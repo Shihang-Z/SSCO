@@ -1,0 +1,22 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<https://w3id.org/ssco/0.1.0> a prov:Entity;
+	 dc:title "Structural Sustainability Compliance Ontology";
+	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo :agent1;
+	 prov:wasAttributedTo :agent2;
+	 prov:wasAttributedTo :agent3;
+	 prov:wasAttributedTo :agent4;
+	 prov:wasAttributedTo :agent5;
+	 prov:wasAttributedTo :agent6;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+.
+:agent0 a prov:Agent; foaf:name "Sherong Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University".
+:agent1 a prov:Agent; foaf:name "Shihang Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University".
+:agent2 a prov:Agent; foaf:name "Zhengqiao Wu, China Water Resources Beifang Investigation, Design and Research Co. Ltd.".
+:agent3 a prov:Agent; foaf:name "Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University".
+:agent4 a prov:Agent; foaf:name "Chen Zhu, Power Construction Corporation of China".
+:agent5 a prov:Agent; foaf:name "Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University".
+:agent6 a prov:Agent; foaf:name "Zhiyong Jiang, China Water Resources Beifang Investigation, Design and Research Co. Ltd.".

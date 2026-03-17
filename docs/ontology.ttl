@@ -1,0 +1,2329 @@
+@prefix : <https://w3id.org/ssco#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/ssco#> .
+
+<https://w3id.org/ssco> rdf:type owl:Ontology ;
+                         owl:versionIRI <https://w3id.org/ssco/0.1.0> ;
+                         <http://purl.org/dc/terms/alternative> "SSCO"@en ;
+                         <http://purl.org/dc/terms/bibliographicCitation> "Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.0, 2026."@en ;
+                         <http://purl.org/dc/terms/contributor> "Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en ,
+                                                                "Chen Zhu, Power Construction Corporation of China"@en ,
+                                                                "Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en ,
+                                                                "Zhiyong Jiang, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
+                         <http://purl.org/dc/terms/creator> "Sherong Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en ,
+                                                            "Shihang Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en ,
+                                                            "Zhengqiao Wu, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
+                         <http://purl.org/dc/terms/description> "An all-in-one publication version of the Structural Sustainability Compliance Ontology, integrating the SSCO-Core, SSCO-BFI, and SSCO-SCC modules."@en ;
+                         <http://purl.org/dc/terms/issued> "2026-03-15"^^xsd:date ;
+                         <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                         <http://purl.org/dc/terms/modified> "2026-03-16"^^xsd:date ;
+                         <http://purl.org/dc/terms/rights> "Copyright © 2026 Authors"@en ;
+                         <http://purl.org/dc/terms/title> "Structural Sustainability Compliance Ontology"@en ;
+                         <http://purl.org/vocab/vann/preferredNamespacePrefix> "ssco" ;
+                         <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/ssco#" ;
+                         rdfs:label "Structural Sustainability Compliance Ontology"@en ;
+                         owl:versionInfo "0.1.0" ;
+                         <http://xmlns.com/foaf/0.1/homepage> <https://w3id.org/ssco> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/alternative
+<http://purl.org/dc/terms/alternative> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/ssco/bfi#allocatesResource
+<https://w3id.org/ssco/bfi#allocatesResource> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#Control> ;
+                                              rdfs:range <https://w3id.org/ssco/bfi#Resource> ;
+                                              rdfs:comment "Links a control to a resource."@en ;
+                                              rdfs:label "allocates resource"@en .
+
+
+###  https://w3id.org/ssco/bfi#appliesInStep
+<https://w3id.org/ssco/bfi#appliesInStep> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/bfi#Constraint> ;
+                                          rdfs:range <https://w3id.org/ssco/bfi#AnalysisStep> ;
+                                          rdfs:comment "Links a constraint to an analysis step."@en ;
+                                          rdfs:label "applies in step"@en .
+
+
+###  https://w3id.org/ssco/bfi#appliesToAnalysisState
+<https://w3id.org/ssco/bfi#appliesToAnalysisState> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <https://w3id.org/ssco/bfi#StateDefinition> ;
+                                                   rdfs:range <https://w3id.org/ssco/bfi#AnalysisState> ;
+                                                   rdfs:comment "Relates a state definition to the analysis state that it defines or characterizes."@en ;
+                                                   rdfs:label "applies to analysis state"@en .
+
+
+###  https://w3id.org/ssco/bfi#appliesToItem
+<https://w3id.org/ssco/bfi#appliesToItem> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/bfi#Constraint> ;
+                                          rdfs:range <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                          rdfs:comment "Links a constraint to a structural item."@en ;
+                                          rdfs:label "applies to item"@en .
+
+
+###  https://w3id.org/ssco/bfi#belongsToItem
+<https://w3id.org/ssco/bfi#belongsToItem> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/bfi#StateDefinition> ;
+                                          rdfs:range <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                          rdfs:comment "Links a state definition to a structural item."@en ;
+                                          rdfs:label "belongs to item"@en .
+
+
+###  https://w3id.org/ssco/bfi#consistsOf
+<https://w3id.org/ssco/bfi#consistsOf> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                       rdfs:range <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                       rdfs:comment "Links a structural item to a material definition."@en ;
+                                       rdfs:label "consists of"@en .
+
+
+###  https://w3id.org/ssco/bfi#consumesResource
+<https://w3id.org/ssco/bfi#consumesResource> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/bfi#Task> ;
+                                             rdfs:range <https://w3id.org/ssco/bfi#Resource> ;
+                                             rdfs:comment "Links a task to a resource it consumes."@en ;
+                                             rdfs:label "consumes resource"@en .
+
+
+###  https://w3id.org/ssco/bfi#containsElement
+<https://w3id.org/ssco/bfi#containsElement> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/bfi#SpatialStructureElement> ;
+                                            rdfs:range <https://w3id.org/ssco/bfi#StructuralElement> ;
+                                            rdfs:comment "Links a spatial structure element to a structural element."@en ;
+                                            rdfs:label "contains element"@en .
+
+
+###  https://w3id.org/ssco/bfi#containsItem
+<https://w3id.org/ssco/bfi#containsItem> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#AnalysisModel> ;
+                                         rdfs:range <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                         rdfs:comment "Links an analysis model to a structural item."@en ;
+                                         rdfs:label "contains item"@en .
+
+
+###  https://w3id.org/ssco/bfi#containsProcess
+<https://w3id.org/ssco/bfi#containsProcess> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/bfi#SpatialStructureElement> ;
+                                            rdfs:range <https://w3id.org/ssco/bfi#Process> ;
+                                            rdfs:comment "Links a spatial structure element to a process."@en ;
+                                            rdfs:label "contains process"@en .
+
+
+###  https://w3id.org/ssco/bfi#containsSpatialStructureElement
+<https://w3id.org/ssco/bfi#containsSpatialStructureElement> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <https://w3id.org/ssco/core#Project> ;
+                                                            rdfs:range <https://w3id.org/ssco/bfi#SpatialStructureElement> ;
+                                                            rdfs:comment "Links a project to a spatial structure element."@en ;
+                                                            rdfs:label "contains spatial structure element"@en .
+
+
+###  https://w3id.org/ssco/bfi#containsSubStructure
+<https://w3id.org/ssco/bfi#containsSubStructure> rdf:type owl:ObjectProperty ,
+                                                          owl:TransitiveProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#SpatialStructureElement> ;
+                                                 rdfs:range <https://w3id.org/ssco/bfi#SpatialStructureElement> ;
+                                                 rdfs:comment "Defines recursive containment among spatial structure elements."@en ;
+                                                 rdfs:label "contains substructure"@en .
+
+
+###  https://w3id.org/ssco/bfi#forStep
+<https://w3id.org/ssco/bfi#forStep> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResultsStep> ;
+                                    rdfs:range <https://w3id.org/ssco/bfi#AnalysisStep> ;
+                                    rdfs:comment "Links a results step to its analysis step."@en ;
+                                    rdfs:label "for step"@en .
+
+
+###  https://w3id.org/ssco/bfi#hasAnalysisModel
+<https://w3id.org/ssco/bfi#hasAnalysisModel> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/core#Project> ;
+                                             rdfs:range <https://w3id.org/ssco/bfi#AnalysisModel> ;
+                                             rdfs:comment "Links a project to an analysis model."@en ;
+                                             rdfs:label "has analysis model"@en .
+
+
+###  https://w3id.org/ssco/bfi#hasDefinition
+<https://w3id.org/ssco/bfi#hasDefinition> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/bfi#AnalysisState> ;
+                                          rdfs:range <https://w3id.org/ssco/bfi#StateDefinition> ;
+                                          rdfs:comment "Links an analysis state to a state definition."@en ;
+                                          rdfs:label "has definition"@en .
+
+
+###  https://w3id.org/ssco/bfi#hasFinalState
+<https://w3id.org/ssco/bfi#hasFinalState> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/bfi#Task> ;
+                                          rdfs:range <https://w3id.org/ssco/bfi#AnalysisState> ;
+                                          rdfs:comment "Links a task to a final analysis state."@en ;
+                                          rdfs:label "has final state"@en .
+
+
+###  https://w3id.org/ssco/bfi#hasInitialState
+<https://w3id.org/ssco/bfi#hasInitialState> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/bfi#Task> ;
+                                            rdfs:range <https://w3id.org/ssco/bfi#AnalysisState> ;
+                                            rdfs:comment "Links a task to an initial analysis state."@en ;
+                                            rdfs:label "has initial state"@en .
+
+
+###  https://w3id.org/ssco/bfi#hasItem
+<https://w3id.org/ssco/bfi#hasItem> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <https://w3id.org/ssco/bfi#AnalysisModel> ;
+                                    rdfs:range <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                    rdfs:comment "Links an analysis model to a structural item."@en ;
+                                    rdfs:label "has item"@en .
+
+
+###  https://w3id.org/ssco/bfi#hasMaterial
+<https://w3id.org/ssco/bfi#hasMaterial> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/bfi#StructuralElement> ;
+                                        rdfs:range <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                        rdfs:comment "Links a structural element to a material definition."@en ;
+                                        rdfs:label "has material"@en .
+
+
+###  https://w3id.org/ssco/bfi#hasResults
+<https://w3id.org/ssco/bfi#hasResults> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <https://w3id.org/ssco/bfi#AnalysisModel> ;
+                                       rdfs:range <https://w3id.org/ssco/bfi#AnalysisResults> ;
+                                       rdfs:comment "Links an analysis model to analysis results."@en ;
+                                       rdfs:label "has results"@en .
+
+
+###  https://w3id.org/ssco/bfi#hasResultsStep
+<https://w3id.org/ssco/bfi#hasResultsStep> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResults> ;
+                                           rdfs:range <https://w3id.org/ssco/bfi#AnalysisResultsStep> ;
+                                           rdfs:comment "Links analysis results to a results step."@en ;
+                                           rdfs:label "has results step"@en .
+
+
+###  https://w3id.org/ssco/bfi#hasStep
+<https://w3id.org/ssco/bfi#hasStep> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <https://w3id.org/ssco/bfi#AnalysisModel> ;
+                                    rdfs:range <https://w3id.org/ssco/bfi#AnalysisStep> ;
+                                    rdfs:comment "Links an analysis model to an analysis step."@en ;
+                                    rdfs:label "has step"@en .
+
+
+###  https://w3id.org/ssco/bfi#hasTask
+<https://w3id.org/ssco/bfi#hasTask> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <https://w3id.org/ssco/bfi#StructuralElement> ;
+                                    rdfs:range <https://w3id.org/ssco/bfi#Task> ;
+                                    rdfs:comment "Links a structural element to a task associated with its construction or engineering work."@en ;
+                                    rdfs:label "has task"@en .
+
+
+###  https://w3id.org/ssco/bfi#isAnalyzedForTask
+<https://w3id.org/ssco/bfi#isAnalyzedForTask> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                              rdfs:range <https://w3id.org/ssco/bfi#Task> ;
+                                              rdfs:comment "Links a structural item to the task for which it is analyzed."@en ;
+                                              rdfs:label "is analyzed for task"@en .
+
+
+###  https://w3id.org/ssco/bfi#isConstructedBy
+<https://w3id.org/ssco/bfi#isConstructedBy> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/bfi#StructuralElement> ;
+                                            rdfs:range <https://w3id.org/ssco/bfi#Process> ;
+                                            rdfs:comment "Links a structural element to a process by which it is constructed."@en ;
+                                            rdfs:label "is constructed by"@en .
+
+
+###  https://w3id.org/ssco/bfi#isControlledBy
+<https://w3id.org/ssco/bfi#isControlledBy> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#Task> ;
+                                           rdfs:range <https://w3id.org/ssco/bfi#Control> ;
+                                           rdfs:comment "Links a task to a control."@en ;
+                                           rdfs:label "is controlled by"@en .
+
+
+###  https://w3id.org/ssco/bfi#isIdealizedAs
+<https://w3id.org/ssco/bfi#isIdealizedAs> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/bfi#StructuralElement> ;
+                                          rdfs:range <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                          rdfs:comment "Links a structural element to its analysis-level structural item."@en ;
+                                          rdfs:label "is idealized as"@en .
+
+
+###  https://w3id.org/ssco/bfi#precedesStep
+<https://w3id.org/ssco/bfi#precedesStep> rdf:type owl:ObjectProperty ,
+                                                  owl:TransitiveProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#AnalysisStep> ;
+                                         rdfs:range <https://w3id.org/ssco/bfi#AnalysisStep> ;
+                                         rdfs:comment "Defines step sequence."@en ;
+                                         rdfs:label "precedes step"@en .
+
+
+###  https://w3id.org/ssco/bfi#precedesTask
+<https://w3id.org/ssco/bfi#precedesTask> rdf:type owl:ObjectProperty ,
+                                                  owl:TransitiveProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#Task> ;
+                                         rdfs:range <https://w3id.org/ssco/bfi#Task> ;
+                                         rdfs:comment "Defines sequence among tasks."@en ;
+                                         rdfs:label "precedes task"@en .
+
+
+###  https://w3id.org/ssco/core#belongsToClassification
+<https://w3id.org/ssco/core#belongsToClassification> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <https://w3id.org/ssco/core#ClassificationReference> ;
+                                                     rdfs:range <https://w3id.org/ssco/core#Classification> ;
+                                                     rdfs:comment "Links a classification reference to a classification."@en ;
+                                                     rdfs:label "belongs to classification"@en .
+
+
+###  https://w3id.org/ssco/core#hasClassificationReference
+<https://w3id.org/ssco/core#hasClassificationReference> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <https://w3id.org/ssco/bfi#StructuralElement> ;
+                                                        rdfs:range <https://w3id.org/ssco/core#ClassificationReference> ;
+                                                        rdfs:comment "Links a structural element to a classification reference."@en ;
+                                                        rdfs:label "has classification reference"@en .
+
+
+###  https://w3id.org/ssco/core#hasObjective
+<https://w3id.org/ssco/core#hasObjective> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/core#Project> ;
+                                          rdfs:range <https://w3id.org/ssco/core#Objective> ;
+                                          rdfs:comment "Links a project to an objective."@en ;
+                                          rdfs:label "has objective"@en .
+
+
+###  https://w3id.org/ssco/core#hasUnitSpecification
+<https://w3id.org/ssco/core#hasUnitSpecification> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <https://w3id.org/ssco/core#Project> ;
+                                                  rdfs:range <https://w3id.org/ssco/core#UnitSpecification> ;
+                                                  rdfs:comment "Links a project to the default unit specification used to interpret quantitative values in the project context."@en ;
+                                                  rdfs:label "has unit specification"@en .
+
+
+###  https://w3id.org/ssco/core#isMeasuredBy
+<https://w3id.org/ssco/core#isMeasuredBy> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/core#Objective> ;
+                                          rdfs:range <https://w3id.org/ssco/core#Metric> ;
+                                          rdfs:comment "Links an objective to a metric."@en ;
+                                          rdfs:label "is measured by"@en .
+
+
+###  https://w3id.org/ssco/core#usesClassification
+<https://w3id.org/ssco/core#usesClassification> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/core#Project> ;
+                                                rdfs:range <https://w3id.org/ssco/core#Classification> ;
+                                                rdfs:comment "Links a project to a classification system."@en ;
+                                                rdfs:label "uses classification"@en .
+
+
+###  https://w3id.org/ssco/scc#appliesToLifeCycleStage
+<https://w3id.org/ssco/scc#appliesToLifeCycleStage> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                                    rdfs:range <https://w3id.org/ssco/scc#LifeCycleStage> ;
+                                                    rdfs:comment "Links an indicator to a life cycle stage."@en ;
+                                                    rdfs:label "applies to life cycle stage"@en .
+
+
+###  https://w3id.org/ssco/scc#appliesToStructuralItem
+<https://w3id.org/ssco/scc#appliesToStructuralItem> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                                    rdfs:range <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                                    rdfs:comment "Relates a compliance criterion to the structural item to which it applies."@en ;
+                                                    rdfs:label "applies to structural item"@en .
+
+
+###  https://w3id.org/ssco/scc#checksCriterion
+<https://w3id.org/ssco/scc#checksCriterion> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/scc#ComplianceCheck> ;
+                                            rdfs:range <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                            rdfs:comment "Relates a compliance check to the compliance criterion that it checks."@en ;
+                                            rdfs:label "checks criterion"@en .
+
+
+###  https://w3id.org/ssco/scc#evaluatesPerformance
+<https://w3id.org/ssco/scc#evaluatesPerformance> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/scc#ComplianceCheck> ;
+                                                 rdfs:range <https://w3id.org/ssco/scc#Performance> ;
+                                                 rdfs:comment "Relates a compliance check to the performance that it evaluates as evidence."@en ;
+                                                 rdfs:label "evaluates performance"@en .
+
+
+###  https://w3id.org/ssco/scc#hasBenchmark
+<https://w3id.org/ssco/scc#hasBenchmark> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                         rdfs:range <https://w3id.org/ssco/scc#Benchmark> ;
+                                         rdfs:comment "Links an indicator to a benchmark."@en ;
+                                         rdfs:label "has benchmark"@en .
+
+
+###  https://w3id.org/ssco/scc#hasCriterion
+<https://w3id.org/ssco/scc#hasCriterion> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/scc#ComplianceRequirement> ;
+                                         rdfs:range <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                         rdfs:comment "Links a compliance requirement to a compliance criterion."@en ;
+                                         rdfs:label "has criterion"@en .
+
+
+###  https://w3id.org/ssco/scc#hasIndicator
+<https://w3id.org/ssco/scc#hasIndicator> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/scc#SustainabilityAspect> ;
+                                         rdfs:range <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                         rdfs:comment "Links a sustainability aspect to a sustainability indicator."@en ;
+                                         rdfs:label "has indicator"@en .
+
+
+###  https://w3id.org/ssco/scc#indicatesPerformance
+<https://w3id.org/ssco/scc#indicatesPerformance> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                                 rdfs:range <https://w3id.org/ssco/scc#Performance> ;
+                                                 rdfs:comment "Links an indicator to a performance."@en ;
+                                                 rdfs:label "indicates performance"@en .
+
+
+###  https://w3id.org/ssco/scc#isBasedOnPerformance
+<https://w3id.org/ssco/scc#isBasedOnPerformance> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/scc#ComplianceResult> ;
+                                                 rdfs:range <https://w3id.org/ssco/scc#Performance> ;
+                                                 rdfs:comment "Links a compliance result to a performance basis."@en ;
+                                                 rdfs:label "is based on performance"@en .
+
+
+###  https://w3id.org/ssco/scc#isCheckedBy
+<https://w3id.org/ssco/scc#isCheckedBy> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                        rdfs:range <https://w3id.org/ssco/scc#ComplianceCheck> ;
+                                        rdfs:comment "Links a compliance criterion to a compliance check."@en ;
+                                        rdfs:label "is checked by"@en .
+
+
+###  https://w3id.org/ssco/scc#isSpecifiedBy
+<https://w3id.org/ssco/scc#isSpecifiedBy> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                          rdfs:range <https://w3id.org/ssco/scc#ComplianceRequirement> ;
+                                          rdfs:comment "Links a sustainability indicator to a compliance requirement that it specifies."@en ;
+                                          rdfs:label "is specified by"@en .
+
+
+###  https://w3id.org/ssco/scc#isSubjectToRequirement
+<https://w3id.org/ssco/scc#isSubjectToRequirement> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <https://w3id.org/ssco/core#Project> ;
+                                                   rdfs:range <https://w3id.org/ssco/scc#ComplianceRequirement> ;
+                                                   rdfs:comment "Links a project to a compliance requirement."@en ;
+                                                   rdfs:label "is subject to requirement"@en .
+
+
+###  https://w3id.org/ssco/scc#operationalizes
+<https://w3id.org/ssco/scc#operationalizes> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                            rdfs:range <https://w3id.org/ssco/core#Metric> ;
+                                            rdfs:comment "Links an indicator to a metric."@en ;
+                                            rdfs:label "operationalizes"@en .
+
+
+###  https://w3id.org/ssco/scc#producesComplianceResult
+<https://w3id.org/ssco/scc#producesComplianceResult> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <https://w3id.org/ssco/scc#ComplianceCheck> ;
+                                                     rdfs:range <https://w3id.org/ssco/scc#ComplianceResult> ;
+                                                     rdfs:comment "Links a compliance check to a compliance result."@en ;
+                                                     rdfs:label "produces compliance result"@en .
+
+
+###  https://w3id.org/ssco/scc#relatesToLifeCycleStage
+<https://w3id.org/ssco/scc#relatesToLifeCycleStage> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <https://w3id.org/ssco/scc#Performance> ;
+                                                    rdfs:range <https://w3id.org/ssco/scc#LifeCycleStage> ;
+                                                    rdfs:comment "Links a performance to a life cycle stage."@en ;
+                                                    rdfs:label "relates to life cycle stage"@en .
+
+
+###  https://w3id.org/ssco/scc#reportsNonconformity
+<https://w3id.org/ssco/scc#reportsNonconformity> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/scc#ComplianceCheck> ;
+                                                 rdfs:range <https://w3id.org/ssco/scc#Nonconformity> ;
+                                                 rdfs:comment "Links a compliance check to a nonconformity."@en ;
+                                                 rdfs:label "reports issue"@en .
+
+
+###  https://w3id.org/ssco/scc#usesBenchmark
+<https://w3id.org/ssco/scc#usesBenchmark> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                          rdfs:range <https://w3id.org/ssco/scc#Benchmark> ;
+                                          rdfs:comment "Links a compliance criterion to a benchmark."@en ;
+                                          rdfs:label "uses benchmark"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/ssco/bfi#analysisModelType
+<https://w3id.org/ssco/bfi#analysisModelType> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#AnalysisModel> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies the type of an analysis model."@en ;
+                                              rdfs:label "analysis model type"@en .
+
+
+###  https://w3id.org/ssco/bfi#analysisResultsIdentifier
+<https://w3id.org/ssco/bfi#analysisResultsIdentifier> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResults> ;
+                                                      rdfs:range xsd:string ;
+                                                      rdfs:comment "Specifies an identifier assigned to a set of analysis results."@en ;
+                                                      rdfs:label "analysis results identifier"@en .
+
+
+###  https://w3id.org/ssco/bfi#analysisSoftwareName
+<https://w3id.org/ssco/bfi#analysisSoftwareName> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#AnalysisModel> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Specifies the name of the software used to create or run an analysis model."@en ;
+                                                 rdfs:label "analysis software name"@en .
+
+
+###  https://w3id.org/ssco/bfi#analysisSoftwareVersion
+<https://w3id.org/ssco/bfi#analysisSoftwareVersion> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <https://w3id.org/ssco/bfi#AnalysisModel> ;
+                                                    rdfs:range xsd:string ;
+                                                    rdfs:comment "Specifies the software version used to create or run an analysis model."@en ;
+                                                    rdfs:label "analysis software version"@en .
+
+
+###  https://w3id.org/ssco/bfi#analysisStateIdentifier
+<https://w3id.org/ssco/bfi#analysisStateIdentifier> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <https://w3id.org/ssco/bfi#AnalysisState> ;
+                                                    rdfs:range xsd:string ;
+                                                    rdfs:comment "Specifies an identifier assigned to an analysis state."@en ;
+                                                    rdfs:label "analysis state identifier"@en .
+
+
+###  https://w3id.org/ssco/bfi#analysisStepIdentifier
+<https://w3id.org/ssco/bfi#analysisStepIdentifier> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <https://w3id.org/ssco/bfi#AnalysisStep> ;
+                                                   rdfs:range xsd:string ;
+                                                   rdfs:comment "Specifies an identifier assigned to an analysis step."@en ;
+                                                   rdfs:label "analysis step identifier"@en .
+
+
+###  https://w3id.org/ssco/bfi#baselineScheduleName
+<https://w3id.org/ssco/bfi#baselineScheduleName> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#ScheduleControl> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Specifies the name of a baseline schedule represented by a schedule control."@en ;
+                                                 rdfs:label "baseline schedule name"@en .
+
+
+###  https://w3id.org/ssco/bfi#budgetBaselineAmount
+<https://w3id.org/ssco/bfi#budgetBaselineAmount> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#CostControl> ;
+                                                 rdfs:range xsd:decimal ;
+                                                 rdfs:comment "Specifies the baseline budget amount represented by a cost control."@en ;
+                                                 rdfs:label "budget baseline amount"@en .
+
+
+###  https://w3id.org/ssco/bfi#budgetCurrency
+<https://w3id.org/ssco/bfi#budgetCurrency> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#Control> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "Specifies the local currency of a planned cost or budget value associated with a control when an explicit value-level currency needs to override or supplement the project unit specification."@en ;
+                                           rdfs:label "budget currency"@en .
+
+
+###  https://w3id.org/ssco/bfi#carbonEmissionUnit
+<https://w3id.org/ssco/bfi#carbonEmissionUnit> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Specifies the local unit of a carbon emission value associated with a resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                               rdfs:label "carbon emission unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#carbonEmissionValue
+<https://w3id.org/ssco/bfi#carbonEmissionValue> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                                rdfs:range xsd:decimal ;
+                                                rdfs:comment "Specifies the carbon emission amount associated with a resource during a defined activity, allocation, or consumption period."@en ;
+                                                rdfs:label "carbon emission value"@en .
+
+
+###  https://w3id.org/ssco/bfi#compressiveStrengthValue
+<https://w3id.org/ssco/bfi#compressiveStrengthValue> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                                     rdfs:range xsd:decimal ;
+                                                     rdfs:comment "Specifies the compressive strength value assigned to a material definition."@en ;
+                                                     rdfs:label "compressive strength value"@en .
+
+
+###  https://w3id.org/ssco/bfi#constraintType
+<https://w3id.org/ssco/bfi#constraintType> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#Constraint> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "Specifies the type of a boundary condition or constraint."@en ;
+                                           rdfs:label "constraint type"@en .
+
+
+###  https://w3id.org/ssco/bfi#consumptionQuantity
+<https://w3id.org/ssco/bfi#consumptionQuantity> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                                rdfs:range xsd:decimal ;
+                                                rdfs:comment "Specifies the quantity of a resource consumed or planned for consumption."@en ;
+                                                rdfs:label "consumption quantity"@en .
+
+
+###  https://w3id.org/ssco/bfi#controlIdentifier
+<https://w3id.org/ssco/bfi#controlIdentifier> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#Control> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies an identifier assigned to a control."@en ;
+                                              rdfs:label "control identifier"@en .
+
+
+###  https://w3id.org/ssco/bfi#controlStatus
+<https://w3id.org/ssco/bfi#controlStatus> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/bfi#Control> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies the status of a control."@en ;
+                                          rdfs:label "control status"@en .
+
+
+###  https://w3id.org/ssco/bfi#controlType
+<https://w3id.org/ssco/bfi#controlType> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/bfi#Control> ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:comment "Specifies the type or category of a control."@en ;
+                                        rdfs:label "control type"@en .
+
+
+###  https://w3id.org/ssco/bfi#costPerformanceIndex
+<https://w3id.org/ssco/bfi#costPerformanceIndex> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#CostControl> ;
+                                                 rdfs:range xsd:decimal ;
+                                                 rdfs:comment "Specifies the cost performance index associated with a cost control."@en ;
+                                                 rdfs:label "cost performance index"@en .
+
+
+###  https://w3id.org/ssco/bfi#costVarianceAmount
+<https://w3id.org/ssco/bfi#costVarianceAmount> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/bfi#CostControl> ;
+                                               rdfs:range xsd:decimal ;
+                                               rdfs:comment "Specifies the cost variance value represented by a cost control."@en ;
+                                               rdfs:label "cost variance amount"@en .
+
+
+###  https://w3id.org/ssco/bfi#dailyWorkingHours
+<https://w3id.org/ssco/bfi#dailyWorkingHours> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#CalendarControl> ;
+                                              rdfs:range xsd:decimal ;
+                                              rdfs:comment "Specifies the number of working hours per day defined by a calendar control."@en ;
+                                              rdfs:label "daily working hours"@en .
+
+
+###  https://w3id.org/ssco/bfi#densityUnit
+<https://w3id.org/ssco/bfi#densityUnit> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:comment "Specifies the local unit of a density value assigned to a material definition when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                        rdfs:label "density unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#densityValue
+<https://w3id.org/ssco/bfi#densityValue> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                         rdfs:range xsd:decimal ;
+                                         rdfs:comment "Specifies the density value assigned to a material definition."@en ;
+                                         rdfs:label "density value"@en .
+
+
+###  https://w3id.org/ssco/bfi#dofCode
+<https://w3id.org/ssco/bfi#dofCode> rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain <https://w3id.org/ssco/bfi#Constraint> ;
+                                    rdfs:range xsd:string ;
+                                    rdfs:comment "Specifies the degree of freedom to which a constraint applies."@en ;
+                                    rdfs:label "degree of freedom code"@en .
+
+
+###  https://w3id.org/ssco/bfi#durationUnit
+<https://w3id.org/ssco/bfi#durationUnit> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#Control> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "Specifies the unit of a duration value associated with a control."@en ;
+                                         rdfs:label "duration unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#earliestStartTime
+<https://w3id.org/ssco/bfi#earliestStartTime> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#ScheduleControl> ;
+                                              rdfs:range xsd:dateTime ;
+                                              rdfs:comment "Specifies the earliest permissible start time represented by a schedule control."@en ;
+                                              rdfs:label "earliest start time"@en .
+
+
+###  https://w3id.org/ssco/bfi#earnedValueAmount
+<https://w3id.org/ssco/bfi#earnedValueAmount> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#CostControl> ;
+                                              rdfs:range xsd:decimal ;
+                                              rdfs:comment "Specifies the earned value amount represented by a cost control."@en ;
+                                              rdfs:label "earned value amount"@en .
+
+
+###  https://w3id.org/ssco/bfi#elasticModulusValue
+<https://w3id.org/ssco/bfi#elasticModulusValue> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                                rdfs:range xsd:decimal ;
+                                                rdfs:comment "Specifies the elastic modulus value assigned to a material definition."@en ;
+                                                rdfs:label "elastic modulus value"@en .
+
+
+###  https://w3id.org/ssco/bfi#embodiedCarbonFactor
+<https://w3id.org/ssco/bfi#embodiedCarbonFactor> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#MaterialResource> ;
+                                                 rdfs:range xsd:decimal ;
+                                                 rdfs:comment "Specifies the embodied carbon factor assigned to a material resource."@en ;
+                                                 rdfs:label "embodied carbon factor"@en .
+
+
+###  https://w3id.org/ssco/bfi#embodiedCarbonFactorValue
+<https://w3id.org/ssco/bfi#embodiedCarbonFactorValue> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:subPropertyOf <https://w3id.org/ssco/bfi#embodiedCarbonFactor> ;
+                                                      rdfs:domain <https://w3id.org/ssco/bfi#MaterialResource> ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:comment "Specifies the numeric embodied carbon factor of a material resource, interpreted by default through the project unit specification unless a local unit is explicitly provided."@en ;
+                                                      rdfs:label "embodied carbon factor value"@en .
+
+
+###  https://w3id.org/ssco/bfi#embodiedCarbonUnit
+<https://w3id.org/ssco/bfi#embodiedCarbonUnit> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/bfi#MaterialResource> ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Specifies the local unit of an embodied carbon factor assigned to a material resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                               rdfs:label "embodied carbon unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#energyConsumptionUnit
+<https://w3id.org/ssco/bfi#energyConsumptionUnit> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/ssco/bfi#EquipmentResource> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment "Specifies the local unit of an energy consumption value associated with an equipment resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                                  rdfs:label "energy consumption unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#energyConsumptionValue
+<https://w3id.org/ssco/bfi#energyConsumptionValue> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <https://w3id.org/ssco/bfi#EquipmentResource> ;
+                                                   rdfs:range xsd:decimal ;
+                                                   rdfs:comment "Specifies the energy consumption amount associated with an equipment resource."@en ;
+                                                   rdfs:label "energy consumption value"@en .
+
+
+###  https://w3id.org/ssco/bfi#equipmentCarbonEmissionValue
+<https://w3id.org/ssco/bfi#equipmentCarbonEmissionValue> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain <https://w3id.org/ssco/bfi#EquipmentResource> ;
+                                                         rdfs:range xsd:decimal ;
+                                                         rdfs:comment "Specifies the carbon emission amount associated specifically with an equipment resource."@en ;
+                                                         rdfs:label "equipment carbon emission value"@en .
+
+
+###  https://w3id.org/ssco/bfi#equipmentUtilizationRate
+<https://w3id.org/ssco/bfi#equipmentUtilizationRate> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <https://w3id.org/ssco/bfi#EquipmentResource> ;
+                                                     rdfs:range xsd:decimal ;
+                                                     rdfs:comment "Specifies the utilization rate associated with an equipment resource."@en ;
+                                                     rdfs:label "equipment utilization rate"@en .
+
+
+###  https://w3id.org/ssco/bfi#femaleLaborRatio
+<https://w3id.org/ssco/bfi#femaleLaborRatio> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/bfi#LaborResource> ;
+                                             rdfs:range xsd:decimal ;
+                                             rdfs:comment "Specifies the ratio of female workers within a labor resource."@en ;
+                                             rdfs:label "female labor ratio"@en .
+
+
+###  https://w3id.org/ssco/bfi#fuelConsumptionUnit
+<https://w3id.org/ssco/bfi#fuelConsumptionUnit> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/bfi#EquipmentResource> ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment "Specifies the local unit of a fuel consumption value associated with an equipment resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                                rdfs:label "fuel consumption unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#fuelConsumptionValue
+<https://w3id.org/ssco/bfi#fuelConsumptionValue> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#EquipmentResource> ;
+                                                 rdfs:range xsd:decimal ;
+                                                 rdfs:comment "Specifies the fuel consumption amount associated with an equipment resource."@en ;
+                                                 rdfs:label "fuel consumption value"@en .
+
+
+###  https://w3id.org/ssco/bfi#geometricRepresentationType
+<https://w3id.org/ssco/bfi#geometricRepresentationType> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <https://w3id.org/ssco/bfi#StructuralElement> ;
+                                                        rdfs:range xsd:string ;
+                                                        rdfs:comment "Specifies the type of geometric representation associated with a structural element."@en ;
+                                                        rdfs:label "geometric representation type"@en .
+
+
+###  https://w3id.org/ssco/bfi#hourlyWageRate
+<https://w3id.org/ssco/bfi#hourlyWageRate> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#LaborResource> ;
+                                           rdfs:range xsd:decimal ;
+                                           rdfs:comment "Specifies the hourly wage rate associated with a labor resource."@en ;
+                                           rdfs:label "hourly wage rate"@en .
+
+
+###  https://w3id.org/ssco/bfi#hourlyWageRateValue
+<https://w3id.org/ssco/bfi#hourlyWageRateValue> rdf:type owl:DatatypeProperty ;
+                                                rdfs:subPropertyOf <https://w3id.org/ssco/bfi#hourlyWageRate> ;
+                                                rdfs:domain <https://w3id.org/ssco/bfi#LaborResource> ;
+                                                rdfs:range xsd:decimal ;
+                                                rdfs:comment "Specifies the numeric wage rate value of a labor resource, interpreted by default through the project unit specification unless a local wage time unit or local currency is explicitly provided."@en ;
+                                                rdfs:label "hourly wage rate value"@en .
+
+
+###  https://w3id.org/ssco/bfi#idealizationType
+<https://w3id.org/ssco/bfi#idealizationType> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                             rdfs:range xsd:string ;
+                                             rdfs:comment "Specifies the idealization type of a structural item in the analysis model."@en ;
+                                             rdfs:label "idealization type"@en .
+
+
+###  https://w3id.org/ssco/bfi#isCriticalControl
+<https://w3id.org/ssco/bfi#isCriticalControl> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#ScheduleControl> ;
+                                              rdfs:range xsd:boolean ;
+                                              rdfs:comment "Indicates whether a schedule control belongs to a critical path condition."@en ;
+                                              rdfs:label "is critical control"@en .
+
+
+###  https://w3id.org/ssco/bfi#laborHourValue
+<https://w3id.org/ssco/bfi#laborHourValue> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#LaborResource> ;
+                                           rdfs:range xsd:decimal ;
+                                           rdfs:comment "Specifies the number of labor hours associated with a labor resource."@en ;
+                                           rdfs:label "labor hour value"@en .
+
+
+###  https://w3id.org/ssco/bfi#latestFinishTime
+<https://w3id.org/ssco/bfi#latestFinishTime> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/bfi#ScheduleControl> ;
+                                             rdfs:range xsd:dateTime ;
+                                             rdfs:comment "Specifies the latest permissible finish time represented by a schedule control."@en ;
+                                             rdfs:label "latest finish time"@en .
+
+
+###  https://w3id.org/ssco/bfi#loadCaseName
+<https://w3id.org/ssco/bfi#loadCaseName> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#AnalysisStep> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "Specifies the name or code of a load case associated with an analysis step."@en ;
+                                         rdfs:label "load case name"@en .
+
+
+###  https://w3id.org/ssco/bfi#localEquipmentRatio
+<https://w3id.org/ssco/bfi#localEquipmentRatio> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/bfi#EquipmentResource> ;
+                                                rdfs:range xsd:decimal ;
+                                                rdfs:comment "Specifies the ratio of an equipment resource that is deployed from local sources or local contractors."@en ;
+                                                rdfs:label "local equipment ratio"@en .
+
+
+###  https://w3id.org/ssco/bfi#localLaborRatio
+<https://w3id.org/ssco/bfi#localLaborRatio> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/bfi#LaborResource> ;
+                                            rdfs:range xsd:decimal ;
+                                            rdfs:comment "Specifies the ratio of a labor resource recruited locally."@en ;
+                                            rdfs:label "local labor ratio"@en .
+
+
+###  https://w3id.org/ssco/bfi#localMaterialRatio
+<https://w3id.org/ssco/bfi#localMaterialRatio> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/bfi#MaterialResource> ;
+                                               rdfs:range xsd:decimal ;
+                                               rdfs:comment "Specifies the ratio of a material resource obtained from local sources."@en ;
+                                               rdfs:label "local material ratio"@en .
+
+
+###  https://w3id.org/ssco/bfi#localResourceRatio
+<https://w3id.org/ssco/bfi#localResourceRatio> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                               rdfs:range xsd:decimal ;
+                                               rdfs:comment "Specifies the ratio of a resource that is sourced or deployed locally."@en ;
+                                               rdfs:label "local resource ratio"@en .
+
+
+###  https://w3id.org/ssco/bfi#maleLaborRatio
+<https://w3id.org/ssco/bfi#maleLaborRatio> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#LaborResource> ;
+                                           rdfs:range xsd:decimal ;
+                                           rdfs:comment "Specifies the ratio of male workers within a labor resource."@en ;
+                                           rdfs:label "male labor ratio"@en .
+
+
+###  https://w3id.org/ssco/bfi#materialGrade
+<https://w3id.org/ssco/bfi#materialGrade> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies the grade or class of a material definition."@en ;
+                                          rdfs:label "material grade"@en .
+
+
+###  https://w3id.org/ssco/bfi#materialName
+<https://w3id.org/ssco/bfi#materialName> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "Specifies the name of a material definition."@en ;
+                                         rdfs:label "material name"@en .
+
+
+###  https://w3id.org/ssco/bfi#materialStandard
+<https://w3id.org/ssco/bfi#materialStandard> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                             rdfs:range xsd:string ;
+                                             rdfs:comment "Specifies the material standard or specification referenced by a material definition."@en ;
+                                             rdfs:label "material standard"@en .
+
+
+###  https://w3id.org/ssco/bfi#materialWasteRatio
+<https://w3id.org/ssco/bfi#materialWasteRatio> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/bfi#MaterialResource> ;
+                                               rdfs:range xsd:decimal ;
+                                               rdfs:comment "Specifies the ratio of material waste associated with a material resource during a task or process."@en ;
+                                               rdfs:label "material waste ratio"@en .
+
+
+###  https://w3id.org/ssco/bfi#maxDisplacementValue
+<https://w3id.org/ssco/bfi#maxDisplacementValue> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResults> ;
+                                                 rdfs:range xsd:decimal ;
+                                                 rdfs:comment "Specifies the maximum displacement value represented in an analysis result set, interpreted by default through the project unit specification unless a local unit is explicitly provided."@en ;
+                                                 rdfs:label "max displacement value"@en .
+
+
+###  https://w3id.org/ssco/bfi#maxStrainValue
+<https://w3id.org/ssco/bfi#maxStrainValue> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResults> ;
+                                           rdfs:range xsd:decimal ;
+                                           rdfs:comment "Specifies the maximum strain value represented in an analysis result set."@en ;
+                                           rdfs:label "max strain value"@en .
+
+
+###  https://w3id.org/ssco/bfi#maxStressValue
+<https://w3id.org/ssco/bfi#maxStressValue> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResults> ;
+                                           rdfs:range xsd:decimal ;
+                                           rdfs:comment "Specifies the maximum stress value represented in an analysis result set, interpreted by default through the project unit specification unless a local unit is explicitly provided."@en ;
+                                           rdfs:label "max stress value"@en .
+
+
+###  https://w3id.org/ssco/bfi#modulusUnit
+<https://w3id.org/ssco/bfi#modulusUnit> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:comment "Specifies the local unit of an elastic modulus value assigned to a material definition when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                        rdfs:label "modulus unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#nonWorkingDayDescription
+<https://w3id.org/ssco/bfi#nonWorkingDayDescription> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <https://w3id.org/ssco/bfi#CalendarControl> ;
+                                                     rdfs:range xsd:string ;
+                                                     rdfs:comment "Specifies a textual description of non-working periods, holidays, or exceptions in a calendar control."@en ;
+                                                     rdfs:label "non-working day description"@en .
+
+
+###  https://w3id.org/ssco/bfi#operatingHoursValue
+<https://w3id.org/ssco/bfi#operatingHoursValue> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/bfi#EquipmentResource> ;
+                                                rdfs:range xsd:decimal ;
+                                                rdfs:comment "Specifies the operating hours associated with an equipment resource."@en ;
+                                                rdfs:label "operating hours value"@en .
+
+
+###  https://w3id.org/ssco/bfi#plannedCost
+<https://w3id.org/ssco/bfi#plannedCost> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/bfi#Control> ;
+                                        rdfs:range xsd:decimal ;
+                                        rdfs:comment "Specifies the planned cost or budget value associated with a control."@en ;
+                                        rdfs:label "planned cost"@en .
+
+
+###  https://w3id.org/ssco/bfi#plannedDurationValue
+<https://w3id.org/ssco/bfi#plannedDurationValue> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#Control> ;
+                                                 rdfs:range xsd:decimal ;
+                                                 rdfs:comment "Specifies the planned duration value associated with a control."@en ;
+                                                 rdfs:label "planned duration value"@en .
+
+
+###  https://w3id.org/ssco/bfi#plannedFinishTime
+<https://w3id.org/ssco/bfi#plannedFinishTime> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#Control> ;
+                                              rdfs:range xsd:dateTime ;
+                                              rdfs:comment "Specifies the planned finish date and time associated with a control."@en ;
+                                              rdfs:label "planned finish time"@en .
+
+
+###  https://w3id.org/ssco/bfi#plannedStartTime
+<https://w3id.org/ssco/bfi#plannedStartTime> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/bfi#Control> ;
+                                             rdfs:range xsd:dateTime ;
+                                             rdfs:comment "Specifies the planned start date and time associated with a control."@en ;
+                                             rdfs:label "planned start time"@en .
+
+
+###  https://w3id.org/ssco/bfi#prescribedUnit
+<https://w3id.org/ssco/bfi#prescribedUnit> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#Constraint> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "Specifies the unit of a prescribed value in a constraint or boundary condition."@en ;
+                                           rdfs:label "prescribed unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#prescribedValue
+<https://w3id.org/ssco/bfi#prescribedValue> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/bfi#Constraint> ;
+                                            rdfs:range xsd:decimal ;
+                                            rdfs:comment "Specifies the scalar value prescribed by a constraint or boundary condition."@en ;
+                                            rdfs:label "prescribed value"@en .
+
+
+###  https://w3id.org/ssco/bfi#processIdentifier
+<https://w3id.org/ssco/bfi#processIdentifier> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#Process> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies an identifier assigned to a process."@en ;
+                                              rdfs:label "process identifier"@en .
+
+
+###  https://w3id.org/ssco/bfi#processStatus
+<https://w3id.org/ssco/bfi#processStatus> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/bfi#Process> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies the status of a process."@en ;
+                                          rdfs:label "process status"@en .
+
+
+###  https://w3id.org/ssco/bfi#processType
+<https://w3id.org/ssco/bfi#processType> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/bfi#Process> ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:comment "Specifies the type or category of a process."@en ;
+                                        rdfs:label "process type"@en .
+
+
+###  https://w3id.org/ssco/bfi#quantityUnit
+<https://w3id.org/ssco/bfi#quantityUnit> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "Specifies the local unit of a resource quantity when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                         rdfs:label "quantity unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#quantityValue
+<https://w3id.org/ssco/bfi#quantityValue> rdf:type owl:DatatypeProperty ;
+                                          rdfs:subPropertyOf <https://w3id.org/ssco/bfi#consumptionQuantity> ;
+                                          rdfs:domain <https://w3id.org/ssco/bfi#MaterialResource> ;
+                                          rdfs:range xsd:decimal ;
+                                          rdfs:comment "Specifies the numeric quantity value of a material resource, interpreted by default through the project unit specification unless a local unit is explicitly provided."@en ;
+                                          rdfs:label "quantity value"@en .
+
+
+###  https://w3id.org/ssco/bfi#recycledContentRatio
+<https://w3id.org/ssco/bfi#recycledContentRatio> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#MaterialResource> ;
+                                                 rdfs:range xsd:decimal ;
+                                                 rdfs:comment "Specifies the ratio of recycled content in a material resource."@en ;
+                                                 rdfs:label "recycled content ratio"@en .
+
+
+###  https://w3id.org/ssco/bfi#resourceCost
+<https://w3id.org/ssco/bfi#resourceCost> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                         rdfs:range xsd:decimal ;
+                                         rdfs:comment "Specifies the total cost associated with a resource."@en ;
+                                         rdfs:label "resource cost"@en .
+
+
+###  https://w3id.org/ssco/bfi#resourceCostValue
+<https://w3id.org/ssco/bfi#resourceCostValue> rdf:type owl:DatatypeProperty ;
+                                              rdfs:subPropertyOf <https://w3id.org/ssco/bfi#resourceCost> ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                              rdfs:range xsd:decimal ;
+                                              rdfs:comment "Specifies the numeric resource cost value, interpreted by default through the project unit specification unless a local currency is explicitly provided."@en ;
+                                              rdfs:label "resource cost value"@en .
+
+
+###  https://w3id.org/ssco/bfi#resourceCurrency
+<https://w3id.org/ssco/bfi#resourceCurrency> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                             rdfs:range xsd:string ;
+                                             rdfs:comment "Specifies the local currency of a cost value associated with a resource when an explicit value-level currency needs to override or supplement the project unit specification."@en ;
+                                             rdfs:label "resource currency"@en .
+
+
+###  https://w3id.org/ssco/bfi#resourceIdentifier
+<https://w3id.org/ssco/bfi#resourceIdentifier> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Specifies an identifier assigned to a resource."@en ;
+                                               rdfs:label "resource identifier"@en .
+
+
+###  https://w3id.org/ssco/bfi#resourceType
+<https://w3id.org/ssco/bfi#resourceType> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "Specifies the type or category of a resource."@en ;
+                                         rdfs:label "resource type"@en .
+
+
+###  https://w3id.org/ssco/bfi#responseLocationType
+<https://w3id.org/ssco/bfi#responseLocationType> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResultsStep> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Specifies the location type at which a response variable is reported, such as nodal, elemental, or section-based."@en ;
+                                                 rdfs:label "response location type"@en .
+
+
+###  https://w3id.org/ssco/bfi#responseStatisticType
+<https://w3id.org/ssco/bfi#responseStatisticType> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResultsStep> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment "Specifies the statistic type of a reported response value, such as maximum, minimum, average, or characteristic."@en ;
+                                                  rdfs:label "response statistic type"@en .
+
+
+###  https://w3id.org/ssco/bfi#responseVariableName
+<https://w3id.org/ssco/bfi#responseVariableName> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResultsStep> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Specifies the name of a response variable reported in an analysis results step."@en ;
+                                                 rdfs:label "response variable name"@en .
+
+
+###  https://w3id.org/ssco/bfi#responseVariableUnit
+<https://w3id.org/ssco/bfi#responseVariableUnit> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResultsStep> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Specifies the unit of a response variable value."@en ;
+                                                 rdfs:label "response variable unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#responseVariableValue
+<https://w3id.org/ssco/bfi#responseVariableValue> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResultsStep> ;
+                                                  rdfs:range xsd:decimal ;
+                                                  rdfs:comment "Specifies the scalar value of a response variable reported in an analysis results step."@en ;
+                                                  rdfs:label "response variable value"@en .
+
+
+###  https://w3id.org/ssco/bfi#resultCaseName
+<https://w3id.org/ssco/bfi#resultCaseName> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResults> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "Specifies the name or code of the result case represented by an analysis results set."@en ;
+                                           rdfs:label "result case name"@en .
+
+
+###  https://w3id.org/ssco/bfi#resultsDateTime
+<https://w3id.org/ssco/bfi#resultsDateTime> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/bfi#AnalysisResults> ;
+                                            rdfs:range xsd:dateTime ;
+                                            rdfs:comment "Specifies the date and time at which an analysis result set is generated or recorded."@en ;
+                                            rdfs:label "results date time"@en .
+
+
+###  https://w3id.org/ssco/bfi#shiftCount
+<https://w3id.org/ssco/bfi#shiftCount> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <https://w3id.org/ssco/bfi#CalendarControl> ;
+                                       rdfs:range xsd:positiveInteger ;
+                                       rdfs:comment "Specifies the number of work shifts defined by a calendar control."@en ;
+                                       rdfs:label "shift count"@en .
+
+
+###  https://w3id.org/ssco/bfi#stateDescription
+<https://w3id.org/ssco/bfi#stateDescription> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/bfi#AnalysisState> ;
+                                             rdfs:range xsd:string ;
+                                             rdfs:comment "Specifies a textual description of an analysis state."@en ;
+                                             rdfs:label "state description"@en .
+
+
+###  https://w3id.org/ssco/bfi#stateVariableName
+<https://w3id.org/ssco/bfi#stateVariableName> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#StateDefinition> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies the name of a state variable defined for an analysis state."@en ;
+                                              rdfs:label "state variable name"@en .
+
+
+###  https://w3id.org/ssco/bfi#stateVariableUnit
+<https://w3id.org/ssco/bfi#stateVariableUnit> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#StateDefinition> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies the unit of a state variable value."@en ;
+                                              rdfs:label "state variable unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#stateVariableValue
+<https://w3id.org/ssco/bfi#stateVariableValue> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/bfi#StateDefinition> ;
+                                               rdfs:range xsd:decimal ;
+                                               rdfs:comment "Specifies the scalar value of a state variable."@en ;
+                                               rdfs:label "state variable value"@en .
+
+
+###  https://w3id.org/ssco/bfi#stepType
+<https://w3id.org/ssco/bfi#stepType> rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain <https://w3id.org/ssco/bfi#AnalysisStep> ;
+                                     rdfs:range xsd:string ;
+                                     rdfs:comment "Specifies the type of an analysis step."@en ;
+                                     rdfs:label "step type"@en .
+
+
+###  https://w3id.org/ssco/bfi#strengthUnit
+<https://w3id.org/ssco/bfi#strengthUnit> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "Specifies the local unit of a strength value assigned to a material definition when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                         rdfs:label "strength unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#structuralElementType
+<https://w3id.org/ssco/bfi#structuralElementType> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/ssco/bfi#StructuralElement> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment "Specifies the type of a structural element in the product model."@en ;
+                                                  rdfs:label "structural element type"@en .
+
+
+###  https://w3id.org/ssco/bfi#taskIdentifier
+<https://w3id.org/ssco/bfi#taskIdentifier> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#Task> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "Specifies an identifier assigned to a task."@en ;
+                                           rdfs:label "task identifier"@en .
+
+
+###  https://w3id.org/ssco/bfi#taskMethod
+<https://w3id.org/ssco/bfi#taskMethod> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <https://w3id.org/ssco/bfi#Task> ;
+                                       rdfs:range xsd:string ;
+                                       rdfs:comment "Specifies the method, procedure, or execution mode used for a task."@en ;
+                                       rdfs:label "task method"@en .
+
+
+###  https://w3id.org/ssco/bfi#taskStatus
+<https://w3id.org/ssco/bfi#taskStatus> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <https://w3id.org/ssco/bfi#Task> ;
+                                       rdfs:range xsd:string ;
+                                       rdfs:comment "Specifies the current status of a task."@en ;
+                                       rdfs:label "task status"@en .
+
+
+###  https://w3id.org/ssco/bfi#taskType
+<https://w3id.org/ssco/bfi#taskType> rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain <https://w3id.org/ssco/bfi#Task> ;
+                                     rdfs:range xsd:string ;
+                                     rdfs:comment "Specifies the type or category of a task."@en ;
+                                     rdfs:label "task type"@en .
+
+
+###  https://w3id.org/ssco/bfi#tensileStrengthValue
+<https://w3id.org/ssco/bfi#tensileStrengthValue> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/bfi#MaterialDefinition> ;
+                                                 rdfs:range xsd:decimal ;
+                                                 rdfs:comment "Specifies the tensile strength value assigned to a material definition, interpreted by default through the project unit specification unless a local unit is explicitly provided."@en ;
+                                                 rdfs:label "tensile strength value"@en .
+
+
+###  https://w3id.org/ssco/bfi#timeUnit
+<https://w3id.org/ssco/bfi#timeUnit> rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                     rdfs:range xsd:string ;
+                                     rdfs:comment "Specifies the unit of a time value associated with a resource."@en ;
+                                     rdfs:label "time unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#totalFloatValue
+<https://w3id.org/ssco/bfi#totalFloatValue> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/bfi#ScheduleControl> ;
+                                            rdfs:range xsd:decimal ;
+                                            rdfs:comment "Specifies the total float or schedule slack value associated with a schedule control."@en ;
+                                            rdfs:label "total float value"@en .
+
+
+###  https://w3id.org/ssco/bfi#transportDistanceUnit
+<https://w3id.org/ssco/bfi#transportDistanceUnit> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/ssco/bfi#MaterialResource> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment "Specifies the local unit of a transport distance associated with a material resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                                  rdfs:label "transport distance unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#transportDistanceValue
+<https://w3id.org/ssco/bfi#transportDistanceValue> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <https://w3id.org/ssco/bfi#MaterialResource> ;
+                                                   rdfs:range xsd:decimal ;
+                                                   rdfs:comment "Specifies the transport distance associated with a material resource."@en ;
+                                                   rdfs:label "transport distance value"@en .
+
+
+###  https://w3id.org/ssco/bfi#unitPrice
+<https://w3id.org/ssco/bfi#unitPrice> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                      rdfs:range xsd:decimal ;
+                                      rdfs:comment "Specifies the unit price of a resource."@en ;
+                                      rdfs:label "unit price"@en .
+
+
+###  https://w3id.org/ssco/bfi#usageTimeValue
+<https://w3id.org/ssco/bfi#usageTimeValue> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                           rdfs:range xsd:decimal ;
+                                           rdfs:comment "Specifies the planned or recorded time used by a resource."@en ;
+                                           rdfs:label "usage time value"@en .
+
+
+###  https://w3id.org/ssco/bfi#utilizationRate
+<https://w3id.org/ssco/bfi#utilizationRate> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/bfi#Resource> ;
+                                            rdfs:range xsd:decimal ;
+                                            rdfs:comment "Specifies the utilization rate of a resource, typically expressed as a ratio or percentage."@en ;
+                                            rdfs:label "utilization rate"@en .
+
+
+###  https://w3id.org/ssco/bfi#wageTimeUnit
+<https://w3id.org/ssco/bfi#wageTimeUnit> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/bfi#LaborResource> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "Specifies the local time unit used by an hourly or periodic wage rate associated with a labor resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                         rdfs:label "wage time unit"@en .
+
+
+###  https://w3id.org/ssco/bfi#workerCount
+<https://w3id.org/ssco/bfi#workerCount> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/bfi#LaborResource> ;
+                                        rdfs:range xsd:nonNegativeInteger ;
+                                        rdfs:comment "Specifies the number of workers represented by a labor resource."@en ;
+                                        rdfs:label "worker count"@en .
+
+
+###  https://w3id.org/ssco/bfi#workingDayPattern
+<https://w3id.org/ssco/bfi#workingDayPattern> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/bfi#CalendarControl> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies the repeating working day pattern associated with a calendar control."@en ;
+                                              rdfs:label "working day pattern"@en .
+
+
+###  https://w3id.org/ssco/core#classificationCode
+<https://w3id.org/ssco/core#classificationCode> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/core#Classification> ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment "Specifies a code or notation assigned to a classification entry or system."@en ;
+                                                rdfs:label "classification code"@en .
+
+
+###  https://w3id.org/ssco/core#classificationEdition
+<https://w3id.org/ssco/core#classificationEdition> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <https://w3id.org/ssco/core#Classification> ;
+                                                   rdfs:range xsd:string ;
+                                                   rdfs:comment "Specifies the edition or version identifier of a classification system."@en ;
+                                                   rdfs:label "classification edition"@en .
+
+
+###  https://w3id.org/ssco/core#classificationName
+<https://w3id.org/ssco/core#classificationName> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/core#Classification> ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment "Specifies the name of a classification system."@en ;
+                                                rdfs:label "classification name"@en .
+
+
+###  https://w3id.org/ssco/core#classificationPublisher
+<https://w3id.org/ssco/core#classificationPublisher> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <https://w3id.org/ssco/core#Classification> ;
+                                                     rdfs:range xsd:string ;
+                                                     rdfs:comment "Specifies the publisher or issuing organization of a classification system."@en ;
+                                                     rdfs:label "classification publisher"@en .
+
+
+###  https://w3id.org/ssco/core#classificationURI
+<https://w3id.org/ssco/core#classificationURI> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/core#Classification> ;
+                                               rdfs:range xsd:anyURI ;
+                                               rdfs:comment "Specifies the URI or web identifier of a classification system."@en ;
+                                               rdfs:label "classification URI"@en .
+
+
+###  https://w3id.org/ssco/core#externalIdentifier
+<https://w3id.org/ssco/core#externalIdentifier> rdf:type owl:DatatypeProperty ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment "Specifies an external identifier used to trace an instance back to a source model, document, or system."@en ;
+                                                rdfs:label "external identifier"@en .
+
+
+###  https://w3id.org/ssco/core#metricCode
+<https://w3id.org/ssco/core#metricCode> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/core#Metric> ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:comment "Specifies a code assigned to a metric."@en ;
+                                        rdfs:label "metric code"@en .
+
+
+###  https://w3id.org/ssco/core#metricMethod
+<https://w3id.org/ssco/core#metricMethod> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/core#Metric> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies the method, rule, or procedure used to determine a metric."@en ;
+                                          rdfs:label "metric method"@en .
+
+
+###  https://w3id.org/ssco/core#metricUnit
+<https://w3id.org/ssco/core#metricUnit> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/core#Metric> ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:comment "Specifies the unit used by a metric."@en ;
+                                        rdfs:label "metric unit"@en .
+
+
+###  https://w3id.org/ssco/core#metricValueType
+<https://w3id.org/ssco/core#metricValueType> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/core#Metric> ;
+                                             rdfs:range xsd:string ;
+                                             rdfs:comment "Specifies the value type of a metric, such as scalar, ratio, percentage, count, or boolean."@en ;
+                                             rdfs:label "metric value type"@en .
+
+
+###  https://w3id.org/ssco/core#objectivePriority
+<https://w3id.org/ssco/core#objectivePriority> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/core#Objective> ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Specifies the priority level assigned to an objective."@en ;
+                                               rdfs:label "objective priority"@en .
+
+
+###  https://w3id.org/ssco/core#objectiveText
+<https://w3id.org/ssco/core#objectiveText> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/core#Objective> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "Specifies the textual statement of an objective."@en ;
+                                           rdfs:label "objective text"@en .
+
+
+###  https://w3id.org/ssco/core#objectiveType
+<https://w3id.org/ssco/core#objectiveType> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/core#Objective> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "Specifies the type or category of an objective, such as sustainability, cost, schedule, or compliance."@en ;
+                                           rdfs:label "objective type"@en .
+
+
+###  https://w3id.org/ssco/core#projectCode
+<https://w3id.org/ssco/core#projectCode> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/core#Project> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "Specifies a code assigned to a project."@en ;
+                                         rdfs:label "project code"@en .
+
+
+###  https://w3id.org/ssco/core#projectName
+<https://w3id.org/ssco/core#projectName> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/core#Project> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "Specifies the name of a project."@en ;
+                                         rdfs:label "project name"@en .
+
+
+###  https://w3id.org/ssco/core#referenceCode
+<https://w3id.org/ssco/core#referenceCode> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/core#ClassificationReference> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "Specifies the code of a classification reference assigned to an element."@en ;
+                                           rdfs:label "reference code"@en .
+
+
+###  https://w3id.org/ssco/core#referenceDescription
+<https://w3id.org/ssco/core#referenceDescription> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/ssco/core#ClassificationReference> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment "Specifies a descriptive statement associated with a classification reference."@en ;
+                                                  rdfs:label "reference description"@en .
+
+
+###  https://w3id.org/ssco/core#referenceEdition
+<https://w3id.org/ssco/core#referenceEdition> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/core#ClassificationReference> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies the edition or version associated with a classification reference."@en ;
+                                              rdfs:label "reference edition"@en .
+
+
+###  https://w3id.org/ssco/core#referenceLocation
+<https://w3id.org/ssco/core#referenceLocation> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/core#ClassificationReference> ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Specifies the location path, section, or hierarchical position of a classification reference within a classification system."@en ;
+                                               rdfs:label "reference location"@en .
+
+
+###  https://w3id.org/ssco/core#referenceTitle
+<https://w3id.org/ssco/core#referenceTitle> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/core#ClassificationReference> ;
+                                            rdfs:range xsd:string ;
+                                            rdfs:comment "Specifies the title or heading associated with a classification reference."@en ;
+                                            rdfs:label "reference title"@en .
+
+
+###  https://w3id.org/ssco/core#referenceURI
+<https://w3id.org/ssco/core#referenceURI> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/core#ClassificationReference> ;
+                                          rdfs:range xsd:anyURI ;
+                                          rdfs:comment "Specifies the URI or web identifier associated with a classification reference."@en ;
+                                          rdfs:label "reference URI"@en .
+
+
+###  https://w3id.org/ssco/core#sequenceIndex
+<https://w3id.org/ssco/core#sequenceIndex> rdf:type owl:DatatypeProperty ;
+                                           rdfs:range xsd:positiveInteger ;
+                                           rdfs:comment "Specifies the ordinal position of a task or analysis step within a sequence."@en ;
+                                           rdfs:label "sequence index"@en .
+
+
+###  https://w3id.org/ssco/core#sourceSystem
+<https://w3id.org/ssco/core#sourceSystem> rdf:type owl:DatatypeProperty ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies the source system or source dataset from which an instance is derived."@en ;
+                                          rdfs:label "source system"@en .
+
+
+###  https://w3id.org/ssco/core#targetDate
+<https://w3id.org/ssco/core#targetDate> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/core#Objective> ;
+                                        rdfs:range xsd:date ;
+                                        rdfs:comment "Specifies the target date by which an objective is intended to be achieved."@en ;
+                                        rdfs:label "target date"@en .
+
+
+###  https://w3id.org/ssco/core#targetUnit
+<https://w3id.org/ssco/core#targetUnit> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <https://w3id.org/ssco/core#Objective> ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:comment "Specifies the unit associated with a target value."@en ;
+                                        rdfs:label "target unit"@en .
+
+
+###  https://w3id.org/ssco/core#targetValue
+<https://w3id.org/ssco/core#targetValue> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/ssco/core#Objective> ;
+                                         rdfs:range xsd:decimal ;
+                                         rdfs:comment "Specifies the target value associated with an objective or metric."@en ;
+                                         rdfs:label "target value"@en .
+
+
+###  https://w3id.org/ssco/scc#applicabilityText
+<https://w3id.org/ssco/scc#applicabilityText> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies a textual statement describing the applicability conditions of a compliance criterion."@en ;
+                                              rdfs:label "applicability text"@en .
+
+
+###  https://w3id.org/ssco/scc#assessmentMethodName
+<https://w3id.org/ssco/scc#assessmentMethodName> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/scc#SustainabilityPerformance> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Specifies the name of the assessment method used to establish a sustainability performance value."@en ;
+                                                 rdfs:label "assessment method name"@en .
+
+
+###  https://w3id.org/ssco/scc#benchmarkSource
+<https://w3id.org/ssco/scc#benchmarkSource> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/scc#Benchmark> ;
+                                            rdfs:range xsd:string ;
+                                            rdfs:comment "Specifies the source from which a benchmark value is derived."@en ;
+                                            rdfs:label "benchmark source"@en .
+
+
+###  https://w3id.org/ssco/scc#benchmarkUnit
+<https://w3id.org/ssco/scc#benchmarkUnit> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/scc#Benchmark> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies the local unit of a benchmark value when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                          rdfs:label "benchmark unit"@en .
+
+
+###  https://w3id.org/ssco/scc#benchmarkValue
+<https://w3id.org/ssco/scc#benchmarkValue> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/scc#Benchmark> ;
+                                           rdfs:range xsd:decimal ;
+                                           rdfs:comment "Specifies the scalar value of a benchmark used for interpretation or comparison."@en ;
+                                           rdfs:label "benchmark value"@en .
+
+
+###  https://w3id.org/ssco/scc#checkDateTime
+<https://w3id.org/ssco/scc#checkDateTime> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/scc#ComplianceCheck> ;
+                                          rdfs:range xsd:dateTime ;
+                                          rdfs:comment "Specifies the date and time at which a compliance check is performed or recorded."@en ;
+                                          rdfs:label "check date time"@en .
+
+
+###  https://w3id.org/ssco/scc#clauseIdentifier
+<https://w3id.org/ssco/scc#clauseIdentifier> rdf:type owl:DatatypeProperty ;
+                                             rdfs:range xsd:string ;
+                                             rdfs:comment "Specifies the clause number or clause identifier from which a requirement or criterion is derived."@en ;
+                                             rdfs:label "clause identifier"@en .
+
+
+###  https://w3id.org/ssco/scc#comparisonOperator
+<https://w3id.org/ssco/scc#comparisonOperator> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Specifies the comparison operator used in a compliance criterion, such as <=, >=, =, <, or >."@en ;
+                                               rdfs:label "comparison operator"@en .
+
+
+###  https://w3id.org/ssco/scc#complianceStatus
+<https://w3id.org/ssco/scc#complianceStatus> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/scc#ComplianceResult> ;
+                                             rdfs:range xsd:string ;
+                                             rdfs:comment "Specifies the status of a compliance result, such as compliant, noncompliant, partially compliant, or not assessable."@en ;
+                                             rdfs:label "compliance status"@en .
+
+
+###  https://w3id.org/ssco/scc#correctiveActionText
+<https://w3id.org/ssco/scc#correctiveActionText> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/scc#Nonconformity> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Specifies a textual statement describing a corrective action proposed or taken for a nonconformity."@en ;
+                                                 rdfs:label "corrective action text"@en .
+
+
+###  https://w3id.org/ssco/scc#criterionExpression
+<https://w3id.org/ssco/scc#criterionExpression> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment "Specifies the textual expression of a compliance criterion."@en ;
+                                                rdfs:label "criterion expression"@en .
+
+
+###  https://w3id.org/ssco/scc#criterionIdentifier
+<https://w3id.org/ssco/scc#criterionIdentifier> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment "Specifies an identifier assigned to a compliance criterion."@en ;
+                                                rdfs:label "criterion identifier"@en .
+
+
+###  https://w3id.org/ssco/scc#evidenceReference
+<https://w3id.org/ssco/scc#evidenceReference> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/scc#ComplianceCheck> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies a reference to supporting evidence used in a compliance check."@en ;
+                                              rdfs:label "evidence reference"@en .
+
+
+###  https://w3id.org/ssco/scc#indicatorCode
+<https://w3id.org/ssco/scc#indicatorCode> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies a code or short identifier for a sustainability indicator."@en ;
+                                          rdfs:label "indicator code"@en .
+
+
+###  https://w3id.org/ssco/scc#indicatorName
+<https://w3id.org/ssco/scc#indicatorName> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies the name of a sustainability indicator."@en ;
+                                          rdfs:label "indicator name"@en .
+
+
+###  https://w3id.org/ssco/scc#indicatorUnit
+<https://w3id.org/ssco/scc#indicatorUnit> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies the local unit used by a sustainability indicator when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                          rdfs:label "indicator unit"@en .
+
+
+###  https://w3id.org/ssco/scc#nonconformityCode
+<https://w3id.org/ssco/scc#nonconformityCode> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/scc#Nonconformity> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies a code assigned to a nonconformity."@en ;
+                                              rdfs:label "nonconformity code"@en .
+
+
+###  https://w3id.org/ssco/scc#nonconformityText
+<https://w3id.org/ssco/scc#nonconformityText> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/ssco/scc#Nonconformity> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies a textual description of a nonconformity."@en ;
+                                              rdfs:label "nonconformity text"@en .
+
+
+###  https://w3id.org/ssco/scc#performanceDate
+<https://w3id.org/ssco/scc#performanceDate> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/scc#Performance> ;
+                                            rdfs:range xsd:date ;
+                                            rdfs:comment "Specifies the date associated with a reported performance value."@en ;
+                                            rdfs:label "performance date"@en .
+
+
+###  https://w3id.org/ssco/scc#performanceUnit
+<https://w3id.org/ssco/scc#performanceUnit> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/scc#Performance> ;
+                                            rdfs:range xsd:string ;
+                                            rdfs:comment "Specifies the local unit of a performance value when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                            rdfs:label "performance unit"@en .
+
+
+###  https://w3id.org/ssco/scc#performanceValue
+<https://w3id.org/ssco/scc#performanceValue> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <https://w3id.org/ssco/scc#Performance> ;
+                                             rdfs:range xsd:decimal ;
+                                             rdfs:comment "Specifies the scalar value of a reported performance."@en ;
+                                             rdfs:label "performance value"@en .
+
+
+###  https://w3id.org/ssco/scc#rationaleText
+<https://w3id.org/ssco/scc#rationaleText> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/scc#ComplianceResult> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies the explanatory rationale associated with a compliance result."@en ;
+                                          rdfs:label "rationale text"@en .
+
+
+###  https://w3id.org/ssco/scc#referenceDocument
+<https://w3id.org/ssco/scc#referenceDocument> rdf:type owl:DatatypeProperty ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Specifies the document in which a requirement or criterion is stated."@en ;
+                                              rdfs:label "reference document"@en .
+
+
+###  https://w3id.org/ssco/scc#referenceVersion
+<https://w3id.org/ssco/scc#referenceVersion> rdf:type owl:DatatypeProperty ;
+                                             rdfs:range xsd:string ;
+                                             rdfs:comment "Specifies the version or edition of the reference document used for a requirement or criterion."@en ;
+                                             rdfs:label "reference version"@en .
+
+
+###  https://w3id.org/ssco/scc#requirementIdentifier
+<https://w3id.org/ssco/scc#requirementIdentifier> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/ssco/scc#ComplianceRequirement> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment "Specifies an identifier assigned to a compliance requirement."@en ;
+                                                  rdfs:label "requirement identifier"@en .
+
+
+###  https://w3id.org/ssco/scc#requirementText
+<https://w3id.org/ssco/scc#requirementText> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/ssco/scc#ComplianceRequirement> ;
+                                            rdfs:range xsd:string ;
+                                            rdfs:comment "Specifies the textual statement of a compliance requirement."@en ;
+                                            rdfs:label "requirement text"@en .
+
+
+###  https://w3id.org/ssco/scc#resultInterpretation
+<https://w3id.org/ssco/scc#resultInterpretation> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/ssco/scc#ComplianceResult> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Specifies an interpretative statement associated with a compliance result."@en ;
+                                                 rdfs:label "result interpretation"@en .
+
+
+###  https://w3id.org/ssco/scc#stageCode
+<https://w3id.org/ssco/scc#stageCode> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <https://w3id.org/ssco/scc#LifeCycleStage> ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:comment "Specifies a code or short identifier for a life cycle stage."@en ;
+                                      rdfs:label "stage code"@en .
+
+
+###  https://w3id.org/ssco/scc#technicalAssessmentMethod
+<https://w3id.org/ssco/scc#technicalAssessmentMethod> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain <https://w3id.org/ssco/scc#FunctionalTechnicalPerformance> ;
+                                                      rdfs:range xsd:string ;
+                                                      rdfs:comment "Specifies the technical or functional assessment method used to establish a functional or technical performance value."@en ;
+                                                      rdfs:label "technical assessment method"@en .
+
+
+###  https://w3id.org/ssco/scc#thresholdUnit
+<https://w3id.org/ssco/scc#thresholdUnit> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Specifies the local unit of a threshold value when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+                                          rdfs:label "threshold unit"@en .
+
+
+###  https://w3id.org/ssco/scc#thresholdValue
+<https://w3id.org/ssco/scc#thresholdValue> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/ssco/scc#ComplianceCriterion> ;
+                                           rdfs:range xsd:decimal ;
+                                           rdfs:comment "Specifies the scalar threshold used in a compliance criterion for comparison."@en ;
+                                           rdfs:label "threshold value"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/ssco/bfi#AnalysisModel
+<https://w3id.org/ssco/bfi#AnalysisModel> rdf:type owl:Class ;
+                                          <http://purl.org/dc/terms/source> "ISO 16739-1:2024; ISO 10303-104:2000, finite element analysis."@en ;
+                                          rdfs:comment "An analysis model representing the idealized structural analysis formulation for a project."@en ;
+                                          rdfs:label "Analysis Model"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Analysis Model"@en .
+
+
+###  https://w3id.org/ssco/bfi#AnalysisResults
+<https://w3id.org/ssco/bfi#AnalysisResults> rdf:type owl:Class ;
+                                            <http://purl.org/dc/terms/source> "ISO 10303-104:2000, finite element analysis result structures."@en ;
+                                            rdfs:comment "A set of analysis results produced by an analysis model."@en ;
+                                            rdfs:label "Analysis Results"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Analysis Results"@en .
+
+
+###  https://w3id.org/ssco/bfi#AnalysisResultsStep
+<https://w3id.org/ssco/bfi#AnalysisResultsStep> rdf:type owl:Class ;
+                                                <http://purl.org/dc/terms/source> "ISO 10303-104:2000, result_analysis_step."@en ;
+                                                rdfs:comment "A result subset corresponding to a particular analysis step."@en ;
+                                                rdfs:label "Analysis Results Step"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Analysis Results Step"@en .
+
+
+###  https://w3id.org/ssco/bfi#AnalysisState
+<https://w3id.org/ssco/bfi#AnalysisState> rdf:type owl:Class ;
+                                          <http://purl.org/dc/terms/source> "ISO 10303-104:2000, model state structures."@en ;
+                                          rdfs:comment "An initial or final analysis state associated with a task."@en ;
+                                          rdfs:label "Analysis State"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Analysis State"@en .
+
+
+###  https://w3id.org/ssco/bfi#AnalysisStep
+<https://w3id.org/ssco/bfi#AnalysisStep> rdf:type owl:Class ;
+                                         <http://purl.org/dc/terms/source> "ISO 10303-104:2000, result_analysis_step."@en ;
+                                         rdfs:comment "An ordered step within an analysis model."@en ;
+                                         rdfs:label "Analysis Step"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "Analysis Step"@en .
+
+
+###  https://w3id.org/ssco/bfi#CalendarControl
+<https://w3id.org/ssco/bfi#CalendarControl> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/ssco/bfi#Control> ;
+                                            <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcWorkCalendar."@en ;
+                                            rdfs:comment "A control that defines working and non-working time patterns for task execution."@en ;
+                                            rdfs:label "Calendar Control"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Calendar Control"@en .
+
+
+###  https://w3id.org/ssco/bfi#Constraint
+<https://w3id.org/ssco/bfi#Constraint> rdf:type owl:Class ;
+                                       <http://purl.org/dc/terms/source> "ISO 10303-104:2000; ISO 10303-108:2005, parameterization and constraints."@en ;
+                                       rdfs:comment "A boundary condition or constraint applicable to an analysis step or structural item."@en ;
+                                       rdfs:label "Constraint"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Constraint"@en .
+
+
+###  https://w3id.org/ssco/bfi#Control
+<https://w3id.org/ssco/bfi#Control> rdf:type owl:Class ;
+                                    <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcControl."@en ;
+                                    rdfs:comment "A control that governs task execution and may allocate resources."@en ;
+                                    rdfs:label "Control"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Control"@en .
+
+
+###  https://w3id.org/ssco/bfi#CostControl
+<https://w3id.org/ssco/bfi#CostControl> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://w3id.org/ssco/bfi#Control> ;
+                                        <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcCostItem and related cost control concepts."@en ;
+                                        rdfs:comment "A control that governs planned cost, budget, or cost-related constraints for a task or process."@en ;
+                                        rdfs:label "Cost Control"@en ;
+                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Cost Control"@en .
+
+
+###  https://w3id.org/ssco/bfi#EquipmentResource
+<https://w3id.org/ssco/bfi#EquipmentResource> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/ssco/bfi#Resource> ;
+                                              <http://purl.org/dc/terms/source> "ISO 16739-1:2024, construction equipment resource concepts."@en ;
+                                              rdfs:comment "An equipment resource used by a task or process."@en ;
+                                              rdfs:label "Equipment Resource"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Equipment Resource"@en .
+
+
+###  https://w3id.org/ssco/bfi#FinalAnalysisState
+<https://w3id.org/ssco/bfi#FinalAnalysisState> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/ssco/bfi#AnalysisState> ;
+                                               <http://purl.org/dc/terms/source> "ISO 10303-104:2000, model state structures."@en ;
+                                               rdfs:comment "An analysis state representing the final condition of an analysis task or step."@en ;
+                                               rdfs:label "Final Analysis State"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "Final Analysis State"@en .
+
+
+###  https://w3id.org/ssco/bfi#InitialAnalysisState
+<https://w3id.org/ssco/bfi#InitialAnalysisState> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <https://w3id.org/ssco/bfi#AnalysisState> ;
+                                                 <http://purl.org/dc/terms/source> "ISO 10303-104:2000, model state structures."@en ;
+                                                 rdfs:comment "An analysis state representing the initial condition of an analysis task or step."@en ;
+                                                 rdfs:label "Initial Analysis State"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Initial Analysis State"@en .
+
+
+###  https://w3id.org/ssco/bfi#LaborResource
+<https://w3id.org/ssco/bfi#LaborResource> rdf:type owl:Class ;
+                                          rdfs:subClassOf <https://w3id.org/ssco/bfi#Resource> ;
+                                          <http://purl.org/dc/terms/source> "ISO 16739-1:2024, labor resource concepts."@en ;
+                                          rdfs:comment "A labor resource used by a task or process."@en ;
+                                          rdfs:label "Labor Resource"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Labor Resource"@en .
+
+
+###  https://w3id.org/ssco/bfi#LineStructuralItem
+<https://w3id.org/ssco/bfi#LineStructuralItem> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                               <http://purl.org/dc/terms/source> "ISO 10303-104:2000, finite element idealization structures."@en ;
+                                               rdfs:comment "An analysis-level structural item idealized as a line-based representation."@en ;
+                                               rdfs:label "Line Structural Item"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "Line Structural Item"@en .
+
+
+###  https://w3id.org/ssco/bfi#MaterialDefinition
+<https://w3id.org/ssco/bfi#MaterialDefinition> rdf:type owl:Class ;
+                                               <http://purl.org/dc/terms/source> "ISO 16739-1:2024; ISO 10303-104:2000, material definitions."@en ;
+                                               rdfs:comment "A definition of material assigned to a structural element or item."@en ;
+                                               rdfs:label "Material Definition"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "Material Definition"@en .
+
+
+###  https://w3id.org/ssco/bfi#MaterialResource
+<https://w3id.org/ssco/bfi#MaterialResource> rdf:type owl:Class ;
+                                             rdfs:subClassOf <https://w3id.org/ssco/bfi#Resource> ;
+                                             <http://purl.org/dc/terms/source> "ISO 16739-1:2024, material resource concepts."@en ;
+                                             rdfs:comment "A material resource used by a task or process."@en ;
+                                             rdfs:label "Material Resource"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Material Resource"@en .
+
+
+###  https://w3id.org/ssco/bfi#Process
+<https://w3id.org/ssco/bfi#Process> rdf:type owl:Class ;
+                                    <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcProcess."@en ;
+                                    rdfs:comment "A construction or engineering process associated with a spatial or structural context."@en ;
+                                    rdfs:label "Process"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Process"@en .
+
+
+###  https://w3id.org/ssco/bfi#Resource
+<https://w3id.org/ssco/bfi#Resource> rdf:type owl:Class ;
+                                     <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcResource."@en ;
+                                     rdfs:comment "A generic resource consumed or allocated in a task."@en ;
+                                     rdfs:label "Resource"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Resource"@en .
+
+
+###  https://w3id.org/ssco/bfi#ScheduleControl
+<https://w3id.org/ssco/bfi#ScheduleControl> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/ssco/bfi#Control> ;
+                                            <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcWorkSchedule."@en ;
+                                            rdfs:comment "A control that governs the planned timing and sequencing of tasks."@en ;
+                                            rdfs:label "Schedule Control"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Schedule Control"@en .
+
+
+###  https://w3id.org/ssco/bfi#SolidStructuralItem
+<https://w3id.org/ssco/bfi#SolidStructuralItem> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                                <http://purl.org/dc/terms/source> "ISO 10303-104:2000, finite element idealization structures."@en ;
+                                                rdfs:comment "An analysis-level structural item idealized as a solid-based representation."@en ;
+                                                rdfs:label "Solid Structural Item"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Solid Structural Item"@en .
+
+
+###  https://w3id.org/ssco/bfi#SpatialStructureElement
+<https://w3id.org/ssco/bfi#SpatialStructureElement> rdf:type owl:Class ;
+                                                    <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcSpatialStructureElement."@en ;
+                                                    rdfs:comment "A spatial structural context that may contain substructures and structural elements."@en ;
+                                                    rdfs:label "Spatial Structure Element"@en ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Spatial Structure Element"@en .
+
+
+###  https://w3id.org/ssco/bfi#StateDefinition
+<https://w3id.org/ssco/bfi#StateDefinition> rdf:type owl:Class ;
+                                            <http://purl.org/dc/terms/source> "ISO 10303-104:2000, state_definition and field_variable_definition."@en ;
+                                            rdfs:comment "A definition describing an analysis state."@en ;
+                                            rdfs:label "State Definition"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "State Definition"@en .
+
+
+###  https://w3id.org/ssco/bfi#StructuralElement
+<https://w3id.org/ssco/bfi#StructuralElement> rdf:type owl:Class ;
+                                              <http://purl.org/dc/terms/source> "ISO 16739-1:2024, structural element concepts."@en ;
+                                              rdfs:comment "A structural element in the product model."@en ;
+                                              rdfs:label "Structural Element"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Structural Element"@en .
+
+
+###  https://w3id.org/ssco/bfi#StructuralItem
+<https://w3id.org/ssco/bfi#StructuralItem> rdf:type owl:Class ;
+                                           <http://purl.org/dc/terms/source> "ISO 16739-1:2024; ISO 10303-104:2000, finite element idealization structures."@en ;
+                                           rdfs:comment "An analysis-level structural item idealized from a structural element."@en ;
+                                           rdfs:label "Structural Item"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Structural Item"@en .
+
+
+###  https://w3id.org/ssco/bfi#SurfaceStructuralItem
+<https://w3id.org/ssco/bfi#SurfaceStructuralItem> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <https://w3id.org/ssco/bfi#StructuralItem> ;
+                                                  <http://purl.org/dc/terms/source> "ISO 10303-104:2000, finite element idealization structures."@en ;
+                                                  rdfs:comment "An analysis-level structural item idealized as a surface-based representation."@en ;
+                                                  rdfs:label "Surface Structural Item"@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Surface Structural Item"@en .
+
+
+###  https://w3id.org/ssco/bfi#Task
+<https://w3id.org/ssco/bfi#Task> rdf:type owl:Class ;
+                                 <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcTask."@en ;
+                                 rdfs:comment "A task within a process."@en ;
+                                 rdfs:label "Task"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Task"@en .
+
+
+###  https://w3id.org/ssco/core#Classification
+<https://w3id.org/ssco/core#Classification> rdf:type owl:Class ;
+                                            <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcClassification."@en ;
+                                            rdfs:comment "A classification system or taxonomy used by the project."@en ;
+                                            rdfs:label "Classification"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Classification"@en .
+
+
+###  https://w3id.org/ssco/core#ClassificationReference
+<https://w3id.org/ssco/core#ClassificationReference> rdf:type owl:Class ;
+                                                     <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcClassificationReference."@en ;
+                                                     rdfs:comment "A reference that links a structural element to a classification entry."@en ;
+                                                     rdfs:label "Classification Reference"@en ;
+                                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Classification Reference"@en .
+
+
+###  https://w3id.org/ssco/core#Metric
+<https://w3id.org/ssco/core#Metric> rdf:type owl:Class ;
+                                    <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcMetric."@en ;
+                                    rdfs:comment "A measurable quantity used to operationalize an indicator and assess an objective."@en ;
+                                    rdfs:label "Metric"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Metric"@en .
+
+
+###  https://w3id.org/ssco/core#Objective
+<https://w3id.org/ssco/core#Objective> rdf:type owl:Class ;
+                                       <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcObjective."@en ;
+                                       rdfs:comment "A project objective to be measured by one or more metrics."@en ;
+                                       rdfs:label "Objective"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Objective"@en .
+
+
+###  https://w3id.org/ssco/core#Project
+<https://w3id.org/ssco/core#Project> rdf:type owl:Class ;
+                                     <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcProject."@en ;
+                                     rdfs:comment "A project context that contains structural, analysis, classification, objective, unit, and compliance-related information."@en ;
+                                     rdfs:label "Project"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Project"@en .
+
+
+###  https://w3id.org/ssco/core#UnitSpecification
+<https://w3id.org/ssco/core#UnitSpecification> rdf:type owl:Class ;
+                                               <http://purl.org/dc/terms/source> "ISO 16739-1:2024, IfcUnitAssignment."@en ;
+                                               rdfs:comment "A specification that defines the default units used for quantitative values within a project context."@en ;
+                                               rdfs:label "Unit Specification"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "Unit Specification"@en .
+
+
+###  https://w3id.org/ssco/scc#Benchmark
+<https://w3id.org/ssco/scc#Benchmark> rdf:type owl:Class ;
+                                      <http://purl.org/dc/terms/source> "ISO 21678:2020, indicators and benchmarks; ISO 21931-2:2019, benchmarks or levels of performance."@en ;
+                                      rdfs:comment "A reference level or benchmark used to interpret an indicator or criterion."@en ;
+                                      rdfs:label "Benchmark"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Benchmark"@en .
+
+
+###  https://w3id.org/ssco/scc#ComplianceCheck
+<https://w3id.org/ssco/scc#ComplianceCheck> rdf:type owl:Class ;
+                                            rdfs:comment "An activity that checks a criterion and produces a compliance result."@en ;
+                                            rdfs:label "Compliance Check"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Compliance Check"@en .
+
+
+###  https://w3id.org/ssco/scc#ComplianceCriterion
+<https://w3id.org/ssco/scc#ComplianceCriterion> rdf:type owl:Class ;
+                                                rdfs:comment "A criterion used to assess whether a compliance requirement is satisfied."@en ;
+                                                rdfs:label "Compliance Criterion"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Compliance Criterion"@en .
+
+
+###  https://w3id.org/ssco/scc#ComplianceRequirement
+<https://w3id.org/ssco/scc#ComplianceRequirement> rdf:type owl:Class ;
+                                                  <http://purl.org/dc/terms/source> "ISO 37301:2021, compliance obligations."@en ;
+                                                  rdfs:comment "A compliance obligation that shall be satisfied and may be specified by indicators and criteria."@en ;
+                                                  rdfs:label "Compliance Requirement"@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Compliance Requirement"@en .
+
+
+###  https://w3id.org/ssco/scc#ComplianceResult
+<https://w3id.org/ssco/scc#ComplianceResult> rdf:type owl:Class ;
+                                             rdfs:comment "The result produced by a compliance check."@en ;
+                                             rdfs:label "Compliance Result"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Compliance Result"@en .
+
+
+###  https://w3id.org/ssco/scc#CompliantResult
+<https://w3id.org/ssco/scc#CompliantResult> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/ssco/scc#ComplianceResult> ;
+                                            rdfs:comment "A compliance result indicating that the checked criterion is satisfied."@en ;
+                                            rdfs:label "Compliant Result"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Compliant Result"@en .
+
+
+###  https://w3id.org/ssco/scc#ConstructionStage
+<https://w3id.org/ssco/scc#ConstructionStage> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/ssco/scc#LifeCycleStage> ;
+                                              <http://purl.org/dc/terms/source> "ISO 15686-1:2011; ISO 15392:2019."@en ;
+                                              rdfs:comment "A life cycle stage covering on-site construction and installation processes."@en ;
+                                              rdfs:label "Construction Stage"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Construction Stage"@en .
+
+
+###  https://w3id.org/ssco/scc#EconomicAspect
+<https://w3id.org/ssco/scc#EconomicAspect> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://w3id.org/ssco/scc#SustainabilityAspect> ;
+                                           <http://purl.org/dc/terms/source> "ISO 21931-1:2022."@en ;
+                                           rdfs:comment "A sustainability aspect related to economic performance."@en ;
+                                           rdfs:label "Economic Aspect"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Economic Aspect"@en .
+
+
+###  https://w3id.org/ssco/scc#EconomicIndicator
+<https://w3id.org/ssco/scc#EconomicIndicator> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                              <http://purl.org/dc/terms/source> "ISO 21931-1:2022."@en ;
+                                              rdfs:comment "A sustainability indicator used to assess economic performance."@en ;
+                                              rdfs:label "Economic Indicator"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Economic Indicator"@en .
+
+
+###  https://w3id.org/ssco/scc#EndOfLifeStage
+<https://w3id.org/ssco/scc#EndOfLifeStage> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://w3id.org/ssco/scc#LifeCycleStage> ;
+                                           <http://purl.org/dc/terms/source> "ISO 15686-1:2011; ISO 15392:2019."@en ;
+                                           rdfs:comment "A life cycle stage covering deconstruction, disposal, recovery, or recycling processes."@en ;
+                                           rdfs:label "End-of-Life Stage"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "End-of-Life Stage"@en .
+
+
+###  https://w3id.org/ssco/scc#EnvironmentalAspect
+<https://w3id.org/ssco/scc#EnvironmentalAspect> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://w3id.org/ssco/scc#SustainabilityAspect> ;
+                                                <http://purl.org/dc/terms/source> "ISO 21931-1:2022; ISO 21931-2:2019."@en ;
+                                                rdfs:comment "A sustainability aspect related to environmental performance."@en ;
+                                                rdfs:label "Environmental Aspect"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Environmental Aspect"@en .
+
+
+###  https://w3id.org/ssco/scc#EnvironmentalIndicator
+<https://w3id.org/ssco/scc#EnvironmentalIndicator> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                                   <http://purl.org/dc/terms/source> "ISO 21929-1:2011; ISO 21931-2:2019."@en ;
+                                                   rdfs:comment "A sustainability indicator used to assess environmental performance."@en ;
+                                                   rdfs:label "Environmental Indicator"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Environmental Indicator"@en .
+
+
+###  https://w3id.org/ssco/scc#FunctionalTechnicalPerformance
+<https://w3id.org/ssco/scc#FunctionalTechnicalPerformance> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <https://w3id.org/ssco/scc#Performance> ;
+                                                           <http://purl.org/dc/terms/source> "ISO 15392:2019, technical and functional performance; ISO 21931-2:2019, technical and functional characteristics and functional equivalent."@en ;
+                                                           rdfs:comment "Technical and functional performance considered as a reference condition for sustainability assessment."@en ;
+                                                           rdfs:label "Functional Technical Performance"@en ;
+                                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Functional Technical Performance"@en .
+
+
+###  https://w3id.org/ssco/scc#LifeCycleStage
+<https://w3id.org/ssco/scc#LifeCycleStage> rdf:type owl:Class ;
+                                           <http://purl.org/dc/terms/source> "ISO 15686-1:2011, life-cycle stages; ISO 15392:2019, life cycle of construction works."@en ;
+                                           rdfs:comment "A stage in the life cycle of a construction work to which indicators or performances may relate."@en ;
+                                           rdfs:label "Life Cycle Stage"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Life Cycle Stage"@en .
+
+
+###  https://w3id.org/ssco/scc#NoncompliantResult
+<https://w3id.org/ssco/scc#NoncompliantResult> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/ssco/scc#ComplianceResult> ;
+                                               rdfs:comment "A compliance result indicating that the checked criterion is not satisfied."@en ;
+                                               rdfs:label "Noncompliant Result"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "Noncompliant Result"@en .
+
+
+###  https://w3id.org/ssco/scc#Nonconformity
+<https://w3id.org/ssco/scc#Nonconformity> rdf:type owl:Class ;
+                                          <http://purl.org/dc/terms/source> "ISO 9000:2015, nonconformity; ISO 37301:2021, nonconformity and corrective action."@en ;
+                                          rdfs:comment "A non-fulfilment of a requirement identified during a compliance check."@en ;
+                                          rdfs:label "Nonconformity"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Nonconformity"@en .
+
+
+###  https://w3id.org/ssco/scc#NotAssessableResult
+<https://w3id.org/ssco/scc#NotAssessableResult> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://w3id.org/ssco/scc#ComplianceResult> ;
+                                                rdfs:comment "A compliance result indicating that a valid assessment cannot be established from the available evidence."@en ;
+                                                rdfs:label "Not Assessable Result"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Not Assessable Result"@en .
+
+
+###  https://w3id.org/ssco/scc#PartiallyCompliantResult
+<https://w3id.org/ssco/scc#PartiallyCompliantResult> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <https://w3id.org/ssco/scc#ComplianceResult> ;
+                                                     rdfs:comment "A compliance result indicating that the checked criterion is only partly satisfied."@en ;
+                                                     rdfs:label "Partially Compliant Result"@en ;
+                                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Partially Compliant Result"@en .
+
+
+###  https://w3id.org/ssco/scc#Performance
+<https://w3id.org/ssco/scc#Performance> rdf:type owl:Class ;
+                                        <http://purl.org/dc/terms/source> "ISO 21931-1:2022, framework for assessing environmental, social and economic performance; ISO 21931-2:2019, framework for assessing environmental performance."@en ;
+                                        rdfs:comment "Performance relevant to sustainability assessment and related technical-functional reference conditions."@en ;
+                                        rdfs:label "Performance"@en ;
+                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Performance"@en .
+
+
+###  https://w3id.org/ssco/scc#ProductStage
+<https://w3id.org/ssco/scc#ProductStage> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/ssco/scc#LifeCycleStage> ;
+                                         <http://purl.org/dc/terms/source> "ISO 15686-1:2011; ISO 15392:2019."@en ;
+                                         rdfs:comment "A life cycle stage covering product-related processes before construction."@en ;
+                                         rdfs:label "Product Stage"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "Product Stage"@en .
+
+
+###  https://w3id.org/ssco/scc#SocialAspect
+<https://w3id.org/ssco/scc#SocialAspect> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/ssco/scc#SustainabilityAspect> ;
+                                         <http://purl.org/dc/terms/source> "EN 16309:2014+A1:2014; ISO 21931-1:2022."@en ;
+                                         rdfs:comment "A sustainability aspect related to social performance."@en ;
+                                         rdfs:label "Social Aspect"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "Social Aspect"@en .
+
+
+###  https://w3id.org/ssco/scc#SocialIndicator
+<https://w3id.org/ssco/scc#SocialIndicator> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/ssco/scc#SustainabilityIndicator> ;
+                                            <http://purl.org/dc/terms/source> "EN 16309:2014+A1:2014."@en ;
+                                            rdfs:comment "A sustainability indicator used to assess social performance."@en ;
+                                            rdfs:label "Social Indicator"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Social Indicator"@en .
+
+
+###  https://w3id.org/ssco/scc#SustainabilityAspect
+<https://w3id.org/ssco/scc#SustainabilityAspect> rdf:type owl:Class ;
+                                                 <http://purl.org/dc/terms/source> "ISO 15392:2019, sustainability in buildings and civil engineering works; ISO 21929-1:2011, sustainability indicators framework."@en ;
+                                                 rdfs:comment "An aspect of sustainability relevant to the assessment of construction works, typically environmental, social, or economic."@en ;
+                                                 rdfs:label "Sustainability Aspect"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sustainability Aspect"@en .
+
+
+###  https://w3id.org/ssco/scc#SustainabilityIndicator
+<https://w3id.org/ssco/scc#SustainabilityIndicator> rdf:type owl:Class ;
+                                                    <http://purl.org/dc/terms/source> "ISO 21929-1:2011, framework for sustainability indicators and core indicators for buildings."@en ;
+                                                    rdfs:comment "An indicator used to assess a sustainability aspect across one or more life cycle stages."@en ;
+                                                    rdfs:label "Sustainability Indicator"@en ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Sustainability Indicator"@en .
+
+
+###  https://w3id.org/ssco/scc#SustainabilityPerformance
+<https://w3id.org/ssco/scc#SustainabilityPerformance> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <https://w3id.org/ssco/scc#Performance> ;
+                                                      <http://purl.org/dc/terms/source> "ISO 21931-1:2022, sustainability performance framework; ISO 21931-2:2019, environmental performance framework."@en ;
+                                                      rdfs:comment "Performance related to the environmental, social, or economic assessment of a construction work."@en ;
+                                                      rdfs:label "Sustainability Performance"@en ;
+                                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Sustainability Performance"@en .
+
+
+###  https://w3id.org/ssco/scc#UseStage
+<https://w3id.org/ssco/scc#UseStage> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/ssco/scc#LifeCycleStage> ;
+                                     <http://purl.org/dc/terms/source> "ISO 15686-1:2011; ISO 15392:2019."@en ;
+                                     rdfs:comment "A life cycle stage covering use, operation, maintenance, and related service life processes."@en ;
+                                     rdfs:label "Use Stage"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Use Stage"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

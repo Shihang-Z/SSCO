@@ -1,0 +1,1769 @@
+@prefix ssco: <https://w3id.org/ssco#> .
+@prefix sscore: <https://w3id.org/ssco/core#> .
+@prefix sscobfi: <https://w3id.org/ssco/bfi#> .
+@prefix sscoscc: <https://w3id.org/ssco/scc#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<https://w3id.org/ssco> a owl:Ontology ;
+    dcterms:title "Structural Sustainability Compliance Ontology"@en ;
+    dcterms:alternative "SSCO"@en ;
+    dcterms:description "An all-in-one publication version of the Structural Sustainability Compliance Ontology, integrating the SSCO-Core, SSCO-BFI, and SSCO-SCC modules."@en ;
+    dcterms:creator "Shihang Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en ;
+    dcterms:creator "Sherong Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en ;
+    dcterms:creator "Zhengqiao Wu, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
+    dcterms:contributor "Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en ;
+    dcterms:contributor "Zhiyong Jiang, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
+    dcterms:contributor "Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en ;
+    dcterms:contributor "Chen Zhu, Power Construction Corporation of China"@en ;
+    dcterms:issued "2026-03-15"^^xsd:date ;
+    dcterms:modified "2026-03-16"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright © 2026 Authors"@en ;
+    dcterms:bibliographicCitation "Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.0, 2026."@en ;
+    owl:versionInfo "0.1.0" ;
+    owl:versionIRI <https://w3id.org/ssco/0.1.0> ;
+    rdfs:label "Structural Sustainability Compliance Ontology"@en ;
+    vann:preferredNamespacePrefix "ssco" ;
+    vann:preferredNamespaceUri "https://w3id.org/ssco#" ;
+    foaf:homepage <https://w3id.org/ssco> .
+
+#################################################################
+# SSCO-Core classes
+#################################################################
+
+sscore:Project a owl:Class ;
+    rdfs:label "Project"@en ;
+    skos:prefLabel "Project"@en ;
+    rdfs:comment "A project context that contains structural, analysis, classification, objective, unit, and compliance-related information."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcProject."@en .
+
+sscore:Objective a owl:Class ;
+    rdfs:label "Objective"@en ;
+    skos:prefLabel "Objective"@en ;
+    rdfs:comment "A project objective to be measured by one or more metrics."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcObjective."@en .
+
+sscore:Metric a owl:Class ;
+    rdfs:label "Metric"@en ;
+    skos:prefLabel "Metric"@en ;
+    rdfs:comment "A measurable quantity used to operationalize an indicator and assess an objective."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcMetric."@en .
+
+sscore:Classification a owl:Class ;
+    rdfs:label "Classification"@en ;
+    skos:prefLabel "Classification"@en ;
+    rdfs:comment "A classification system or taxonomy used by the project."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcClassification."@en .
+
+sscore:ClassificationReference a owl:Class ;
+    rdfs:label "Classification Reference"@en ;
+    skos:prefLabel "Classification Reference"@en ;
+    rdfs:comment "A reference that links a structural element to a classification entry."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcClassificationReference."@en .
+
+
+sscore:UnitSpecification a owl:Class ;
+    rdfs:label "Unit Specification"@en ;
+    skos:prefLabel "Unit Specification"@en ;
+    rdfs:comment "A specification that defines the default units used for quantitative values within a project context."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcUnitAssignment."@en .
+
+sscobfi:Process a owl:Class ;
+    rdfs:label "Process"@en ;
+    skos:prefLabel "Process"@en ;
+    rdfs:comment "A construction or engineering process associated with a spatial or structural context."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcProcess."@en .
+
+sscobfi:Task a owl:Class ;
+    rdfs:label "Task"@en ;
+    skos:prefLabel "Task"@en ;
+    rdfs:comment "A task within a process."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcTask."@en .
+
+sscobfi:Control a owl:Class ;
+    rdfs:label "Control"@en ;
+    skos:prefLabel "Control"@en ;
+    rdfs:comment "A control that governs task execution and may allocate resources."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcControl."@en .
+
+sscobfi:Resource a owl:Class ;
+    rdfs:label "Resource"@en ;
+    skos:prefLabel "Resource"@en ;
+    rdfs:comment "A generic resource consumed or allocated in a task."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcResource."@en .
+
+sscobfi:MaterialResource a owl:Class ;
+    rdfs:subClassOf sscobfi:Resource ;
+    rdfs:label "Material Resource"@en ;
+    skos:prefLabel "Material Resource"@en ;
+    rdfs:comment "A material resource used by a task or process."@en ;
+    dcterms:source "ISO 16739-1:2024, material resource concepts."@en .
+
+sscobfi:LaborResource a owl:Class ;
+    rdfs:subClassOf sscobfi:Resource ;
+    rdfs:label "Labor Resource"@en ;
+    skos:prefLabel "Labor Resource"@en ;
+    rdfs:comment "A labor resource used by a task or process."@en ;
+    dcterms:source "ISO 16739-1:2024, labor resource concepts."@en .
+
+sscobfi:EquipmentResource a owl:Class ;
+    rdfs:subClassOf sscobfi:Resource ;
+    rdfs:label "Equipment Resource"@en ;
+    skos:prefLabel "Equipment Resource"@en ;
+    rdfs:comment "An equipment resource used by a task or process."@en ;
+    dcterms:source "ISO 16739-1:2024, construction equipment resource concepts."@en .
+
+sscobfi:ScheduleControl a owl:Class ;
+    rdfs:subClassOf sscobfi:Control ;
+    rdfs:label "Schedule Control"@en ;
+    skos:prefLabel "Schedule Control"@en ;
+    rdfs:comment "A control that governs the planned timing and sequencing of tasks."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcWorkSchedule."@en .
+
+sscobfi:CalendarControl a owl:Class ;
+    rdfs:subClassOf sscobfi:Control ;
+    rdfs:label "Calendar Control"@en ;
+    skos:prefLabel "Calendar Control"@en ;
+    rdfs:comment "A control that defines working and non-working time patterns for task execution."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcWorkCalendar."@en .
+
+sscobfi:CostControl a owl:Class ;
+    rdfs:subClassOf sscobfi:Control ;
+    rdfs:label "Cost Control"@en ;
+    skos:prefLabel "Cost Control"@en ;
+    rdfs:comment "A control that governs planned cost, budget, or cost-related constraints for a task or process."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcCostItem and related cost control concepts."@en .
+
+#################################################################
+# SSCO-BFI classes
+#################################################################
+
+sscobfi:AnalysisModel a owl:Class ;
+    rdfs:label "Analysis Model"@en ;
+    skos:prefLabel "Analysis Model"@en ;
+    rdfs:comment "An analysis model representing the idealized structural analysis formulation for a project."@en ;
+    dcterms:source "ISO 16739-1:2024; ISO 10303-104:2000, finite element analysis."@en .
+
+sscobfi:SpatialStructureElement a owl:Class ;
+    rdfs:label "Spatial Structure Element"@en ;
+    skos:prefLabel "Spatial Structure Element"@en ;
+    rdfs:comment "A spatial structural context that may contain substructures and structural elements."@en ;
+    dcterms:source "ISO 16739-1:2024, IfcSpatialStructureElement."@en .
+
+sscobfi:StructuralElement a owl:Class ;
+    rdfs:label "Structural Element"@en ;
+    skos:prefLabel "Structural Element"@en ;
+    rdfs:comment "A structural element in the product model."@en ;
+    dcterms:source "ISO 16739-1:2024, structural element concepts."@en .
+
+sscobfi:StructuralItem a owl:Class ;
+    rdfs:label "Structural Item"@en ;
+    skos:prefLabel "Structural Item"@en ;
+    rdfs:comment "An analysis-level structural item idealized from a structural element."@en ;
+    dcterms:source "ISO 16739-1:2024; ISO 10303-104:2000, finite element idealization structures."@en .
+
+sscobfi:MaterialDefinition a owl:Class ;
+    rdfs:label "Material Definition"@en ;
+    skos:prefLabel "Material Definition"@en ;
+    rdfs:comment "A definition of material assigned to a structural element or item."@en ;
+    dcterms:source "ISO 16739-1:2024; ISO 10303-104:2000, material definitions."@en .
+
+sscobfi:AnalysisStep a owl:Class ;
+    rdfs:label "Analysis Step"@en ;
+    skos:prefLabel "Analysis Step"@en ;
+    rdfs:comment "An ordered step within an analysis model."@en ;
+    dcterms:source "ISO 10303-104:2000, result_analysis_step."@en .
+
+sscobfi:Constraint a owl:Class ;
+    rdfs:label "Constraint"@en ;
+    skos:prefLabel "Constraint"@en ;
+    rdfs:comment "A boundary condition or constraint applicable to an analysis step or structural item."@en ;
+    dcterms:source "ISO 10303-104:2000; ISO 10303-108:2005, parameterization and constraints."@en .
+
+sscobfi:AnalysisState a owl:Class ;
+    rdfs:label "Analysis State"@en ;
+    skos:prefLabel "Analysis State"@en ;
+    rdfs:comment "An initial or final analysis state associated with a task."@en ;
+    dcterms:source "ISO 10303-104:2000, model state structures."@en .
+
+sscobfi:StateDefinition a owl:Class ;
+    rdfs:label "State Definition"@en ;
+    skos:prefLabel "State Definition"@en ;
+    rdfs:comment "A definition describing an analysis state."@en ;
+    dcterms:source "ISO 10303-104:2000, state_definition and field_variable_definition."@en .
+
+sscobfi:AnalysisResults a owl:Class ;
+    rdfs:label "Analysis Results"@en ;
+    skos:prefLabel "Analysis Results"@en ;
+    rdfs:comment "A set of analysis results produced by an analysis model."@en ;
+    dcterms:source "ISO 10303-104:2000, finite element analysis result structures."@en .
+
+sscobfi:AnalysisResultsStep a owl:Class ;
+    rdfs:label "Analysis Results Step"@en ;
+    skos:prefLabel "Analysis Results Step"@en ;
+    rdfs:comment "A result subset corresponding to a particular analysis step."@en ;
+    dcterms:source "ISO 10303-104:2000, result_analysis_step."@en .
+
+
+# --- Structural item subclasses ---
+sscobfi:LineStructuralItem a owl:Class ;
+    rdfs:subClassOf sscobfi:StructuralItem ;
+    rdfs:label "Line Structural Item"@en ;
+    skos:prefLabel "Line Structural Item"@en ;
+    rdfs:comment "An analysis-level structural item idealized as a line-based representation."@en ;
+    dcterms:source "ISO 10303-104:2000, finite element idealization structures."@en .
+
+sscobfi:SurfaceStructuralItem a owl:Class ;
+    rdfs:subClassOf sscobfi:StructuralItem ;
+    rdfs:label "Surface Structural Item"@en ;
+    skos:prefLabel "Surface Structural Item"@en ;
+    rdfs:comment "An analysis-level structural item idealized as a surface-based representation."@en ;
+    dcterms:source "ISO 10303-104:2000, finite element idealization structures."@en .
+
+sscobfi:SolidStructuralItem a owl:Class ;
+    rdfs:subClassOf sscobfi:StructuralItem ;
+    rdfs:label "Solid Structural Item"@en ;
+    skos:prefLabel "Solid Structural Item"@en ;
+    rdfs:comment "An analysis-level structural item idealized as a solid-based representation."@en ;
+    dcterms:source "ISO 10303-104:2000, finite element idealization structures."@en .
+
+# --- Analysis state subclasses ---
+sscobfi:InitialAnalysisState a owl:Class ;
+    rdfs:subClassOf sscobfi:AnalysisState ;
+    rdfs:label "Initial Analysis State"@en ;
+    skos:prefLabel "Initial Analysis State"@en ;
+    rdfs:comment "An analysis state representing the initial condition of an analysis task or step."@en ;
+    dcterms:source "ISO 10303-104:2000, model state structures."@en .
+
+sscobfi:FinalAnalysisState a owl:Class ;
+    rdfs:subClassOf sscobfi:AnalysisState ;
+    rdfs:label "Final Analysis State"@en ;
+    skos:prefLabel "Final Analysis State"@en ;
+    rdfs:comment "An analysis state representing the final condition of an analysis task or step."@en ;
+    dcterms:source "ISO 10303-104:2000, model state structures."@en .
+
+
+
+#################################################################
+# SSCO-SCC classes
+#################################################################
+
+sscoscc:SustainabilityAspect a owl:Class ;
+    rdfs:label "Sustainability Aspect"@en ;
+    skos:prefLabel "Sustainability Aspect"@en ;
+    rdfs:comment "An aspect of sustainability relevant to the assessment of construction works, typically environmental, social, or economic."@en ;
+    dcterms:source "ISO 15392:2019, sustainability in buildings and civil engineering works; ISO 21929-1:2011, sustainability indicators framework."@en .
+
+sscoscc:SustainabilityIndicator a owl:Class ;
+    rdfs:label "Sustainability Indicator"@en ;
+    skos:prefLabel "Sustainability Indicator"@en ;
+    rdfs:comment "An indicator used to assess a sustainability aspect across one or more life cycle stages."@en ;
+    dcterms:source "ISO 21929-1:2011, framework for sustainability indicators and core indicators for buildings."@en .
+
+sscoscc:LifeCycleStage a owl:Class ;
+    rdfs:label "Life Cycle Stage"@en ;
+    skos:prefLabel "Life Cycle Stage"@en ;
+    rdfs:comment "A stage in the life cycle of a construction work to which indicators or performances may relate."@en ;
+    dcterms:source "ISO 15686-1:2011, life-cycle stages; ISO 15392:2019, life cycle of construction works."@en .
+
+sscoscc:Benchmark a owl:Class ;
+    rdfs:label "Benchmark"@en ;
+    skos:prefLabel "Benchmark"@en ;
+    rdfs:comment "A reference level or benchmark used to interpret an indicator or criterion."@en ;
+    dcterms:source "ISO 21678:2020, indicators and benchmarks; ISO 21931-2:2019, benchmarks or levels of performance."@en .
+
+sscoscc:ComplianceRequirement a owl:Class ;
+    rdfs:label "Compliance Requirement"@en ;
+    skos:prefLabel "Compliance Requirement"@en ;
+    rdfs:comment "A compliance obligation that shall be satisfied and may be specified by indicators and criteria."@en ;
+    dcterms:source "ISO 37301:2021, compliance obligations."@en .
+
+sscoscc:ComplianceCriterion a owl:Class ;
+    rdfs:label "Compliance Criterion"@en ;
+    skos:prefLabel "Compliance Criterion"@en ;
+    rdfs:comment "A criterion used to assess whether a compliance requirement is satisfied."@en .
+
+sscoscc:ComplianceCheck a owl:Class ;
+    rdfs:label "Compliance Check"@en ;
+    skos:prefLabel "Compliance Check"@en ;
+    rdfs:comment "An activity that checks a criterion and produces a compliance result."@en .
+
+sscoscc:ComplianceResult a owl:Class ;
+    rdfs:label "Compliance Result"@en ;
+    skos:prefLabel "Compliance Result"@en ;
+    rdfs:comment "The result produced by a compliance check."@en .
+
+sscoscc:Performance a owl:Class ;
+    rdfs:label "Performance"@en ;
+    skos:prefLabel "Performance"@en ;
+    rdfs:comment "Performance relevant to sustainability assessment and related technical-functional reference conditions."@en ;
+    dcterms:source "ISO 21931-1:2022, framework for assessing environmental, social and economic performance; ISO 21931-2:2019, framework for assessing environmental performance."@en .
+
+sscoscc:SustainabilityPerformance a owl:Class ;
+    rdfs:subClassOf sscoscc:Performance ;
+    rdfs:label "Sustainability Performance"@en ;
+    skos:prefLabel "Sustainability Performance"@en ;
+    rdfs:comment "Performance related to the environmental, social, or economic assessment of a construction work."@en ;
+    dcterms:source "ISO 21931-1:2022, sustainability performance framework; ISO 21931-2:2019, environmental performance framework."@en .
+
+sscoscc:FunctionalTechnicalPerformance a owl:Class ;
+    rdfs:subClassOf sscoscc:Performance ;
+    rdfs:label "Functional Technical Performance"@en ;
+    skos:prefLabel "Functional Technical Performance"@en ;
+    rdfs:comment "Technical and functional performance considered as a reference condition for sustainability assessment."@en ;
+    dcterms:source "ISO 15392:2019, technical and functional performance; ISO 21931-2:2019, technical and functional characteristics and functional equivalent."@en .
+
+sscoscc:Nonconformity a owl:Class ;
+    rdfs:label "Nonconformity"@en ;
+    skos:prefLabel "Nonconformity"@en ;
+    rdfs:comment "A non-fulfilment of a requirement identified during a compliance check."@en ;
+    dcterms:source "ISO 9000:2015, nonconformity; ISO 37301:2021, nonconformity and corrective action."@en .
+
+
+# --- Sustainability aspects ---
+sscoscc:EnvironmentalAspect a owl:Class ;
+    rdfs:subClassOf sscoscc:SustainabilityAspect ;
+    rdfs:label "Environmental Aspect"@en ;
+    skos:prefLabel "Environmental Aspect"@en ;
+    rdfs:comment "A sustainability aspect related to environmental performance."@en ;
+    dcterms:source "ISO 21931-1:2022; ISO 21931-2:2019."@en .
+
+sscoscc:SocialAspect a owl:Class ;
+    rdfs:subClassOf sscoscc:SustainabilityAspect ;
+    rdfs:label "Social Aspect"@en ;
+    skos:prefLabel "Social Aspect"@en ;
+    rdfs:comment "A sustainability aspect related to social performance."@en ;
+    dcterms:source "EN 16309:2014+A1:2014; ISO 21931-1:2022."@en .
+
+sscoscc:EconomicAspect a owl:Class ;
+    rdfs:subClassOf sscoscc:SustainabilityAspect ;
+    rdfs:label "Economic Aspect"@en ;
+    skos:prefLabel "Economic Aspect"@en ;
+    rdfs:comment "A sustainability aspect related to economic performance."@en ;
+    dcterms:source "ISO 21931-1:2022."@en .
+
+# --- Sustainability indicators ---
+sscoscc:EnvironmentalIndicator a owl:Class ;
+    rdfs:subClassOf sscoscc:SustainabilityIndicator ;
+    rdfs:label "Environmental Indicator"@en ;
+    skos:prefLabel "Environmental Indicator"@en ;
+    rdfs:comment "A sustainability indicator used to assess environmental performance."@en ;
+    dcterms:source "ISO 21929-1:2011; ISO 21931-2:2019."@en .
+
+sscoscc:SocialIndicator a owl:Class ;
+    rdfs:subClassOf sscoscc:SustainabilityIndicator ;
+    rdfs:label "Social Indicator"@en ;
+    skos:prefLabel "Social Indicator"@en ;
+    rdfs:comment "A sustainability indicator used to assess social performance."@en ;
+    dcterms:source "EN 16309:2014+A1:2014."@en .
+
+sscoscc:EconomicIndicator a owl:Class ;
+    rdfs:subClassOf sscoscc:SustainabilityIndicator ;
+    rdfs:label "Economic Indicator"@en ;
+    skos:prefLabel "Economic Indicator"@en ;
+    rdfs:comment "A sustainability indicator used to assess economic performance."@en ;
+    dcterms:source "ISO 21931-1:2022."@en .
+
+# --- Life cycle stages ---
+sscoscc:ProductStage a owl:Class ;
+    rdfs:subClassOf sscoscc:LifeCycleStage ;
+    rdfs:label "Product Stage"@en ;
+    skos:prefLabel "Product Stage"@en ;
+    rdfs:comment "A life cycle stage covering product-related processes before construction."@en ;
+    dcterms:source "ISO 15686-1:2011; ISO 15392:2019."@en .
+
+sscoscc:ConstructionStage a owl:Class ;
+    rdfs:subClassOf sscoscc:LifeCycleStage ;
+    rdfs:label "Construction Stage"@en ;
+    skos:prefLabel "Construction Stage"@en ;
+    rdfs:comment "A life cycle stage covering on-site construction and installation processes."@en ;
+    dcterms:source "ISO 15686-1:2011; ISO 15392:2019."@en .
+
+sscoscc:UseStage a owl:Class ;
+    rdfs:subClassOf sscoscc:LifeCycleStage ;
+    rdfs:label "Use Stage"@en ;
+    skos:prefLabel "Use Stage"@en ;
+    rdfs:comment "A life cycle stage covering use, operation, maintenance, and related service life processes."@en ;
+    dcterms:source "ISO 15686-1:2011; ISO 15392:2019."@en .
+
+sscoscc:EndOfLifeStage a owl:Class ;
+    rdfs:subClassOf sscoscc:LifeCycleStage ;
+    rdfs:label "End-of-Life Stage"@en ;
+    skos:prefLabel "End-of-Life Stage"@en ;
+    rdfs:comment "A life cycle stage covering deconstruction, disposal, recovery, or recycling processes."@en ;
+    dcterms:source "ISO 15686-1:2011; ISO 15392:2019."@en .
+
+# --- Compliance result subclasses ---
+sscoscc:CompliantResult a owl:Class ;
+    rdfs:subClassOf sscoscc:ComplianceResult ;
+    rdfs:label "Compliant Result"@en ;
+    skos:prefLabel "Compliant Result"@en ;
+    rdfs:comment "A compliance result indicating that the checked criterion is satisfied."@en .
+
+sscoscc:NoncompliantResult a owl:Class ;
+    rdfs:subClassOf sscoscc:ComplianceResult ;
+    rdfs:label "Noncompliant Result"@en ;
+    skos:prefLabel "Noncompliant Result"@en ;
+    rdfs:comment "A compliance result indicating that the checked criterion is not satisfied."@en .
+
+sscoscc:PartiallyCompliantResult a owl:Class ;
+    rdfs:subClassOf sscoscc:ComplianceResult ;
+    rdfs:label "Partially Compliant Result"@en ;
+    skos:prefLabel "Partially Compliant Result"@en ;
+    rdfs:comment "A compliance result indicating that the checked criterion is only partly satisfied."@en .
+
+sscoscc:NotAssessableResult a owl:Class ;
+    rdfs:subClassOf sscoscc:ComplianceResult ;
+    rdfs:label "Not Assessable Result"@en ;
+    skos:prefLabel "Not Assessable Result"@en ;
+    rdfs:comment "A compliance result indicating that a valid assessment cannot be established from the available evidence."@en .
+
+
+
+
+#################################################################
+# SSCO-Core properties
+#################################################################
+
+sscore:hasObjective a owl:ObjectProperty ;
+    rdfs:label "has objective"@en ;
+    rdfs:comment "Links a project to an objective."@en ;
+    rdfs:domain sscore:Project ;
+    rdfs:range sscore:Objective .
+
+sscore:isMeasuredBy a owl:ObjectProperty ;
+    rdfs:label "is measured by"@en ;
+    rdfs:comment "Links an objective to a metric."@en ;
+    rdfs:domain sscore:Objective ;
+    rdfs:range sscore:Metric .
+
+sscore:usesClassification a owl:ObjectProperty ;
+    rdfs:label "uses classification"@en ;
+    rdfs:comment "Links a project to a classification system."@en ;
+    rdfs:domain sscore:Project ;
+    rdfs:range sscore:Classification .
+
+
+sscore:hasUnitSpecification a owl:ObjectProperty ;
+    rdfs:label "has unit specification"@en ;
+    rdfs:comment "Links a project to the default unit specification used to interpret quantitative values in the project context."@en ;
+    rdfs:domain sscore:Project ;
+    rdfs:range sscore:UnitSpecification .
+
+sscore:belongsToClassification a owl:ObjectProperty ;
+    rdfs:label "belongs to classification"@en ;
+    rdfs:comment "Links a classification reference to a classification."@en ;
+    rdfs:domain sscore:ClassificationReference ;
+    rdfs:range sscore:Classification .
+
+sscobfi:hasTask a owl:ObjectProperty ;
+    rdfs:label "has task"@en ;
+    rdfs:comment "Links a structural element to a task associated with its construction or engineering work."@en ;
+    rdfs:domain sscobfi:StructuralElement ;
+    rdfs:range sscobfi:Task .
+
+sscobfi:precedesTask a owl:TransitiveProperty, owl:ObjectProperty ;
+    rdfs:label "precedes task"@en ;
+    rdfs:comment "Defines sequence among tasks."@en ;
+    rdfs:domain sscobfi:Task ;
+    rdfs:range sscobfi:Task .
+
+sscobfi:isControlledBy a owl:ObjectProperty ;
+    rdfs:label "is controlled by"@en ;
+    rdfs:comment "Links a task to a control."@en ;
+    rdfs:domain sscobfi:Task ;
+    rdfs:range sscobfi:Control .
+
+sscobfi:allocatesResource a owl:ObjectProperty ;
+    rdfs:label "allocates resource"@en ;
+    rdfs:comment "Links a control to a resource."@en ;
+    rdfs:domain sscobfi:Control ;
+    rdfs:range sscobfi:Resource .
+
+sscobfi:consumesResource a owl:ObjectProperty ;
+    rdfs:label "consumes resource"@en ;
+    rdfs:comment "Links a task to a resource it consumes."@en ;
+    rdfs:domain sscobfi:Task ;
+    rdfs:range sscobfi:Resource .
+
+sscore:hasClassificationReference a owl:ObjectProperty ;
+    rdfs:label "has classification reference"@en ;
+    rdfs:comment "Links a structural element to a classification reference."@en ;
+    rdfs:domain sscobfi:StructuralElement ;
+    rdfs:range sscore:ClassificationReference .
+
+#################################################################
+# SSCO-BFI properties
+#################################################################
+
+sscobfi:containsProcess a owl:ObjectProperty ;
+    rdfs:label "contains process"@en ;
+    rdfs:comment "Links a spatial structure element to a process."@en ;
+    rdfs:domain sscobfi:SpatialStructureElement ;
+    rdfs:range sscobfi:Process .
+
+sscobfi:containsElement a owl:ObjectProperty ;
+    rdfs:label "contains element"@en ;
+    rdfs:comment "Links a spatial structure element to a structural element."@en ;
+    rdfs:domain sscobfi:SpatialStructureElement ;
+    rdfs:range sscobfi:StructuralElement .
+
+sscobfi:isConstructedBy a owl:ObjectProperty ;
+    rdfs:label "is constructed by"@en ;
+    rdfs:comment "Links a structural element to a process by which it is constructed."@en ;
+    rdfs:domain sscobfi:StructuralElement ;
+    rdfs:range sscobfi:Process .
+
+sscobfi:hasAnalysisModel a owl:ObjectProperty ;
+    rdfs:label "has analysis model"@en ;
+    rdfs:comment "Links a project to an analysis model."@en ;
+    rdfs:domain sscore:Project ;
+    rdfs:range sscobfi:AnalysisModel .
+
+sscobfi:containsSpatialStructureElement a owl:ObjectProperty ;
+    rdfs:label "contains spatial structure element"@en ;
+    rdfs:comment "Links a project to a spatial structure element."@en ;
+    rdfs:domain sscore:Project ;
+    rdfs:range sscobfi:SpatialStructureElement .
+
+sscobfi:containsSubStructure a owl:TransitiveProperty, owl:ObjectProperty ;
+    rdfs:label "contains substructure"@en ;
+    rdfs:comment "Defines recursive containment among spatial structure elements."@en ;
+    rdfs:domain sscobfi:SpatialStructureElement ;
+    rdfs:range sscobfi:SpatialStructureElement .
+
+sscobfi:containsItem a owl:ObjectProperty ;
+    rdfs:label "contains item"@en ;
+    rdfs:comment "Links an analysis model to a structural item."@en ;
+    rdfs:domain sscobfi:AnalysisModel ;
+    rdfs:range sscobfi:StructuralItem .
+
+sscobfi:isIdealizedAs a owl:ObjectProperty ;
+    rdfs:label "is idealized as"@en ;
+    rdfs:comment "Links a structural element to its analysis-level structural item."@en ;
+    rdfs:domain sscobfi:StructuralElement ;
+    rdfs:range sscobfi:StructuralItem .
+
+sscobfi:hasMaterial a owl:ObjectProperty ;
+    rdfs:label "has material"@en ;
+    rdfs:comment "Links a structural element to a material definition."@en ;
+    rdfs:domain sscobfi:StructuralElement ;
+    rdfs:range sscobfi:MaterialDefinition .
+
+sscobfi:consistsOf a owl:ObjectProperty ;
+    rdfs:label "consists of"@en ;
+    rdfs:comment "Links a structural item to a material definition."@en ;
+    rdfs:domain sscobfi:StructuralItem ;
+    rdfs:range sscobfi:MaterialDefinition .
+
+sscobfi:hasStep a owl:ObjectProperty ;
+    rdfs:label "has step"@en ;
+    rdfs:comment "Links an analysis model to an analysis step."@en ;
+    rdfs:domain sscobfi:AnalysisModel ;
+    rdfs:range sscobfi:AnalysisStep .
+
+sscobfi:forStep a owl:ObjectProperty ;
+    rdfs:label "for step"@en ;
+    rdfs:comment "Links a results step to its analysis step."@en ;
+    rdfs:domain sscobfi:AnalysisResultsStep ;
+    rdfs:range sscobfi:AnalysisStep .
+
+sscobfi:precedesStep a owl:TransitiveProperty, owl:ObjectProperty ;
+    rdfs:label "precedes step"@en ;
+    rdfs:comment "Defines step sequence."@en ;
+    rdfs:domain sscobfi:AnalysisStep ;
+    rdfs:range sscobfi:AnalysisStep .
+
+sscobfi:appliesInStep a owl:ObjectProperty ;
+    rdfs:label "applies in step"@en ;
+    rdfs:comment "Links a constraint to an analysis step."@en ;
+    rdfs:domain sscobfi:Constraint ;
+    rdfs:range sscobfi:AnalysisStep .
+
+sscobfi:appliesToItem a owl:ObjectProperty ;
+    rdfs:label "applies to item"@en ;
+    rdfs:comment "Links a constraint to a structural item."@en ;
+    rdfs:domain sscobfi:Constraint ;
+    rdfs:range sscobfi:StructuralItem .
+
+sscobfi:isAnalyzedForTask a owl:ObjectProperty ;
+    rdfs:label "is analyzed for task"@en ;
+    rdfs:comment "Links a structural item to the task for which it is analyzed."@en ;
+    rdfs:domain sscobfi:StructuralItem ;
+    rdfs:range sscobfi:Task .
+
+sscobfi:hasInitialState a owl:ObjectProperty ;
+    rdfs:label "has initial state"@en ;
+    rdfs:comment "Links a task to an initial analysis state."@en ;
+    rdfs:domain sscobfi:Task ;
+    rdfs:range sscobfi:AnalysisState .
+
+sscobfi:hasFinalState a owl:ObjectProperty ;
+    rdfs:label "has final state"@en ;
+    rdfs:comment "Links a task to a final analysis state."@en ;
+    rdfs:domain sscobfi:Task ;
+    rdfs:range sscobfi:AnalysisState .
+
+sscobfi:hasDefinition a owl:ObjectProperty ;
+    rdfs:label "has definition"@en ;
+    rdfs:comment "Links an analysis state to a state definition."@en ;
+    rdfs:domain sscobfi:AnalysisState ;
+    rdfs:range sscobfi:StateDefinition .
+
+sscobfi:hasItem a owl:ObjectProperty ;
+    rdfs:label "has item"@en ;
+    rdfs:comment "Links an analysis model to a structural item."@en ;
+    rdfs:domain sscobfi:AnalysisModel ;
+    rdfs:range sscobfi:StructuralItem .
+
+sscobfi:belongsToItem a owl:ObjectProperty ;
+    rdfs:label "belongs to item"@en ;
+    rdfs:comment "Links a state definition to a structural item."@en ;
+    rdfs:domain sscobfi:StateDefinition ;
+    rdfs:range sscobfi:StructuralItem .
+
+sscobfi:hasResults a owl:ObjectProperty ;
+    rdfs:label "has results"@en ;
+    rdfs:comment "Links an analysis model to analysis results."@en ;
+    rdfs:domain sscobfi:AnalysisModel ;
+    rdfs:range sscobfi:AnalysisResults .
+
+sscobfi:hasResultsStep a owl:ObjectProperty ;
+    rdfs:label "has results step"@en ;
+    rdfs:comment "Links analysis results to a results step."@en ;
+    rdfs:domain sscobfi:AnalysisResults ;
+    rdfs:range sscobfi:AnalysisResultsStep .
+
+#################################################################
+# SSCO-SCC properties
+#################################################################
+
+sscoscc:hasIndicator a owl:ObjectProperty ;
+    rdfs:label "has indicator"@en ;
+    rdfs:comment "Links a sustainability aspect to a sustainability indicator."@en ;
+    rdfs:domain sscoscc:SustainabilityAspect ;
+    rdfs:range sscoscc:SustainabilityIndicator .
+
+sscoscc:operationalizes a owl:ObjectProperty ;
+    rdfs:label "operationalizes"@en ;
+    rdfs:comment "Links an indicator to a metric."@en ;
+    rdfs:domain sscoscc:SustainabilityIndicator ;
+    rdfs:range sscore:Metric .
+
+sscoscc:isSpecifiedBy a owl:ObjectProperty ;
+    rdfs:label "is specified by"@en ;
+    rdfs:comment "Links a sustainability indicator to a compliance requirement that it specifies."@en ;
+    rdfs:domain sscoscc:SustainabilityIndicator ;
+    rdfs:range sscoscc:ComplianceRequirement .
+
+sscoscc:hasCriterion a owl:ObjectProperty ;
+    rdfs:label "has criterion"@en ;
+    rdfs:comment "Links a compliance requirement to a compliance criterion."@en ;
+    rdfs:domain sscoscc:ComplianceRequirement ;
+    rdfs:range sscoscc:ComplianceCriterion .
+
+sscoscc:isCheckedBy a owl:ObjectProperty ;
+    rdfs:label "is checked by"@en ;
+    rdfs:comment "Links a compliance criterion to a compliance check."@en ;
+    rdfs:domain sscoscc:ComplianceCriterion ;
+    rdfs:range sscoscc:ComplianceCheck .
+
+sscoscc:producesComplianceResult a owl:ObjectProperty ;
+    rdfs:label "produces compliance result"@en ;
+    rdfs:comment "Links a compliance check to a compliance result."@en ;
+    rdfs:domain sscoscc:ComplianceCheck ;
+    rdfs:range sscoscc:ComplianceResult .
+
+sscoscc:isSubjectToRequirement a owl:ObjectProperty ;
+    rdfs:label "is subject to requirement"@en ;
+    rdfs:comment "Links a project to a compliance requirement."@en ;
+    rdfs:domain sscore:Project ;
+    rdfs:range sscoscc:ComplianceRequirement .
+
+sscoscc:appliesToLifeCycleStage a owl:ObjectProperty ;
+    rdfs:label "applies to life cycle stage"@en ;
+    rdfs:comment "Links an indicator to a life cycle stage."@en ;
+    rdfs:domain sscoscc:SustainabilityIndicator ;
+    rdfs:range sscoscc:LifeCycleStage .
+
+sscoscc:hasBenchmark a owl:ObjectProperty ;
+    rdfs:label "has benchmark"@en ;
+    rdfs:comment "Links an indicator to a benchmark."@en ;
+    rdfs:domain sscoscc:SustainabilityIndicator ;
+    rdfs:range sscoscc:Benchmark .
+
+sscoscc:usesBenchmark a owl:ObjectProperty ;
+    rdfs:label "uses benchmark"@en ;
+    rdfs:comment "Links a compliance criterion to a benchmark."@en ;
+    rdfs:domain sscoscc:ComplianceCriterion ;
+    rdfs:range sscoscc:Benchmark .
+
+sscoscc:indicatesPerformance a owl:ObjectProperty ;
+    rdfs:label "indicates performance"@en ;
+    rdfs:comment "Links an indicator to a performance."@en ;
+    rdfs:domain sscoscc:SustainabilityIndicator ;
+    rdfs:range sscoscc:Performance .
+
+sscoscc:relatesToLifeCycleStage a owl:ObjectProperty ;
+    rdfs:label "relates to life cycle stage"@en ;
+    rdfs:comment "Links a performance to a life cycle stage."@en ;
+    rdfs:domain sscoscc:Performance ;
+    rdfs:range sscoscc:LifeCycleStage .
+
+sscoscc:isBasedOnPerformance a owl:ObjectProperty ;
+    rdfs:label "is based on performance"@en ;
+    rdfs:comment "Links a compliance result to a performance basis."@en ;
+    rdfs:domain sscoscc:ComplianceResult ;
+    rdfs:range sscoscc:Performance .
+
+sscoscc:reportsNonconformity a owl:ObjectProperty ;
+    rdfs:label "reports issue"@en ;
+    rdfs:comment "Links a compliance check to a nonconformity."@en ;
+    rdfs:domain sscoscc:ComplianceCheck ;
+    rdfs:range sscoscc:Nonconformity .
+
+
+sscoscc:checksCriterion a owl:ObjectProperty ;
+    rdfs:label "checks criterion"@en ;
+    rdfs:comment "Relates a compliance check to the compliance criterion that it checks."@en ;
+    rdfs:domain sscoscc:ComplianceCheck ;
+    rdfs:range sscoscc:ComplianceCriterion .
+
+sscoscc:evaluatesPerformance a owl:ObjectProperty ;
+    rdfs:label "evaluates performance"@en ;
+    rdfs:comment "Relates a compliance check to the performance that it evaluates as evidence."@en ;
+    rdfs:domain sscoscc:ComplianceCheck ;
+    rdfs:range sscoscc:Performance .
+
+sscoscc:appliesToStructuralItem a owl:ObjectProperty ;
+    rdfs:label "applies to structural item"@en ;
+    rdfs:comment "Relates a compliance criterion to the structural item to which it applies."@en ;
+    rdfs:domain sscoscc:ComplianceCriterion ;
+    rdfs:range sscobfi:StructuralItem .
+
+sscobfi:appliesToAnalysisState a owl:ObjectProperty ;
+    rdfs:label "applies to analysis state"@en ;
+    rdfs:comment "Relates a state definition to the analysis state that it defines or characterizes."@en ;
+    rdfs:domain sscobfi:StateDefinition ;
+    rdfs:range sscobfi:AnalysisState .
+
+
+#################################################################
+# SSCO-Core datatype properties
+#################################################################
+
+sscore:externalIdentifier a owl:DatatypeProperty ;
+    rdfs:label "external identifier"@en ;
+    rdfs:comment "Specifies an external identifier used to trace an instance back to a source model, document, or system."@en ;
+    rdfs:range xsd:string .
+
+sscore:sourceSystem a owl:DatatypeProperty ;
+    rdfs:label "source system"@en ;
+    rdfs:comment "Specifies the source system or source dataset from which an instance is derived."@en ;
+    rdfs:range xsd:string .
+
+sscore:sequenceIndex a owl:DatatypeProperty ;
+    rdfs:label "sequence index"@en ;
+    rdfs:comment "Specifies the ordinal position of a task or analysis step within a sequence."@en ;
+    rdfs:range xsd:positiveInteger .
+
+
+# --- SSCO-Core ---
+sscore:projectCode a owl:DatatypeProperty ;
+    rdfs:label "project code"@en ;
+    rdfs:comment "Specifies a code assigned to a project."@en ;
+    rdfs:domain sscore:Project ;
+    rdfs:range xsd:string .
+
+sscore:projectName a owl:DatatypeProperty ;
+    rdfs:label "project name"@en ;
+    rdfs:comment "Specifies the name of a project."@en ;
+    rdfs:domain sscore:Project ;
+    rdfs:range xsd:string .
+
+sscobfi:processIdentifier a owl:DatatypeProperty ;
+    rdfs:label "process identifier"@en ;
+    rdfs:comment "Specifies an identifier assigned to a process."@en ;
+    rdfs:domain sscobfi:Process ;
+    rdfs:range xsd:string .
+
+sscobfi:taskIdentifier a owl:DatatypeProperty ;
+    rdfs:label "task identifier"@en ;
+    rdfs:comment "Specifies an identifier assigned to a task."@en ;
+    rdfs:domain sscobfi:Task ;
+    rdfs:range xsd:string .
+
+sscobfi:taskStatus a owl:DatatypeProperty ;
+    rdfs:label "task status"@en ;
+    rdfs:comment "Specifies the current status of a task."@en ;
+    rdfs:domain sscobfi:Task ;
+    rdfs:range xsd:string .
+
+sscobfi:controlIdentifier a owl:DatatypeProperty ;
+    rdfs:label "control identifier"@en ;
+    rdfs:comment "Specifies an identifier assigned to a control."@en ;
+    rdfs:domain sscobfi:Control ;
+    rdfs:range xsd:string .
+
+sscobfi:controlType a owl:DatatypeProperty ;
+    rdfs:label "control type"@en ;
+    rdfs:comment "Specifies the type or category of a control."@en ;
+    rdfs:domain sscobfi:Control ;
+    rdfs:range xsd:string .
+
+sscobfi:controlStatus a owl:DatatypeProperty ;
+    rdfs:label "control status"@en ;
+    rdfs:comment "Specifies the status of a control."@en ;
+    rdfs:domain sscobfi:Control ;
+    rdfs:range xsd:string .
+
+sscobfi:plannedStartTime a owl:DatatypeProperty ;
+    rdfs:label "planned start time"@en ;
+    rdfs:comment "Specifies the planned start date and time associated with a control."@en ;
+    rdfs:domain sscobfi:Control ;
+    rdfs:range xsd:dateTime .
+
+sscobfi:plannedFinishTime a owl:DatatypeProperty ;
+    rdfs:label "planned finish time"@en ;
+    rdfs:comment "Specifies the planned finish date and time associated with a control."@en ;
+    rdfs:domain sscobfi:Control ;
+    rdfs:range xsd:dateTime .
+
+sscobfi:plannedDurationValue a owl:DatatypeProperty ;
+    rdfs:label "planned duration value"@en ;
+    rdfs:comment "Specifies the planned duration value associated with a control."@en ;
+    rdfs:domain sscobfi:Control ;
+    rdfs:range xsd:decimal .
+
+sscobfi:durationUnit a owl:DatatypeProperty ;
+    rdfs:label "duration unit"@en ;
+    rdfs:comment "Specifies the unit of a duration value associated with a control."@en ;
+    rdfs:domain sscobfi:Control ;
+    rdfs:range xsd:string .
+
+sscobfi:plannedCost a owl:DatatypeProperty ;
+    rdfs:label "planned cost"@en ;
+    rdfs:comment "Specifies the planned cost or budget value associated with a control."@en ;
+    rdfs:domain sscobfi:Control ;
+    rdfs:range xsd:decimal .
+
+sscobfi:budgetCurrency a owl:DatatypeProperty ;
+    rdfs:label "budget currency"@en ;
+    rdfs:comment "Specifies the local currency of a planned cost or budget value associated with a control when an explicit value-level currency needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:Control ;
+    rdfs:range xsd:string .
+
+sscobfi:resourceIdentifier a owl:DatatypeProperty ;
+    rdfs:label "resource identifier"@en ;
+    rdfs:comment "Specifies an identifier assigned to a resource."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:string .
+
+sscobfi:resourceType a owl:DatatypeProperty ;
+    rdfs:label "resource type"@en ;
+    rdfs:comment "Specifies the type or category of a resource."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:string .
+
+sscobfi:usageTimeValue a owl:DatatypeProperty ;
+    rdfs:label "usage time value"@en ;
+    rdfs:comment "Specifies the planned or recorded time used by a resource."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:timeUnit a owl:DatatypeProperty ;
+    rdfs:label "time unit"@en ;
+    rdfs:comment "Specifies the unit of a time value associated with a resource."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:string .
+
+sscobfi:consumptionQuantity a owl:DatatypeProperty ;
+    rdfs:label "consumption quantity"@en ;
+    rdfs:comment "Specifies the quantity of a resource consumed or planned for consumption."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:quantityUnit a owl:DatatypeProperty ;
+    rdfs:label "quantity unit"@en ;
+    rdfs:comment "Specifies the local unit of a resource quantity when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:string .
+
+sscobfi:unitPrice a owl:DatatypeProperty ;
+    rdfs:label "unit price"@en ;
+    rdfs:comment "Specifies the unit price of a resource."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:resourceCost a owl:DatatypeProperty ;
+    rdfs:label "resource cost"@en ;
+    rdfs:comment "Specifies the total cost associated with a resource."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:resourceCurrency a owl:DatatypeProperty ;
+    rdfs:label "resource currency"@en ;
+    rdfs:comment "Specifies the local currency of a cost value associated with a resource when an explicit value-level currency needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:string .
+
+sscore:metricCode a owl:DatatypeProperty ;
+    rdfs:label "metric code"@en ;
+    rdfs:comment "Specifies a code assigned to a metric."@en ;
+    rdfs:domain sscore:Metric ;
+    rdfs:range xsd:string .
+
+sscore:objectiveText a owl:DatatypeProperty ;
+    rdfs:label "objective text"@en ;
+    rdfs:comment "Specifies the textual statement of an objective."@en ;
+    rdfs:domain sscore:Objective ;
+    rdfs:range xsd:string .
+
+sscore:classificationCode a owl:DatatypeProperty ;
+    rdfs:label "classification code"@en ;
+    rdfs:comment "Specifies a code or notation assigned to a classification entry or system."@en ;
+    rdfs:domain sscore:Classification ;
+    rdfs:range xsd:string .
+
+sscore:referenceCode a owl:DatatypeProperty ;
+    rdfs:label "reference code"@en ;
+    rdfs:comment "Specifies the code of a classification reference assigned to an element."@en ;
+    rdfs:domain sscore:ClassificationReference ;
+    rdfs:range xsd:string .
+
+sscore:referenceTitle a owl:DatatypeProperty ;
+    rdfs:label "reference title"@en ;
+    rdfs:comment "Specifies the title or heading associated with a classification reference."@en ;
+    rdfs:domain sscore:ClassificationReference ;
+    rdfs:range xsd:string .
+
+
+#################################################################
+# SSCO-BFI datatype properties
+#################################################################
+
+sscobfi:analysisModelType a owl:DatatypeProperty ;
+    rdfs:label "analysis model type"@en ;
+    rdfs:comment "Specifies the type of an analysis model."@en ;
+    rdfs:domain sscobfi:AnalysisModel ;
+    rdfs:range xsd:string .
+
+sscobfi:idealizationType a owl:DatatypeProperty ;
+    rdfs:label "idealization type"@en ;
+    rdfs:comment "Specifies the idealization type of a structural item in the analysis model."@en ;
+    rdfs:domain sscobfi:StructuralItem ;
+    rdfs:range xsd:string .
+
+sscobfi:analysisStepIdentifier a owl:DatatypeProperty ;
+    rdfs:label "analysis step identifier"@en ;
+    rdfs:comment "Specifies an identifier assigned to an analysis step."@en ;
+    rdfs:domain sscobfi:AnalysisStep ;
+    rdfs:range xsd:string .
+
+sscobfi:loadCaseName a owl:DatatypeProperty ;
+    rdfs:label "load case name"@en ;
+    rdfs:comment "Specifies the name or code of a load case associated with an analysis step."@en ;
+    rdfs:domain sscobfi:AnalysisStep ;
+    rdfs:range xsd:string .
+
+sscobfi:stepType a owl:DatatypeProperty ;
+    rdfs:label "step type"@en ;
+    rdfs:comment "Specifies the type of an analysis step."@en ;
+    rdfs:domain sscobfi:AnalysisStep ;
+    rdfs:range xsd:string .
+
+sscobfi:constraintType a owl:DatatypeProperty ;
+    rdfs:label "constraint type"@en ;
+    rdfs:comment "Specifies the type of a boundary condition or constraint."@en ;
+    rdfs:domain sscobfi:Constraint ;
+    rdfs:range xsd:string .
+
+sscobfi:dofCode a owl:DatatypeProperty ;
+    rdfs:label "degree of freedom code"@en ;
+    rdfs:comment "Specifies the degree of freedom to which a constraint applies."@en ;
+    rdfs:domain sscobfi:Constraint ;
+    rdfs:range xsd:string .
+
+sscobfi:prescribedValue a owl:DatatypeProperty ;
+    rdfs:label "prescribed value"@en ;
+    rdfs:comment "Specifies the scalar value prescribed by a constraint or boundary condition."@en ;
+    rdfs:domain sscobfi:Constraint ;
+    rdfs:range xsd:decimal .
+
+sscobfi:prescribedUnit a owl:DatatypeProperty ;
+    rdfs:label "prescribed unit"@en ;
+    rdfs:comment "Specifies the unit of a prescribed value in a constraint or boundary condition."@en ;
+    rdfs:domain sscobfi:Constraint ;
+    rdfs:range xsd:string .
+
+sscobfi:stateVariableName a owl:DatatypeProperty ;
+    rdfs:label "state variable name"@en ;
+    rdfs:comment "Specifies the name of a state variable defined for an analysis state."@en ;
+    rdfs:domain sscobfi:StateDefinition ;
+    rdfs:range xsd:string .
+
+sscobfi:stateVariableValue a owl:DatatypeProperty ;
+    rdfs:label "state variable value"@en ;
+    rdfs:comment "Specifies the scalar value of a state variable."@en ;
+    rdfs:domain sscobfi:StateDefinition ;
+    rdfs:range xsd:decimal .
+
+sscobfi:stateVariableUnit a owl:DatatypeProperty ;
+    rdfs:label "state variable unit"@en ;
+    rdfs:comment "Specifies the unit of a state variable value."@en ;
+    rdfs:domain sscobfi:StateDefinition ;
+    rdfs:range xsd:string .
+
+sscobfi:responseVariableName a owl:DatatypeProperty ;
+    rdfs:label "response variable name"@en ;
+    rdfs:comment "Specifies the name of a response variable reported in an analysis results step."@en ;
+    rdfs:domain sscobfi:AnalysisResultsStep ;
+    rdfs:range xsd:string .
+
+sscobfi:responseVariableValue a owl:DatatypeProperty ;
+    rdfs:label "response variable value"@en ;
+    rdfs:comment "Specifies the scalar value of a response variable reported in an analysis results step."@en ;
+    rdfs:domain sscobfi:AnalysisResultsStep ;
+    rdfs:range xsd:decimal .
+
+sscobfi:responseVariableUnit a owl:DatatypeProperty ;
+    rdfs:label "response variable unit"@en ;
+    rdfs:comment "Specifies the unit of a response variable value."@en ;
+    rdfs:domain sscobfi:AnalysisResultsStep ;
+    rdfs:range xsd:string .
+
+sscobfi:responseLocationType a owl:DatatypeProperty ;
+    rdfs:label "response location type"@en ;
+    rdfs:comment "Specifies the location type at which a response variable is reported, such as nodal, elemental, or section-based."@en ;
+    rdfs:domain sscobfi:AnalysisResultsStep ;
+    rdfs:range xsd:string .
+
+
+# --- SSCO-BFI ---
+sscobfi:analysisResultsIdentifier a owl:DatatypeProperty ;
+    rdfs:label "analysis results identifier"@en ;
+    rdfs:comment "Specifies an identifier assigned to a set of analysis results."@en ;
+    rdfs:domain sscobfi:AnalysisResults ;
+    rdfs:range xsd:string .
+
+sscobfi:resultCaseName a owl:DatatypeProperty ;
+    rdfs:label "result case name"@en ;
+    rdfs:comment "Specifies the name or code of the result case represented by an analysis results set."@en ;
+    rdfs:domain sscobfi:AnalysisResults ;
+    rdfs:range xsd:string .
+
+sscobfi:responseStatisticType a owl:DatatypeProperty ;
+    rdfs:label "response statistic type"@en ;
+    rdfs:comment "Specifies the statistic type of a reported response value, such as maximum, minimum, average, or characteristic."@en ;
+    rdfs:domain sscobfi:AnalysisResultsStep ;
+    rdfs:range xsd:string .
+
+sscobfi:materialGrade a owl:DatatypeProperty ;
+    rdfs:label "material grade"@en ;
+    rdfs:comment "Specifies the grade or class of a material definition."@en ;
+    rdfs:domain sscobfi:MaterialDefinition ;
+    rdfs:range xsd:string .
+
+sscobfi:materialStandard a owl:DatatypeProperty ;
+    rdfs:label "material standard"@en ;
+    rdfs:comment "Specifies the material standard or specification referenced by a material definition."@en ;
+    rdfs:domain sscobfi:MaterialDefinition ;
+    rdfs:range xsd:string .
+
+sscobfi:structuralElementType a owl:DatatypeProperty ;
+    rdfs:label "structural element type"@en ;
+    rdfs:comment "Specifies the type of a structural element in the product model."@en ;
+    rdfs:domain sscobfi:StructuralElement ;
+    rdfs:range xsd:string .
+
+sscobfi:geometricRepresentationType a owl:DatatypeProperty ;
+    rdfs:label "geometric representation type"@en ;
+    rdfs:comment "Specifies the type of geometric representation associated with a structural element."@en ;
+    rdfs:domain sscobfi:StructuralElement ;
+    rdfs:range xsd:string .
+
+sscobfi:analysisStateIdentifier a owl:DatatypeProperty ;
+    rdfs:label "analysis state identifier"@en ;
+    rdfs:comment "Specifies an identifier assigned to an analysis state."@en ;
+    rdfs:domain sscobfi:AnalysisState ;
+    rdfs:range xsd:string .
+
+sscobfi:stateDescription a owl:DatatypeProperty ;
+    rdfs:label "state description"@en ;
+    rdfs:comment "Specifies a textual description of an analysis state."@en ;
+    rdfs:domain sscobfi:AnalysisState ;
+    rdfs:range xsd:string .
+
+#################################################################
+# SSCO-SCC datatype properties
+#################################################################
+
+sscoscc:indicatorCode a owl:DatatypeProperty ;
+    rdfs:label "indicator code"@en ;
+    rdfs:comment "Specifies a code or short identifier for a sustainability indicator."@en ;
+    rdfs:domain sscoscc:SustainabilityIndicator ;
+    rdfs:range xsd:string .
+
+sscoscc:stageCode a owl:DatatypeProperty ;
+    rdfs:label "stage code"@en ;
+    rdfs:comment "Specifies a code or short identifier for a life cycle stage."@en ;
+    rdfs:domain sscoscc:LifeCycleStage ;
+    rdfs:range xsd:string .
+
+sscoscc:benchmarkValue a owl:DatatypeProperty ;
+    rdfs:label "benchmark value"@en ;
+    rdfs:comment "Specifies the scalar value of a benchmark used for interpretation or comparison."@en ;
+    rdfs:domain sscoscc:Benchmark ;
+    rdfs:range xsd:decimal .
+
+sscoscc:benchmarkUnit a owl:DatatypeProperty ;
+    rdfs:label "benchmark unit"@en ;
+    rdfs:comment "Specifies the local unit of a benchmark value when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscoscc:Benchmark ;
+    rdfs:range xsd:string .
+
+sscoscc:requirementIdentifier a owl:DatatypeProperty ;
+    rdfs:label "requirement identifier"@en ;
+    rdfs:comment "Specifies an identifier assigned to a compliance requirement."@en ;
+    rdfs:domain sscoscc:ComplianceRequirement ;
+    rdfs:range xsd:string .
+
+sscoscc:requirementText a owl:DatatypeProperty ;
+    rdfs:label "requirement text"@en ;
+    rdfs:comment "Specifies the textual statement of a compliance requirement."@en ;
+    rdfs:domain sscoscc:ComplianceRequirement ;
+    rdfs:range xsd:string .
+
+sscoscc:criterionIdentifier a owl:DatatypeProperty ;
+    rdfs:label "criterion identifier"@en ;
+    rdfs:comment "Specifies an identifier assigned to a compliance criterion."@en ;
+    rdfs:domain sscoscc:ComplianceCriterion ;
+    rdfs:range xsd:string .
+
+sscoscc:clauseIdentifier a owl:DatatypeProperty ;
+    rdfs:label "clause identifier"@en ;
+    rdfs:comment "Specifies the clause number or clause identifier from which a requirement or criterion is derived."@en ;
+    rdfs:range xsd:string .
+
+sscoscc:criterionExpression a owl:DatatypeProperty ;
+    rdfs:label "criterion expression"@en ;
+    rdfs:comment "Specifies the textual expression of a compliance criterion."@en ;
+    rdfs:domain sscoscc:ComplianceCriterion ;
+    rdfs:range xsd:string .
+
+sscoscc:thresholdValue a owl:DatatypeProperty ;
+    rdfs:label "threshold value"@en ;
+    rdfs:comment "Specifies the scalar threshold used in a compliance criterion for comparison."@en ;
+    rdfs:domain sscoscc:ComplianceCriterion ;
+    rdfs:range xsd:decimal .
+
+sscoscc:thresholdUnit a owl:DatatypeProperty ;
+    rdfs:label "threshold unit"@en ;
+    rdfs:comment "Specifies the local unit of a threshold value when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscoscc:ComplianceCriterion ;
+    rdfs:range xsd:string .
+
+sscoscc:comparisonOperator a owl:DatatypeProperty ;
+    rdfs:label "comparison operator"@en ;
+    rdfs:comment "Specifies the comparison operator used in a compliance criterion, such as <=, >=, =, <, or >."@en ;
+    rdfs:domain sscoscc:ComplianceCriterion ;
+    rdfs:range xsd:string .
+
+sscoscc:checkDateTime a owl:DatatypeProperty ;
+    rdfs:label "check date time"@en ;
+    rdfs:comment "Specifies the date and time at which a compliance check is performed or recorded."@en ;
+    rdfs:domain sscoscc:ComplianceCheck ;
+    rdfs:range xsd:dateTime .
+
+sscoscc:complianceStatus a owl:DatatypeProperty ;
+    rdfs:label "compliance status"@en ;
+    rdfs:comment "Specifies the status of a compliance result, such as compliant, noncompliant, partially compliant, or not assessable."@en ;
+    rdfs:domain sscoscc:ComplianceResult ;
+    rdfs:range xsd:string .
+
+sscoscc:rationaleText a owl:DatatypeProperty ;
+    rdfs:label "rationale text"@en ;
+    rdfs:comment "Specifies the explanatory rationale associated with a compliance result."@en ;
+    rdfs:domain sscoscc:ComplianceResult ;
+    rdfs:range xsd:string .
+
+sscoscc:nonconformityText a owl:DatatypeProperty ;
+    rdfs:label "nonconformity text"@en ;
+    rdfs:comment "Specifies a textual description of a nonconformity."@en ;
+    rdfs:domain sscoscc:Nonconformity ;
+    rdfs:range xsd:string .
+
+
+# --- SSCO-SCC ---
+sscoscc:performanceValue a owl:DatatypeProperty ;
+    rdfs:label "performance value"@en ;
+    rdfs:comment "Specifies the scalar value of a reported performance."@en ;
+    rdfs:domain sscoscc:Performance ;
+    rdfs:range xsd:decimal .
+
+sscoscc:performanceUnit a owl:DatatypeProperty ;
+    rdfs:label "performance unit"@en ;
+    rdfs:comment "Specifies the local unit of a performance value when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscoscc:Performance ;
+    rdfs:range xsd:string .
+
+sscoscc:performanceDate a owl:DatatypeProperty ;
+    rdfs:label "performance date"@en ;
+    rdfs:comment "Specifies the date associated with a reported performance value."@en ;
+    rdfs:domain sscoscc:Performance ;
+    rdfs:range xsd:date .
+
+sscoscc:indicatorName a owl:DatatypeProperty ;
+    rdfs:label "indicator name"@en ;
+    rdfs:comment "Specifies the name of a sustainability indicator."@en ;
+    rdfs:domain sscoscc:SustainabilityIndicator ;
+    rdfs:range xsd:string .
+
+sscoscc:indicatorUnit a owl:DatatypeProperty ;
+    rdfs:label "indicator unit"@en ;
+    rdfs:comment "Specifies the local unit used by a sustainability indicator when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscoscc:SustainabilityIndicator ;
+    rdfs:range xsd:string .
+
+sscoscc:benchmarkSource a owl:DatatypeProperty ;
+    rdfs:label "benchmark source"@en ;
+    rdfs:comment "Specifies the source from which a benchmark value is derived."@en ;
+    rdfs:domain sscoscc:Benchmark ;
+    rdfs:range xsd:string .
+
+sscoscc:applicabilityText a owl:DatatypeProperty ;
+    rdfs:label "applicability text"@en ;
+    rdfs:comment "Specifies a textual statement describing the applicability conditions of a compliance criterion."@en ;
+    rdfs:domain sscoscc:ComplianceCriterion ;
+    rdfs:range xsd:string .
+
+sscoscc:referenceDocument a owl:DatatypeProperty ;
+    rdfs:label "reference document"@en ;
+    rdfs:comment "Specifies the document in which a requirement or criterion is stated."@en ;
+    rdfs:range xsd:string .
+
+sscoscc:referenceVersion a owl:DatatypeProperty ;
+    rdfs:label "reference version"@en ;
+    rdfs:comment "Specifies the version or edition of the reference document used for a requirement or criterion."@en ;
+    rdfs:range xsd:string .
+
+sscoscc:assessmentMethodName a owl:DatatypeProperty ;
+    rdfs:label "assessment method name"@en ;
+    rdfs:comment "Specifies the name of the assessment method used to establish a sustainability performance value."@en ;
+    rdfs:domain sscoscc:SustainabilityPerformance ;
+    rdfs:range xsd:string .
+
+sscoscc:technicalAssessmentMethod a owl:DatatypeProperty ;
+    rdfs:label "technical assessment method"@en ;
+    rdfs:comment "Specifies the technical or functional assessment method used to establish a functional or technical performance value."@en ;
+    rdfs:domain sscoscc:FunctionalTechnicalPerformance ;
+    rdfs:range xsd:string .
+
+sscoscc:resultInterpretation a owl:DatatypeProperty ;
+    rdfs:label "result interpretation"@en ;
+    rdfs:comment "Specifies an interpretative statement associated with a compliance result."@en ;
+    rdfs:domain sscoscc:ComplianceResult ;
+    rdfs:range xsd:string .
+
+sscoscc:evidenceReference a owl:DatatypeProperty ;
+    rdfs:label "evidence reference"@en ;
+    rdfs:comment "Specifies a reference to supporting evidence used in a compliance check."@en ;
+    rdfs:domain sscoscc:ComplianceCheck ;
+    rdfs:range xsd:string .
+
+sscoscc:nonconformityCode a owl:DatatypeProperty ;
+    rdfs:label "nonconformity code"@en ;
+    rdfs:comment "Specifies a code assigned to a nonconformity."@en ;
+    rdfs:domain sscoscc:Nonconformity ;
+    rdfs:range xsd:string .
+
+sscoscc:correctiveActionText a owl:DatatypeProperty ;
+    rdfs:label "corrective action text"@en ;
+    rdfs:comment "Specifies a textual statement describing a corrective action proposed or taken for a nonconformity."@en ;
+    rdfs:domain sscoscc:Nonconformity ;
+    rdfs:range xsd:string .
+
+
+#################################################################
+# Additional datatype properties for model completeness
+#################################################################
+
+# --- SSCO-Core extensions ---
+sscore:objectiveType a owl:DatatypeProperty ;
+    rdfs:label "objective type"@en ;
+    rdfs:comment "Specifies the type or category of an objective, such as sustainability, cost, schedule, or compliance."@en ;
+    rdfs:domain sscore:Objective ;
+    rdfs:range xsd:string .
+
+sscore:objectivePriority a owl:DatatypeProperty ;
+    rdfs:label "objective priority"@en ;
+    rdfs:comment "Specifies the priority level assigned to an objective."@en ;
+    rdfs:domain sscore:Objective ;
+    rdfs:range xsd:string .
+
+sscore:targetValue a owl:DatatypeProperty ;
+    rdfs:label "target value"@en ;
+    rdfs:comment "Specifies the target value associated with an objective or metric."@en ;
+    rdfs:domain sscore:Objective ;
+    rdfs:range xsd:decimal .
+
+sscore:targetUnit a owl:DatatypeProperty ;
+    rdfs:label "target unit"@en ;
+    rdfs:comment "Specifies the unit associated with a target value."@en ;
+    rdfs:domain sscore:Objective ;
+    rdfs:range xsd:string .
+
+sscore:targetDate a owl:DatatypeProperty ;
+    rdfs:label "target date"@en ;
+    rdfs:comment "Specifies the target date by which an objective is intended to be achieved."@en ;
+    rdfs:domain sscore:Objective ;
+    rdfs:range xsd:date .
+
+sscore:metricUnit a owl:DatatypeProperty ;
+    rdfs:label "metric unit"@en ;
+    rdfs:comment "Specifies the unit used by a metric."@en ;
+    rdfs:domain sscore:Metric ;
+    rdfs:range xsd:string .
+
+sscore:metricMethod a owl:DatatypeProperty ;
+    rdfs:label "metric method"@en ;
+    rdfs:comment "Specifies the method, rule, or procedure used to determine a metric."@en ;
+    rdfs:domain sscore:Metric ;
+    rdfs:range xsd:string .
+
+sscore:metricValueType a owl:DatatypeProperty ;
+    rdfs:label "metric value type"@en ;
+    rdfs:comment "Specifies the value type of a metric, such as scalar, ratio, percentage, count, or boolean."@en ;
+    rdfs:domain sscore:Metric ;
+    rdfs:range xsd:string .
+
+sscore:classificationName a owl:DatatypeProperty ;
+    rdfs:label "classification name"@en ;
+    rdfs:comment "Specifies the name of a classification system."@en ;
+    rdfs:domain sscore:Classification ;
+    rdfs:range xsd:string .
+
+sscore:classificationEdition a owl:DatatypeProperty ;
+    rdfs:label "classification edition"@en ;
+    rdfs:comment "Specifies the edition or version identifier of a classification system."@en ;
+    rdfs:domain sscore:Classification ;
+    rdfs:range xsd:string .
+
+sscore:classificationPublisher a owl:DatatypeProperty ;
+    rdfs:label "classification publisher"@en ;
+    rdfs:comment "Specifies the publisher or issuing organization of a classification system."@en ;
+    rdfs:domain sscore:Classification ;
+    rdfs:range xsd:string .
+
+sscore:classificationURI a owl:DatatypeProperty ;
+    rdfs:label "classification URI"@en ;
+    rdfs:comment "Specifies the URI or web identifier of a classification system."@en ;
+    rdfs:domain sscore:Classification ;
+    rdfs:range xsd:anyURI .
+
+sscore:referenceDescription a owl:DatatypeProperty ;
+    rdfs:label "reference description"@en ;
+    rdfs:comment "Specifies a descriptive statement associated with a classification reference."@en ;
+    rdfs:domain sscore:ClassificationReference ;
+    rdfs:range xsd:string .
+
+sscore:referenceURI a owl:DatatypeProperty ;
+    rdfs:label "reference URI"@en ;
+    rdfs:comment "Specifies the URI or web identifier associated with a classification reference."@en ;
+    rdfs:domain sscore:ClassificationReference ;
+    rdfs:range xsd:anyURI .
+
+sscore:referenceEdition a owl:DatatypeProperty ;
+    rdfs:label "reference edition"@en ;
+    rdfs:comment "Specifies the edition or version associated with a classification reference."@en ;
+    rdfs:domain sscore:ClassificationReference ;
+    rdfs:range xsd:string .
+
+sscore:referenceLocation a owl:DatatypeProperty ;
+    rdfs:label "reference location"@en ;
+    rdfs:comment "Specifies the location path, section, or hierarchical position of a classification reference within a classification system."@en ;
+    rdfs:domain sscore:ClassificationReference ;
+    rdfs:range xsd:string .
+
+# --- SSCO-BFI task and process extensions ---
+sscobfi:processType a owl:DatatypeProperty ;
+    rdfs:label "process type"@en ;
+    rdfs:comment "Specifies the type or category of a process."@en ;
+    rdfs:domain sscobfi:Process ;
+    rdfs:range xsd:string .
+
+sscobfi:processStatus a owl:DatatypeProperty ;
+    rdfs:label "process status"@en ;
+    rdfs:comment "Specifies the status of a process."@en ;
+    rdfs:domain sscobfi:Process ;
+    rdfs:range xsd:string .
+
+sscobfi:taskType a owl:DatatypeProperty ;
+    rdfs:label "task type"@en ;
+    rdfs:comment "Specifies the type or category of a task."@en ;
+    rdfs:domain sscobfi:Task ;
+    rdfs:range xsd:string .
+
+sscobfi:taskMethod a owl:DatatypeProperty ;
+    rdfs:label "task method"@en ;
+    rdfs:comment "Specifies the method, procedure, or execution mode used for a task."@en ;
+    rdfs:domain sscobfi:Task ;
+    rdfs:range xsd:string .
+
+# --- SSCO-BFI control subclass-specific extensions ---
+sscobfi:baselineScheduleName a owl:DatatypeProperty ;
+    rdfs:label "baseline schedule name"@en ;
+    rdfs:comment "Specifies the name of a baseline schedule represented by a schedule control."@en ;
+    rdfs:domain sscobfi:ScheduleControl ;
+    rdfs:range xsd:string .
+
+sscobfi:earliestStartTime a owl:DatatypeProperty ;
+    rdfs:label "earliest start time"@en ;
+    rdfs:comment "Specifies the earliest permissible start time represented by a schedule control."@en ;
+    rdfs:domain sscobfi:ScheduleControl ;
+    rdfs:range xsd:dateTime .
+
+sscobfi:latestFinishTime a owl:DatatypeProperty ;
+    rdfs:label "latest finish time"@en ;
+    rdfs:comment "Specifies the latest permissible finish time represented by a schedule control."@en ;
+    rdfs:domain sscobfi:ScheduleControl ;
+    rdfs:range xsd:dateTime .
+
+sscobfi:totalFloatValue a owl:DatatypeProperty ;
+    rdfs:label "total float value"@en ;
+    rdfs:comment "Specifies the total float or schedule slack value associated with a schedule control."@en ;
+    rdfs:domain sscobfi:ScheduleControl ;
+    rdfs:range xsd:decimal .
+
+sscobfi:isCriticalControl a owl:DatatypeProperty ;
+    rdfs:label "is critical control"@en ;
+    rdfs:comment "Indicates whether a schedule control belongs to a critical path condition."@en ;
+    rdfs:domain sscobfi:ScheduleControl ;
+    rdfs:range xsd:boolean .
+
+sscobfi:workingDayPattern a owl:DatatypeProperty ;
+    rdfs:label "working day pattern"@en ;
+    rdfs:comment "Specifies the repeating working day pattern associated with a calendar control."@en ;
+    rdfs:domain sscobfi:CalendarControl ;
+    rdfs:range xsd:string .
+
+sscobfi:shiftCount a owl:DatatypeProperty ;
+    rdfs:label "shift count"@en ;
+    rdfs:comment "Specifies the number of work shifts defined by a calendar control."@en ;
+    rdfs:domain sscobfi:CalendarControl ;
+    rdfs:range xsd:positiveInteger .
+
+sscobfi:dailyWorkingHours a owl:DatatypeProperty ;
+    rdfs:label "daily working hours"@en ;
+    rdfs:comment "Specifies the number of working hours per day defined by a calendar control."@en ;
+    rdfs:domain sscobfi:CalendarControl ;
+    rdfs:range xsd:decimal .
+
+sscobfi:nonWorkingDayDescription a owl:DatatypeProperty ;
+    rdfs:label "non-working day description"@en ;
+    rdfs:comment "Specifies a textual description of non-working periods, holidays, or exceptions in a calendar control."@en ;
+    rdfs:domain sscobfi:CalendarControl ;
+    rdfs:range xsd:string .
+
+sscobfi:budgetBaselineAmount a owl:DatatypeProperty ;
+    rdfs:label "budget baseline amount"@en ;
+    rdfs:comment "Specifies the baseline budget amount represented by a cost control."@en ;
+    rdfs:domain sscobfi:CostControl ;
+    rdfs:range xsd:decimal .
+
+sscobfi:costVarianceAmount a owl:DatatypeProperty ;
+    rdfs:label "cost variance amount"@en ;
+    rdfs:comment "Specifies the cost variance value represented by a cost control."@en ;
+    rdfs:domain sscobfi:CostControl ;
+    rdfs:range xsd:decimal .
+
+sscobfi:earnedValueAmount a owl:DatatypeProperty ;
+    rdfs:label "earned value amount"@en ;
+    rdfs:comment "Specifies the earned value amount represented by a cost control."@en ;
+    rdfs:domain sscobfi:CostControl ;
+    rdfs:range xsd:decimal .
+
+sscobfi:costPerformanceIndex a owl:DatatypeProperty ;
+    rdfs:label "cost performance index"@en ;
+    rdfs:comment "Specifies the cost performance index associated with a cost control."@en ;
+    rdfs:domain sscobfi:CostControl ;
+    rdfs:range xsd:decimal .
+
+# --- SSCO-BFI resource and sustainability-related extensions ---
+sscobfi:utilizationRate a owl:DatatypeProperty ;
+    rdfs:label "utilization rate"@en ;
+    rdfs:comment "Specifies the utilization rate of a resource, typically expressed as a ratio or percentage."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:localResourceRatio a owl:DatatypeProperty ;
+    rdfs:label "local resource ratio"@en ;
+    rdfs:comment "Specifies the ratio of a resource that is sourced or deployed locally."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:carbonEmissionValue a owl:DatatypeProperty ;
+    rdfs:label "carbon emission value"@en ;
+    rdfs:comment "Specifies the carbon emission amount associated with a resource during a defined activity, allocation, or consumption period."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:carbonEmissionUnit a owl:DatatypeProperty ;
+    rdfs:label "carbon emission unit"@en ;
+    rdfs:comment "Specifies the local unit of a carbon emission value associated with a resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:string .
+
+sscobfi:localMaterialRatio a owl:DatatypeProperty ;
+    rdfs:label "local material ratio"@en ;
+    rdfs:comment "Specifies the ratio of a material resource obtained from local sources."@en ;
+    rdfs:domain sscobfi:MaterialResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:recycledContentRatio a owl:DatatypeProperty ;
+    rdfs:label "recycled content ratio"@en ;
+    rdfs:comment "Specifies the ratio of recycled content in a material resource."@en ;
+    rdfs:domain sscobfi:MaterialResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:materialWasteRatio a owl:DatatypeProperty ;
+    rdfs:label "material waste ratio"@en ;
+    rdfs:comment "Specifies the ratio of material waste associated with a material resource during a task or process."@en ;
+    rdfs:domain sscobfi:MaterialResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:transportDistanceValue a owl:DatatypeProperty ;
+    rdfs:label "transport distance value"@en ;
+    rdfs:comment "Specifies the transport distance associated with a material resource."@en ;
+    rdfs:domain sscobfi:MaterialResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:transportDistanceUnit a owl:DatatypeProperty ;
+    rdfs:label "transport distance unit"@en ;
+    rdfs:comment "Specifies the local unit of a transport distance associated with a material resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:MaterialResource ;
+    rdfs:range xsd:string .
+
+sscobfi:embodiedCarbonFactor a owl:DatatypeProperty ;
+    rdfs:label "embodied carbon factor"@en ;
+    rdfs:comment "Specifies the embodied carbon factor assigned to a material resource."@en ;
+    rdfs:domain sscobfi:MaterialResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:embodiedCarbonUnit a owl:DatatypeProperty ;
+    rdfs:label "embodied carbon unit"@en ;
+    rdfs:comment "Specifies the local unit of an embodied carbon factor assigned to a material resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:MaterialResource ;
+    rdfs:range xsd:string .
+
+sscobfi:workerCount a owl:DatatypeProperty ;
+    rdfs:label "worker count"@en ;
+    rdfs:comment "Specifies the number of workers represented by a labor resource."@en ;
+    rdfs:domain sscobfi:LaborResource ;
+    rdfs:range xsd:nonNegativeInteger .
+
+sscobfi:localLaborRatio a owl:DatatypeProperty ;
+    rdfs:label "local labor ratio"@en ;
+    rdfs:comment "Specifies the ratio of a labor resource recruited locally."@en ;
+    rdfs:domain sscobfi:LaborResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:femaleLaborRatio a owl:DatatypeProperty ;
+    rdfs:label "female labor ratio"@en ;
+    rdfs:comment "Specifies the ratio of female workers within a labor resource."@en ;
+    rdfs:domain sscobfi:LaborResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:maleLaborRatio a owl:DatatypeProperty ;
+    rdfs:label "male labor ratio"@en ;
+    rdfs:comment "Specifies the ratio of male workers within a labor resource."@en ;
+    rdfs:domain sscobfi:LaborResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:laborHourValue a owl:DatatypeProperty ;
+    rdfs:label "labor hour value"@en ;
+    rdfs:comment "Specifies the number of labor hours associated with a labor resource."@en ;
+    rdfs:domain sscobfi:LaborResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:hourlyWageRate a owl:DatatypeProperty ;
+    rdfs:label "hourly wage rate"@en ;
+    rdfs:comment "Specifies the hourly wage rate associated with a labor resource."@en ;
+    rdfs:domain sscobfi:LaborResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:wageTimeUnit a owl:DatatypeProperty ;
+    rdfs:label "wage time unit"@en ;
+    rdfs:comment "Specifies the local time unit used by an hourly or periodic wage rate associated with a labor resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:LaborResource ;
+    rdfs:range xsd:string .
+
+sscobfi:localEquipmentRatio a owl:DatatypeProperty ;
+    rdfs:label "local equipment ratio"@en ;
+    rdfs:comment "Specifies the ratio of an equipment resource that is deployed from local sources or local contractors."@en ;
+    rdfs:domain sscobfi:EquipmentResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:operatingHoursValue a owl:DatatypeProperty ;
+    rdfs:label "operating hours value"@en ;
+    rdfs:comment "Specifies the operating hours associated with an equipment resource."@en ;
+    rdfs:domain sscobfi:EquipmentResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:fuelConsumptionValue a owl:DatatypeProperty ;
+    rdfs:label "fuel consumption value"@en ;
+    rdfs:comment "Specifies the fuel consumption amount associated with an equipment resource."@en ;
+    rdfs:domain sscobfi:EquipmentResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:fuelConsumptionUnit a owl:DatatypeProperty ;
+    rdfs:label "fuel consumption unit"@en ;
+    rdfs:comment "Specifies the local unit of a fuel consumption value associated with an equipment resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:EquipmentResource ;
+    rdfs:range xsd:string .
+
+sscobfi:energyConsumptionValue a owl:DatatypeProperty ;
+    rdfs:label "energy consumption value"@en ;
+    rdfs:comment "Specifies the energy consumption amount associated with an equipment resource."@en ;
+    rdfs:domain sscobfi:EquipmentResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:energyConsumptionUnit a owl:DatatypeProperty ;
+    rdfs:label "energy consumption unit"@en ;
+    rdfs:comment "Specifies the local unit of an energy consumption value associated with an equipment resource when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:EquipmentResource ;
+    rdfs:range xsd:string .
+
+sscobfi:equipmentUtilizationRate a owl:DatatypeProperty ;
+    rdfs:label "equipment utilization rate"@en ;
+    rdfs:comment "Specifies the utilization rate associated with an equipment resource."@en ;
+    rdfs:domain sscobfi:EquipmentResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:equipmentCarbonEmissionValue a owl:DatatypeProperty ;
+    rdfs:label "equipment carbon emission value"@en ;
+    rdfs:comment "Specifies the carbon emission amount associated specifically with an equipment resource."@en ;
+    rdfs:domain sscobfi:EquipmentResource ;
+    rdfs:range xsd:decimal .
+
+# --- SSCO-BFI structural and analysis extensions ---
+sscobfi:materialName a owl:DatatypeProperty ;
+    rdfs:label "material name"@en ;
+    rdfs:comment "Specifies the name of a material definition."@en ;
+    rdfs:domain sscobfi:MaterialDefinition ;
+    rdfs:range xsd:string .
+
+sscobfi:densityValue a owl:DatatypeProperty ;
+    rdfs:label "density value"@en ;
+    rdfs:comment "Specifies the density value assigned to a material definition."@en ;
+    rdfs:domain sscobfi:MaterialDefinition ;
+    rdfs:range xsd:decimal .
+
+sscobfi:densityUnit a owl:DatatypeProperty ;
+    rdfs:label "density unit"@en ;
+    rdfs:comment "Specifies the local unit of a density value assigned to a material definition when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:MaterialDefinition ;
+    rdfs:range xsd:string .
+
+sscobfi:elasticModulusValue a owl:DatatypeProperty ;
+    rdfs:label "elastic modulus value"@en ;
+    rdfs:comment "Specifies the elastic modulus value assigned to a material definition."@en ;
+    rdfs:domain sscobfi:MaterialDefinition ;
+    rdfs:range xsd:decimal .
+
+sscobfi:modulusUnit a owl:DatatypeProperty ;
+    rdfs:label "modulus unit"@en ;
+    rdfs:comment "Specifies the local unit of an elastic modulus value assigned to a material definition when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:MaterialDefinition ;
+    rdfs:range xsd:string .
+
+sscobfi:compressiveStrengthValue a owl:DatatypeProperty ;
+    rdfs:label "compressive strength value"@en ;
+    rdfs:comment "Specifies the compressive strength value assigned to a material definition."@en ;
+    rdfs:domain sscobfi:MaterialDefinition ;
+    rdfs:range xsd:decimal .
+
+sscobfi:strengthUnit a owl:DatatypeProperty ;
+    rdfs:label "strength unit"@en ;
+    rdfs:comment "Specifies the local unit of a strength value assigned to a material definition when an explicit value-level unit needs to override or supplement the project unit specification."@en ;
+    rdfs:domain sscobfi:MaterialDefinition ;
+    rdfs:range xsd:string .
+
+
+
+# --- SSCO-BFI project-unit-aligned numeric properties ---
+sscobfi:quantityValue a owl:DatatypeProperty ;
+    rdfs:label "quantity value"@en ;
+    rdfs:comment "Specifies the numeric quantity value of a material resource, interpreted by default through the project unit specification unless a local unit is explicitly provided."@en ;
+    rdfs:subPropertyOf sscobfi:consumptionQuantity ;
+    rdfs:domain sscobfi:MaterialResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:resourceCostValue a owl:DatatypeProperty ;
+    rdfs:label "resource cost value"@en ;
+    rdfs:comment "Specifies the numeric resource cost value, interpreted by default through the project unit specification unless a local currency is explicitly provided."@en ;
+    rdfs:subPropertyOf sscobfi:resourceCost ;
+    rdfs:domain sscobfi:Resource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:embodiedCarbonFactorValue a owl:DatatypeProperty ;
+    rdfs:label "embodied carbon factor value"@en ;
+    rdfs:comment "Specifies the numeric embodied carbon factor of a material resource, interpreted by default through the project unit specification unless a local unit is explicitly provided."@en ;
+    rdfs:subPropertyOf sscobfi:embodiedCarbonFactor ;
+    rdfs:domain sscobfi:MaterialResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:hourlyWageRateValue a owl:DatatypeProperty ;
+    rdfs:label "hourly wage rate value"@en ;
+    rdfs:comment "Specifies the numeric wage rate value of a labor resource, interpreted by default through the project unit specification unless a local wage time unit or local currency is explicitly provided."@en ;
+    rdfs:subPropertyOf sscobfi:hourlyWageRate ;
+    rdfs:domain sscobfi:LaborResource ;
+    rdfs:range xsd:decimal .
+
+sscobfi:tensileStrengthValue a owl:DatatypeProperty ;
+    rdfs:label "tensile strength value"@en ;
+    rdfs:comment "Specifies the tensile strength value assigned to a material definition, interpreted by default through the project unit specification unless a local unit is explicitly provided."@en ;
+    rdfs:domain sscobfi:MaterialDefinition ;
+    rdfs:range xsd:decimal .
+
+sscobfi:maxDisplacementValue a owl:DatatypeProperty ;
+    rdfs:label "max displacement value"@en ;
+    rdfs:comment "Specifies the maximum displacement value represented in an analysis result set, interpreted by default through the project unit specification unless a local unit is explicitly provided."@en ;
+    rdfs:domain sscobfi:AnalysisResults ;
+    rdfs:range xsd:decimal .
+
+sscobfi:maxStressValue a owl:DatatypeProperty ;
+    rdfs:label "max stress value"@en ;
+    rdfs:comment "Specifies the maximum stress value represented in an analysis result set, interpreted by default through the project unit specification unless a local unit is explicitly provided."@en ;
+    rdfs:domain sscobfi:AnalysisResults ;
+    rdfs:range xsd:decimal .
+
+sscobfi:maxStrainValue a owl:DatatypeProperty ;
+    rdfs:label "max strain value"@en ;
+    rdfs:comment "Specifies the maximum strain value represented in an analysis result set."@en ;
+    rdfs:domain sscobfi:AnalysisResults ;
+    rdfs:range xsd:decimal .
+sscobfi:analysisSoftwareName a owl:DatatypeProperty ;
+    rdfs:label "analysis software name"@en ;
+    rdfs:comment "Specifies the name of the software used to create or run an analysis model."@en ;
+    rdfs:domain sscobfi:AnalysisModel ;
+    rdfs:range xsd:string .
+
+sscobfi:analysisSoftwareVersion a owl:DatatypeProperty ;
+    rdfs:label "analysis software version"@en ;
+    rdfs:comment "Specifies the software version used to create or run an analysis model."@en ;
+    rdfs:domain sscobfi:AnalysisModel ;
+    rdfs:range xsd:string .
+
+sscobfi:resultsDateTime a owl:DatatypeProperty ;
+    rdfs:label "results date time"@en ;
+    rdfs:comment "Specifies the date and time at which an analysis result set is generated or recorded."@en ;
+    rdfs:domain sscobfi:AnalysisResults ;
+    rdfs:range xsd:dateTime .
