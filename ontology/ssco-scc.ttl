@@ -9,6 +9,31 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://w3id.org/ssco/scc> a owl:Ontology ;
+    rdfs:label "SSCO-SCC"@en ;
+    dcterms:alternative "SSCO"@en ;
+    dcterms:bibliographicCitation "Zhang, S.; Zhang, S.; Wu, Z. SSCO-SCC, version 0.1.1, 2026."@en ;
+    dcterms:contributor "Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Chen Zhu, Power Construction Corporation of China"@en,
+        "Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Zhiyong Jiang, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
+    dcterms:creator "Sherong Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Shihang Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Zhengqiao Wu, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
+    dcterms:description "Sustainability and compliance-checking module of SSCO, defining lifecycle stages, aspects, indicators, performance, stakeholder, requirement, and result concepts."@en ;
+    dcterms:issued "2026-03-15"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-03-18"^^xsd:date ;
+    dcterms:rights "Copyright © 2026 Authors"@en ;
+    dcterms:title "SSCO-SCC"@en ;
+    vann:preferredNamespacePrefix "sscoscc" ;
+    vann:preferredNamespaceUri "https://w3id.org/ssco/scc#" ;
+    owl:imports <https://w3id.org/ssco/bfi>,
+        <https://w3id.org/ssco/core> ;
+    owl:versionIRI <https://w3id.org/ssco/scc/0.1.1> ;
+    owl:versionInfo "0.1.1" ;
+    foaf:homepage <https://w3id.org/ssco> .
+
 sscoscc:CompliantResult a owl:Class ;
     rdfs:label "Compliant Result"@en ;
     rdfs:comment "A compliance result indicating that the checked criterion is satisfied."@en ;
@@ -21,6 +46,13 @@ sscoscc:ConstructionStage a owl:Class ;
     rdfs:comment "A life cycle stage covering on-site construction and installation processes."@en ;
     rdfs:subClassOf sscoscc:LifeCycleStage ;
     skos:prefLabel "Construction Stage"@en .
+
+sscoscc:ConsumerStakeholderCategory a owl:Class ;
+    rdfs:label "Consumer Stakeholder Category"@en ;
+    dcterms:source "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."@en ;
+    rdfs:comment "A stakeholder category representing consumers or end users relevant to social life-cycle assessment."@en ;
+    rdfs:subClassOf sscoscc:StakeholderCategory ;
+    skos:prefLabel "Consumer Stakeholder Category"@en .
 
 sscoscc:EconomicAspect a owl:Class ;
     rdfs:label "Economic Aspect"@en ;
@@ -50,12 +82,12 @@ sscoscc:EnvironmentalAspect a owl:Class ;
     rdfs:subClassOf sscoscc:SustainabilityAspect ;
     skos:prefLabel "Environmental Aspect"@en .
 
-sscoscc:EnvironmentalIndicator a owl:Class ;
-    rdfs:label "Environmental Indicator"@en ;
-    dcterms:source "ISO 21929-1:2011; ISO 21931-2:2019."@en ;
-    rdfs:comment "A sustainability indicator used to assess environmental performance."@en ;
-    rdfs:subClassOf sscoscc:SustainabilityIndicator ;
-    skos:prefLabel "Environmental Indicator"@en .
+sscoscc:LocalCommunityStakeholderCategory a owl:Class ;
+    rdfs:label "Local Community Stakeholder Category"@en ;
+    dcterms:source "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."@en ;
+    rdfs:comment "A stakeholder category representing local communities affected by the product system or constructed asset."@en ;
+    rdfs:subClassOf sscoscc:StakeholderCategory ;
+    skos:prefLabel "Local Community Stakeholder Category"@en .
 
 sscoscc:NoncompliantResult a owl:Class ;
     rdfs:label "Noncompliant Result"@en ;
@@ -89,12 +121,12 @@ sscoscc:SocialAspect a owl:Class ;
     rdfs:subClassOf sscoscc:SustainabilityAspect ;
     skos:prefLabel "Social Aspect"@en .
 
-sscoscc:SocialIndicator a owl:Class ;
-    rdfs:label "Social Indicator"@en ;
-    dcterms:source "EN 16309:2014+A1:2014."@en ;
-    rdfs:comment "A sustainability indicator used to assess social performance."@en ;
-    rdfs:subClassOf sscoscc:SustainabilityIndicator ;
-    skos:prefLabel "Social Indicator"@en .
+sscoscc:SocietyStakeholderCategory a owl:Class ;
+    rdfs:label "Society Stakeholder Category"@en ;
+    dcterms:source "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."@en ;
+    rdfs:comment "A stakeholder category representing society-level concerns relevant to social life-cycle assessment."@en ;
+    rdfs:subClassOf sscoscc:StakeholderCategory ;
+    skos:prefLabel "Society Stakeholder Category"@en .
 
 sscoscc:UseStage a owl:Class ;
     rdfs:label "Use Stage"@en ;
@@ -102,6 +134,32 @@ sscoscc:UseStage a owl:Class ;
     rdfs:comment "A life cycle stage covering use, operation, maintenance, and related service life processes."@en ;
     rdfs:subClassOf sscoscc:LifeCycleStage ;
     skos:prefLabel "Use Stage"@en .
+
+sscoscc:ValueChainActorStakeholderCategory a owl:Class ;
+    rdfs:label "Value Chain Actor Stakeholder Category"@en ;
+    dcterms:source "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."@en ;
+    rdfs:comment "A stakeholder category representing suppliers and other value-chain actors relevant to social life-cycle assessment."@en ;
+    rdfs:subClassOf sscoscc:StakeholderCategory ;
+    skos:prefLabel "Value Chain Actor Stakeholder Category"@en .
+
+sscoscc:WorkerStakeholderCategory a owl:Class ;
+    rdfs:label "Worker Stakeholder Category"@en ;
+    dcterms:source "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."@en ;
+    rdfs:comment "A stakeholder category representing workers or employees affected by the product system or constructed asset."@en ;
+    rdfs:subClassOf sscoscc:StakeholderCategory ;
+    skos:prefLabel "Worker Stakeholder Category"@en .
+
+sscoscc:addressesStakeholderCategory a owl:ObjectProperty ;
+    rdfs:label "addresses stakeholder category"@en ;
+    rdfs:comment "Links a social indicator to the stakeholder category that the indicator addresses."@en ;
+    rdfs:domain sscoscc:SocialIndicator ;
+    rdfs:range sscoscc:StakeholderCategory .
+
+sscoscc:allocationMethodText a owl:DatatypeProperty ;
+    rdfs:label "allocation method text"@en ;
+    rdfs:comment "Specifies the allocation method adopted by the assessment scenario."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
+    rdfs:range xsd:string .
 
 sscoscc:applicabilityText a owl:DatatypeProperty ;
     rdfs:label "applicability text"@en ;
@@ -174,11 +232,41 @@ sscoscc:complianceStatus a owl:DatatypeProperty ;
     rdfs:domain sscoscc:ComplianceResult ;
     rdfs:range xsd:string .
 
+sscoscc:contributesToImpactCategory a owl:ObjectProperty ;
+    rdfs:label "contributes to impact category"@en ;
+    rdfs:comment "Links an inventory flow to an environmental indicator or impact category to which it contributes."@en ;
+    rdfs:domain sscoscc:InventoryFlow ;
+    rdfs:range sscoscc:EnvironmentalIndicator .
+
 sscoscc:correctiveActionText a owl:DatatypeProperty ;
     rdfs:label "corrective action text"@en ;
     rdfs:comment "Specifies a textual statement describing a corrective action proposed or taken for a nonconformity."@en ;
     rdfs:domain sscoscc:Nonconformity ;
     rdfs:range xsd:string .
+
+sscoscc:costCurrency a owl:DatatypeProperty ;
+    rdfs:label "cost currency"@en ;
+    rdfs:comment "Specifies the currency in which a life-cycle cost item is expressed."@en ;
+    rdfs:domain sscoscc:LifeCycleCostItem ;
+    rdfs:range xsd:string .
+
+sscoscc:costOccurrenceYear a owl:DatatypeProperty ;
+    rdfs:label "cost occurrence year"@en ;
+    rdfs:comment "Specifies the year in which a life-cycle cost item occurs within the period of analysis."@en ;
+    rdfs:domain sscoscc:LifeCycleCostItem ;
+    rdfs:range xsd:gYear .
+
+sscoscc:costType a owl:DatatypeProperty ;
+    rdfs:label "cost type"@en ;
+    rdfs:comment "Specifies the type of a life-cycle cost item, such as initial, operation, maintenance, replacement, or end-of-life cost."@en ;
+    rdfs:domain sscoscc:LifeCycleCostItem ;
+    rdfs:range xsd:string .
+
+sscoscc:costValue a owl:DatatypeProperty ;
+    rdfs:label "cost value"@en ;
+    rdfs:comment "Specifies the quantified value of a life-cycle cost item."@en ;
+    rdfs:domain sscoscc:LifeCycleCostItem ;
+    rdfs:range xsd:decimal .
 
 sscoscc:criterionExpression a owl:DatatypeProperty ;
     rdfs:label "criterion expression"@en ;
@@ -192,6 +280,36 @@ sscoscc:criterionIdentifier a owl:DatatypeProperty ;
     rdfs:domain sscoscc:ComplianceCriterion ;
     rdfs:range xsd:string .
 
+sscoscc:cutOffRuleText a owl:DatatypeProperty ;
+    rdfs:label "cut-off rule text"@en ;
+    rdfs:comment "Specifies the cut-off rule adopted by the assessment scenario."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
+    rdfs:range xsd:string .
+
+sscoscc:dataQualityDescription a owl:DatatypeProperty ;
+    rdfs:label "data quality description"@en ;
+    rdfs:comment "Specifies a qualitative description of the data quality assumptions adopted by the assessment scenario."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
+    rdfs:range xsd:string .
+
+sscoscc:derivesFromCostItem a owl:ObjectProperty ;
+    rdfs:label "derives from cost item"@en ;
+    rdfs:comment "Links a sustainability performance value, especially an economic performance value, to the life-cycle cost items from which it is derived."@en ;
+    rdfs:domain sscoscc:SustainabilityPerformance ;
+    rdfs:range sscoscc:LifeCycleCostItem .
+
+sscoscc:derivesFromInventoryFlow a owl:ObjectProperty ;
+    rdfs:label "derives from inventory flow"@en ;
+    rdfs:comment "Links a sustainability performance value to the inventory flow data from which it is derived."@en ;
+    rdfs:domain sscoscc:SustainabilityPerformance ;
+    rdfs:range sscoscc:InventoryFlow .
+
+sscoscc:discountRateValue a owl:DatatypeProperty ;
+    rdfs:label "discount rate value"@en ;
+    rdfs:comment "Specifies the discount rate adopted for life-cycle costing analysis."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
+    rdfs:range xsd:decimal .
+
 sscoscc:evaluatesPerformance a owl:ObjectProperty ;
     rdfs:label "evaluates performance"@en ;
     rdfs:comment "Relates a compliance check to the performance that it evaluates as evidence."@en ;
@@ -203,6 +321,60 @@ sscoscc:evidenceReference a owl:DatatypeProperty ;
     rdfs:comment "Specifies a reference to supporting evidence used in a compliance check."@en ;
     rdfs:domain sscoscc:ComplianceCheck ;
     rdfs:range xsd:string .
+
+sscoscc:flowDirection a owl:DatatypeProperty ;
+    rdfs:label "flow direction"@en ;
+    rdfs:comment "Specifies whether an inventory flow is an input, output, emission, waste, or other directed flow."@en ;
+    rdfs:domain sscoscc:InventoryFlow ;
+    rdfs:range xsd:string .
+
+sscoscc:flowName a owl:DatatypeProperty ;
+    rdfs:label "flow name"@en ;
+    rdfs:comment "Specifies the name of an inventory flow."@en ;
+    rdfs:domain sscoscc:InventoryFlow ;
+    rdfs:range xsd:string .
+
+sscoscc:flowSourceText a owl:DatatypeProperty ;
+    rdfs:label "flow source text"@en ;
+    rdfs:comment "Specifies the data source, dataset, or provenance statement for an inventory flow."@en ;
+    rdfs:domain sscoscc:InventoryFlow ;
+    rdfs:range xsd:string .
+
+sscoscc:flowUnit a owl:DatatypeProperty ;
+    rdfs:label "flow unit"@en ;
+    rdfs:comment "Specifies the unit used to quantify an inventory flow."@en ;
+    rdfs:domain sscoscc:InventoryFlow ;
+    rdfs:range xsd:string .
+
+sscoscc:flowValue a owl:DatatypeProperty ;
+    rdfs:label "flow value"@en ;
+    rdfs:comment "Specifies the quantified value of an inventory flow."@en ;
+    rdfs:domain sscoscc:InventoryFlow ;
+    rdfs:range xsd:decimal .
+
+sscoscc:functionalUnitQuantity a owl:DatatypeProperty ;
+    rdfs:label "functional unit quantity"@en ;
+    rdfs:comment "Specifies the numeric quantity of the functional unit used by the assessment scenario."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
+    rdfs:range xsd:decimal .
+
+sscoscc:functionalUnitText a owl:DatatypeProperty ;
+    rdfs:label "functional unit text"@en ;
+    rdfs:comment "Specifies the textual description of the functional unit or functional equivalent used by the assessment scenario."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
+    rdfs:range xsd:string .
+
+sscoscc:functionalUnitUnit a owl:DatatypeProperty ;
+    rdfs:label "functional unit unit"@en ;
+    rdfs:comment "Specifies the unit associated with the functional unit quantity."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
+    rdfs:range xsd:string .
+
+sscoscc:hasAssessmentScenario a owl:ObjectProperty ;
+    rdfs:label "has assessment scenario"@en ;
+    rdfs:comment "Links a project to the assessment scenario that defines the goal-and-scope conditions of a life-cycle sustainability assessment."@en ;
+    rdfs:domain sscore:Project ;
+    rdfs:range sscoscc:AssessmentScenario .
 
 sscoscc:hasBenchmark a owl:ObjectProperty ;
     rdfs:label "has benchmark"@en ;
@@ -221,6 +393,18 @@ sscoscc:hasIndicator a owl:ObjectProperty ;
     rdfs:comment "Links a sustainability aspect to a sustainability indicator."@en ;
     rdfs:domain sscoscc:SustainabilityAspect ;
     rdfs:range sscoscc:SustainabilityIndicator .
+
+sscoscc:hasInventoryFlow a owl:ObjectProperty ;
+    rdfs:label "has inventory flow"@en ;
+    rdfs:comment "Links a task to an inventory flow used in life cycle inventory analysis."@en ;
+    rdfs:domain sscobfi:Task ;
+    rdfs:range sscoscc:InventoryFlow .
+
+sscoscc:hasLifeCycleCostItem a owl:ObjectProperty ;
+    rdfs:label "has life-cycle cost item"@en ;
+    rdfs:comment "Links a project to a life-cycle cost item considered in life-cycle costing."@en ;
+    rdfs:domain sscore:Project ;
+    rdfs:range sscoscc:LifeCycleCostItem .
 
 sscoscc:indicatesPerformance a owl:ObjectProperty ;
     rdfs:label "indicates performance"@en ;
@@ -258,6 +442,18 @@ sscoscc:isCheckedBy a owl:ObjectProperty ;
     rdfs:domain sscoscc:ComplianceCriterion ;
     rdfs:range sscoscc:ComplianceCheck .
 
+sscoscc:isCostOfResource a owl:ObjectProperty ;
+    rdfs:label "is cost of resource"@en ;
+    rdfs:comment "Links a life-cycle cost item to the resource to which the cost refers."@en ;
+    rdfs:domain sscoscc:LifeCycleCostItem ;
+    rdfs:range sscobfi:Resource .
+
+sscoscc:isCostOfTask a owl:ObjectProperty ;
+    rdfs:label "is cost of task"@en ;
+    rdfs:comment "Links a life-cycle cost item to the task that gives rise to the cost."@en ;
+    rdfs:domain sscoscc:LifeCycleCostItem ;
+    rdfs:range sscobfi:Task .
+
 sscoscc:isSpecifiedBy a owl:ObjectProperty ;
     rdfs:label "is specified by"@en ;
     rdfs:comment "Links a sustainability indicator to a compliance requirement that it specifies."@en ;
@@ -282,6 +478,11 @@ sscoscc:nonconformityText a owl:DatatypeProperty ;
     rdfs:domain sscoscc:Nonconformity ;
     rdfs:range xsd:string .
 
+sscoscc:occursInLifeCycleStage a owl:ObjectProperty ;
+    rdfs:label "occurs in life-cycle stage"@en ;
+    rdfs:comment "Links a task, inventory flow, life-cycle cost item, or other assessment element to the life-cycle stage in which it occurs."@en ;
+    rdfs:range sscoscc:LifeCycleStage .
+
 sscoscc:operationalizes a owl:ObjectProperty ;
     rdfs:label "operationalizes"@en ;
     rdfs:comment "Links an indicator to a metric."@en ;
@@ -304,6 +505,12 @@ sscoscc:performanceValue a owl:DatatypeProperty ;
     rdfs:label "performance value"@en ;
     rdfs:comment "Specifies the scalar value of a reported performance."@en ;
     rdfs:domain sscoscc:Performance ;
+    rdfs:range xsd:decimal .
+
+sscoscc:presentValue a owl:DatatypeProperty ;
+    rdfs:label "present value"@en ;
+    rdfs:comment "Specifies the discounted present value assigned to a life-cycle cost item."@en ;
+    rdfs:domain sscoscc:LifeCycleCostItem ;
     rdfs:range xsd:decimal .
 
 sscoscc:producesComplianceResult a owl:ObjectProperty ;
@@ -352,16 +559,58 @@ sscoscc:requirementText a owl:DatatypeProperty ;
     rdfs:domain sscoscc:ComplianceRequirement ;
     rdfs:range xsd:string .
 
+sscoscc:residualValue a owl:DatatypeProperty ;
+    rdfs:label "residual value"@en ;
+    rdfs:comment "Specifies the residual or terminal value associated with a life-cycle cost item at the end of the period of analysis."@en ;
+    rdfs:domain sscoscc:LifeCycleCostItem ;
+    rdfs:range xsd:decimal .
+
 sscoscc:resultInterpretation a owl:DatatypeProperty ;
     rdfs:label "result interpretation"@en ;
     rdfs:comment "Specifies an interpretative statement associated with a compliance result."@en ;
     rdfs:domain sscoscc:ComplianceResult ;
     rdfs:range xsd:string .
 
+sscoscc:scenarioName a owl:DatatypeProperty ;
+    rdfs:label "scenario name"@en ;
+    rdfs:comment "Specifies the name or short designation of an assessment scenario."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
+    rdfs:range xsd:string .
+
+sscoscc:socialSubcategoryText a owl:DatatypeProperty ;
+    rdfs:label "social subcategory text"@en ;
+    rdfs:comment "Specifies the social subcategory or issue addressed by a social indicator."@en ;
+    rdfs:domain sscoscc:SocialIndicator ;
+    rdfs:range xsd:string .
+
 sscoscc:stageCode a owl:DatatypeProperty ;
     rdfs:label "stage code"@en ;
     rdfs:comment "Specifies a code or short identifier for a life cycle stage."@en ;
     rdfs:domain sscoscc:LifeCycleStage ;
+    rdfs:range xsd:string .
+
+sscoscc:stakeholderScopeText a owl:DatatypeProperty ;
+    rdfs:label "stakeholder scope text"@en ;
+    rdfs:comment "Specifies a textual description of the scope or interpretation of a stakeholder category in the assessment."@en ;
+    rdfs:domain sscoscc:StakeholderCategory ;
+    rdfs:range xsd:string .
+
+sscoscc:studyPeriodUnit a owl:DatatypeProperty ;
+    rdfs:label "study period unit"@en ;
+    rdfs:comment "Specifies the unit of the period of analysis, such as year or month."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
+    rdfs:range xsd:string .
+
+sscoscc:studyPeriodValue a owl:DatatypeProperty ;
+    rdfs:label "study period value"@en ;
+    rdfs:comment "Specifies the numeric period of analysis used for life-cycle costing or other time-based assessment."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
+    rdfs:range xsd:decimal .
+
+sscoscc:systemBoundaryText a owl:DatatypeProperty ;
+    rdfs:label "system boundary text"@en ;
+    rdfs:comment "Specifies the textual statement of the system boundary used by the assessment scenario."@en ;
+    rdfs:domain sscoscc:AssessmentScenario ;
     rdfs:range xsd:string .
 
 sscoscc:technicalAssessmentMethod a owl:DatatypeProperty ;
@@ -382,36 +631,24 @@ sscoscc:thresholdValue a owl:DatatypeProperty ;
     rdfs:domain sscoscc:ComplianceCriterion ;
     rdfs:range xsd:decimal .
 
+sscoscc:uncertaintyText a owl:DatatypeProperty ;
+    rdfs:label "uncertainty text"@en ;
+    rdfs:comment "Specifies an uncertainty statement associated with an inventory flow."@en ;
+    rdfs:domain sscoscc:InventoryFlow ;
+    rdfs:range xsd:string .
+
 sscoscc:usesBenchmark a owl:ObjectProperty ;
     rdfs:label "uses benchmark"@en ;
     rdfs:comment "Links a compliance criterion to a benchmark."@en ;
     rdfs:domain sscoscc:ComplianceCriterion ;
     rdfs:range sscoscc:Benchmark .
 
-<https://w3id.org/ssco/scc> a owl:Ontology ;
-    rdfs:label "SSCO-SCC Ontology"@en ;
-    dcterms:alternative "SSCO-SCC"@en ;
-    dcterms:bibliographicCitation "Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.0, 2026."@en ;
-    dcterms:contributor "Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Chen Zhu, Power Construction Corporation of China"@en,
-        "Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Zhiyong Jiang, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
-    dcterms:creator "Sherong Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Shihang Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Zhengqiao Wu, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
-    dcterms:description "The sustainability compliance checking module of the Structural Sustainability Compliance Ontology, defining sustainability, life-cycle, benchmark, requirement, criterion, performance, check, result, and nonconformity concepts."@en ;
-    dcterms:issued "2026-03-15"^^xsd:date ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-03-16"^^xsd:date ;
-    dcterms:rights "Copyright © 2026 Authors"@en ;
-    dcterms:title "SSCO-SCC Ontology"@en ;
-    vann:preferredNamespacePrefix "sscoscc" ;
-    vann:preferredNamespaceUri "https://w3id.org/ssco/scc#" ;
-    owl:imports <https://w3id.org/ssco/bfi>,
-        <https://w3id.org/ssco/core> ;
-    owl:versionIRI <https://w3id.org/ssco/scc/0.1.0> ;
-    owl:versionInfo "0.1.0" ;
-    foaf:homepage <https://w3id.org/ssco/scc> .
+sscoscc:EnvironmentalIndicator a owl:Class ;
+    rdfs:label "Environmental Indicator"@en ;
+    dcterms:source "ISO 21929-1:2011; ISO 21931-2:2019."@en ;
+    rdfs:comment "A sustainability indicator used to assess environmental performance."@en ;
+    rdfs:subClassOf sscoscc:SustainabilityIndicator ;
+    skos:prefLabel "Environmental Indicator"@en .
 
 sscoscc:FunctionalTechnicalPerformance a owl:Class ;
     rdfs:label "Functional Technical Performance"@en ;
@@ -419,6 +656,13 @@ sscoscc:FunctionalTechnicalPerformance a owl:Class ;
     rdfs:comment "Technical and functional performance considered as a reference condition for sustainability assessment."@en ;
     rdfs:subClassOf sscoscc:Performance ;
     skos:prefLabel "Functional Technical Performance"@en .
+
+sscoscc:SocialIndicator a owl:Class ;
+    rdfs:label "Social Indicator"@en ;
+    dcterms:source "EN 16309:2014+A1:2014."@en ;
+    rdfs:comment "A sustainability indicator used to assess social performance."@en ;
+    rdfs:subClassOf sscoscc:SustainabilityIndicator ;
+    skos:prefLabel "Social Indicator"@en .
 
 sscoscc:SustainabilityPerformance a owl:Class ;
     rdfs:label "Sustainability Performance"@en ;
@@ -456,6 +700,12 @@ sscoscc:ComplianceCheck a owl:Class ;
     rdfs:comment "An activity that checks a criterion and produces a compliance result."@en ;
     skos:prefLabel "Compliance Check"@en .
 
+sscoscc:StakeholderCategory a owl:Class ;
+    rdfs:label "Stakeholder Category"@en ;
+    dcterms:source "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products, stakeholder categories."@en ;
+    rdfs:comment "A category of stakeholders used to scope and interpret social life-cycle assessment issues and indicators."@en ;
+    skos:prefLabel "Stakeholder Category"@en .
+
 sscoscc:LifeCycleStage a owl:Class ;
     rdfs:label "Life Cycle Stage"@en ;
     dcterms:source "ISO 15686-1:2011, life-cycle stages; ISO 15392:2019, life cycle of construction works."@en ;
@@ -467,16 +717,34 @@ sscoscc:ComplianceResult a owl:Class ;
     rdfs:comment "The result produced by a compliance check."@en ;
     skos:prefLabel "Compliance Result"@en .
 
+sscoscc:InventoryFlow a owl:Class ;
+    rdfs:label "Inventory Flow"@en ;
+    dcterms:source "ISO 14044:2006, life cycle inventory analysis."@en ;
+    rdfs:comment "A quantified input, output, emission, waste, or other inventory flow associated with a task and used in life cycle inventory analysis."@en ;
+    skos:prefLabel "Inventory Flow"@en .
+
 sscoscc:Performance a owl:Class ;
     rdfs:label "Performance"@en ;
     dcterms:source "ISO 21931-1:2022, framework for assessing environmental, social and economic performance; ISO 21931-2:2019, framework for assessing environmental performance."@en ;
     rdfs:comment "Performance relevant to sustainability assessment and related technical-functional reference conditions."@en ;
     skos:prefLabel "Performance"@en .
 
+sscoscc:LifeCycleCostItem a owl:Class ;
+    rdfs:label "Life-Cycle Cost Item"@en ;
+    dcterms:source "ISO 15686-5:2017, life-cycle costing and period of analysis."@en ;
+    rdfs:comment "A cost item occurring over a defined period of analysis and contributing to life-cycle costing."@en ;
+    skos:prefLabel "Life-Cycle Cost Item"@en .
+
 sscoscc:ComplianceCriterion a owl:Class ;
     rdfs:label "Compliance Criterion"@en ;
     rdfs:comment "A criterion used to assess whether a compliance requirement is satisfied."@en ;
     skos:prefLabel "Compliance Criterion"@en .
+
+sscoscc:AssessmentScenario a owl:Class ;
+    rdfs:label "Assessment Scenario"@en ;
+    dcterms:source "ISO 14044:2006, goal and scope definition; ISO 15686-5:2017, period of analysis for life-cycle costing."@en ;
+    rdfs:comment "A goal-and-scope setting that states the functional unit, system boundary, study period, allocation method, cut-off rule, and data-quality context used for a life-cycle sustainability assessment."@en ;
+    skos:prefLabel "Assessment Scenario"@en .
 
 sscoscc:SustainabilityIndicator a owl:Class ;
     rdfs:label "Sustainability Indicator"@en ;
