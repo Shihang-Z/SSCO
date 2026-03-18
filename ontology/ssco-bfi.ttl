@@ -8,6 +8,30 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://w3id.org/ssco/bfi> a owl:Ontology ;
+    rdfs:label "SSCO-BFI"@en ;
+    dcterms:alternative "SSCO"@en ;
+    dcterms:bibliographicCitation "Zhang, S.; Zhang, S.; Wu, Z. SSCO-BFI, version 0.1.1, 2026."@en ;
+    dcterms:contributor "Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Chen Zhu, Power Construction Corporation of China"@en,
+        "Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Zhiyong Jiang, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
+    dcterms:creator "Sherong Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Shihang Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Zhengqiao Wu, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
+    dcterms:description "Building and finite-element information module of SSCO, defining structural, process, resource, analysis, and lifecycle inventory/cost concepts."@en ;
+    dcterms:issued "2026-03-15"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-03-18"^^xsd:date ;
+    dcterms:rights "Copyright © 2026 Authors"@en ;
+    dcterms:title "SSCO-BFI"@en ;
+    vann:preferredNamespacePrefix "sscobfi" ;
+    vann:preferredNamespaceUri "https://w3id.org/ssco/bfi#" ;
+    owl:imports <https://w3id.org/ssco/core> ;
+    owl:versionIRI <https://w3id.org/ssco/bfi/0.1.1> ;
+    owl:versionInfo "0.1.1" ;
+    foaf:homepage <https://w3id.org/ssco> .
+
 sscobfi:FinalAnalysisState a owl:Class ;
     rdfs:label "Final Analysis State"@en ;
     dcterms:source "ISO 10303-104:2000, model state structures."@en ;
@@ -841,30 +865,6 @@ sscobfi:workingDayPattern a owl:DatatypeProperty ;
     rdfs:comment "Specifies the repeating working day pattern associated with a calendar control."@en ;
     rdfs:domain sscobfi:CalendarControl ;
     rdfs:range xsd:string .
-
-<https://w3id.org/ssco/bfi> a owl:Ontology ;
-    rdfs:label "SSCO-BFI Ontology"@en ;
-    dcterms:alternative "SSCO-BFI"@en ;
-    dcterms:bibliographicCitation "Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.0, 2026."@en ;
-    dcterms:contributor "Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Chen Zhu, Power Construction Corporation of China"@en,
-        "Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Zhiyong Jiang, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
-    dcterms:creator "Sherong Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Shihang Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Zhengqiao Wu, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
-    dcterms:description "The BIM-FEM integration module of the Structural Sustainability Compliance Ontology, defining process, resource, structural, material, analysis, state, constraint, and result concepts."@en ;
-    dcterms:issued "2026-03-15"^^xsd:date ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-03-16"^^xsd:date ;
-    dcterms:rights "Copyright © 2026 Authors"@en ;
-    dcterms:title "SSCO-BFI Ontology"@en ;
-    vann:preferredNamespacePrefix "sscobfi" ;
-    vann:preferredNamespaceUri "https://w3id.org/ssco/bfi#" ;
-    owl:imports <https://w3id.org/ssco/core> ;
-    owl:versionIRI <https://w3id.org/ssco/bfi/0.1.0> ;
-    owl:versionInfo "0.1.0" ;
-    foaf:homepage <https://w3id.org/ssco/bfi> .
 
 sscobfi:consumptionQuantity a owl:DatatypeProperty ;
     rdfs:label "consumption quantity"@en ;
