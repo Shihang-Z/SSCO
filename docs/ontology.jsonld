@@ -41,6 +41,9 @@
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#gYear",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
   "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -55,7 +58,7 @@
   } ],
   "http://purl.org/dc/terms/bibliographicCitation" : [ {
     "@language" : "en",
-    "@value" : "Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.0, 2026."
+    "@value" : "Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.1, 2026."
   } ],
   "http://purl.org/dc/terms/contributor" : [ {
     "@language" : "en",
@@ -93,7 +96,7 @@
   } ],
   "http://purl.org/dc/terms/modified" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-03-16"
+    "@value" : "2026-03-18"
   } ],
   "http://purl.org/dc/terms/rights" : [ {
     "@language" : "en",
@@ -114,10 +117,10 @@
     "@value" : "Structural Sustainability Compliance Ontology"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/ssco/0.1.0"
+    "@id" : "https://w3id.org/ssco/0.1.1"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.1.0"
+    "@value" : "0.1.1"
   } ],
   "http://xmlns.com/foaf/0.1/homepage" : [ {
     "@id" : "https://w3id.org/ssco"
@@ -3623,6 +3626,25 @@
     "@id" : "https://w3id.org/ssco/core#Classification"
   } ]
 }, {
+  "@id" : "https://w3id.org/ssco/scc#AssessmentScenario",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@language" : "en",
+    "@value" : "ISO 14044:2006, goal and scope definition; ISO 15686-5:2017, period of analysis for life-cycle costing."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A goal-and-scope setting that states the functional unit, system boundary, study period, allocation method, cut-off rule, and data-quality context used for a life-cycle sustainability assessment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Assessment Scenario"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Assessment Scenario"
+  } ]
+}, {
   "@id" : "https://w3id.org/ssco/scc#Benchmark",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
@@ -3744,6 +3766,28 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Construction Stage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#ConsumerStakeholderCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@language" : "en",
+    "@value" : "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A stakeholder category representing consumers or end users relevant to social life-cycle assessment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Consumer Stakeholder Category"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/ssco/scc#StakeholderCategory"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Consumer Stakeholder Category"
   } ]
 }, {
   "@id" : "https://w3id.org/ssco/scc#EconomicAspect",
@@ -3878,6 +3922,44 @@
     "@value" : "Functional Technical Performance"
   } ]
 }, {
+  "@id" : "https://w3id.org/ssco/scc#InventoryFlow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@language" : "en",
+    "@value" : "ISO 14044:2006, life cycle inventory analysis."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A quantified input, output, emission, waste, or other inventory flow associated with a task and used in life cycle inventory analysis."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Inventory Flow"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Inventory Flow"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@language" : "en",
+    "@value" : "ISO 15686-5:2017, life-cycle costing and period of analysis."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A cost item occurring over a defined period of analysis and contributing to life-cycle costing."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Life-Cycle Cost Item"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Life-Cycle Cost Item"
+  } ]
+}, {
   "@id" : "https://w3id.org/ssco/scc#LifeCycleStage",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
@@ -3895,6 +3977,28 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Life Cycle Stage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#LocalCommunityStakeholderCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@language" : "en",
+    "@value" : "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A stakeholder category representing local communities affected by the product system or constructed asset."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Local Community Stakeholder Category"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/ssco/scc#StakeholderCategory"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Local Community Stakeholder Category"
   } ]
 }, {
   "@id" : "https://w3id.org/ssco/scc#NoncompliantResult",
@@ -4055,6 +4159,47 @@
     "@value" : "Social Indicator"
   } ]
 }, {
+  "@id" : "https://w3id.org/ssco/scc#SocietyStakeholderCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@language" : "en",
+    "@value" : "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A stakeholder category representing society-level concerns relevant to social life-cycle assessment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Society Stakeholder Category"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/ssco/scc#StakeholderCategory"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Society Stakeholder Category"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#StakeholderCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@language" : "en",
+    "@value" : "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products, stakeholder categories."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A category of stakeholders used to scope and interpret social life-cycle assessment issues and indicators."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Stakeholder Category"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Stakeholder Category"
+  } ]
+}, {
   "@id" : "https://w3id.org/ssco/scc#SustainabilityAspect",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
@@ -4135,6 +4280,84 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Use Stage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#ValueChainActorStakeholderCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@language" : "en",
+    "@value" : "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A stakeholder category representing suppliers and other value-chain actors relevant to social life-cycle assessment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Value Chain Actor Stakeholder Category"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/ssco/scc#StakeholderCategory"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Value Chain Actor Stakeholder Category"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#WorkerStakeholderCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@language" : "en",
+    "@value" : "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A stakeholder category representing workers or employees affected by the product system or constructed asset."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Worker Stakeholder Category"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/ssco/scc#StakeholderCategory"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
+    "@language" : "en",
+    "@value" : "Worker Stakeholder Category"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#addressesStakeholderCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a social indicator to the stakeholder category that the indicator addresses."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#SocialIndicator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "addresses stakeholder category"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ssco/scc#StakeholderCategory"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#allocationMethodText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the allocation method adopted by the assessment scenario."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "allocation method text"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "https://w3id.org/ssco/scc#applicabilityText",
@@ -4338,6 +4561,23 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
+  "@id" : "https://w3id.org/ssco/scc#contributesToImpactCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links an inventory flow to an environmental indicator or impact category to which it contributes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#InventoryFlow"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "contributes to impact category"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ssco/scc#EnvironmentalIndicator"
+  } ]
+}, {
   "@id" : "https://w3id.org/ssco/scc#correctiveActionText",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -4353,6 +4593,74 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#costCurrency",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the currency in which a life-cycle cost item is expressed."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "cost currency"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#costOccurrenceYear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the year in which a life-cycle cost item occurs within the period of analysis."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "cost occurrence year"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#gYear"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#costType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the type of a life-cycle cost item, such as initial, operation, maintenance, replacement, or end-of-life cost."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "cost type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#costValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the quantified value of a life-cycle cost item."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "cost value"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
   } ]
 }, {
   "@id" : "https://w3id.org/ssco/scc#criterionExpression",
@@ -4389,6 +4697,91 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
+  "@id" : "https://w3id.org/ssco/scc#cutOffRuleText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the cut-off rule adopted by the assessment scenario."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "cut-off rule text"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#dataQualityDescription",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies a qualitative description of the data quality assumptions adopted by the assessment scenario."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "data quality description"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#derivesFromCostItem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a sustainability performance value, especially an economic performance value, to the life-cycle cost items from which it is derived."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#SustainabilityPerformance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "derives from cost item"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#derivesFromInventoryFlow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a sustainability performance value to the inventory flow data from which it is derived."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#SustainabilityPerformance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "derives from inventory flow"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ssco/scc#InventoryFlow"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#discountRateValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the discount rate adopted for life-cycle costing analysis."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "discount rate value"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
   "@id" : "https://w3id.org/ssco/scc#evaluatesPerformance",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -4421,6 +4814,159 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#flowDirection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies whether an inventory flow is an input, output, emission, waste, or other directed flow."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#InventoryFlow"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "flow direction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#flowName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the name of an inventory flow."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#InventoryFlow"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "flow name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#flowSourceText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the data source, dataset, or provenance statement for an inventory flow."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#InventoryFlow"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "flow source text"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#flowUnit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the unit used to quantify an inventory flow."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#InventoryFlow"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "flow unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#flowValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the quantified value of an inventory flow."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#InventoryFlow"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "flow value"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#functionalUnitQuantity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the numeric quantity of the functional unit used by the assessment scenario."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "functional unit quantity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#functionalUnitText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the textual description of the functional unit or functional equivalent used by the assessment scenario."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "functional unit text"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#functionalUnitUnit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the unit associated with the functional unit quantity."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "functional unit unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#hasAssessmentScenario",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a project to the assessment scenario that defines the goal-and-scope conditions of a life-cycle sustainability assessment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/core#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has assessment scenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
   } ]
 }, {
   "@id" : "https://w3id.org/ssco/scc#hasBenchmark",
@@ -4472,6 +5018,40 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/ssco/scc#SustainabilityIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#hasInventoryFlow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a task to an inventory flow used in life cycle inventory analysis."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/bfi#Task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has inventory flow"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ssco/scc#InventoryFlow"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#hasLifeCycleCostItem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a project to a life-cycle cost item considered in life-cycle costing."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/core#Project"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has life-cycle cost item"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem"
   } ]
 }, {
   "@id" : "https://w3id.org/ssco/scc#indicatesPerformance",
@@ -4576,6 +5156,40 @@
     "@id" : "https://w3id.org/ssco/scc#ComplianceCheck"
   } ]
 }, {
+  "@id" : "https://w3id.org/ssco/scc#isCostOfResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a life-cycle cost item to the resource to which the cost refers."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is cost of resource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ssco/bfi#Resource"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#isCostOfTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a life-cycle cost item to the task that gives rise to the cost."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is cost of task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ssco/bfi#Task"
+  } ]
+}, {
   "@id" : "https://w3id.org/ssco/scc#isSpecifiedBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -4644,6 +5258,20 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
+  "@id" : "https://w3id.org/ssco/scc#occursInLifeCycleStage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a task, inventory flow, life-cycle cost item, or other assessment element to the life-cycle stage in which it occurs."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "occurs in life-cycle stage"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleStage"
+  } ]
+}, {
   "@id" : "https://w3id.org/ssco/scc#operationalizes",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -4707,6 +5335,23 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "performance value"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#presentValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the discounted present value assigned to a life-cycle cost item."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "present value"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
@@ -4842,6 +5487,23 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
+  "@id" : "https://w3id.org/ssco/scc#residualValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the residual or terminal value associated with a life-cycle cost item at the end of the period of analysis."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#LifeCycleCostItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "residual value"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
   "@id" : "https://w3id.org/ssco/scc#resultInterpretation",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -4859,6 +5521,40 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
+  "@id" : "https://w3id.org/ssco/scc#scenarioName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the name or short designation of an assessment scenario."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "scenario name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#socialSubcategoryText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the social subcategory or issue addressed by a social indicator."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#SocialIndicator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "social subcategory text"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
   "@id" : "https://w3id.org/ssco/scc#stageCode",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -4871,6 +5567,74 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "stage code"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#stakeholderScopeText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies a textual description of the scope or interpretation of a stakeholder category in the assessment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#StakeholderCategory"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "stakeholder scope text"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#studyPeriodUnit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the unit of the period of analysis, such as year or month."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "study period unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#studyPeriodValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the numeric period of analysis used for life-cycle costing or other time-based assessment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "study period value"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#systemBoundaryText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies the textual statement of the system boundary used by the assessment scenario."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#AssessmentScenario"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "system boundary text"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
@@ -4925,6 +5689,23 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "https://w3id.org/ssco/scc#uncertaintyText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Specifies an uncertainty statement associated with an inventory flow."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/ssco/scc#InventoryFlow"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "uncertainty text"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "https://w3id.org/ssco/scc#usesBenchmark",
