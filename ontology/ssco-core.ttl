@@ -8,6 +8,29 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://w3id.org/ssco/core> a owl:Ontology ;
+    rdfs:label "SSCO-Core"@en ;
+    dcterms:alternative "SSCO"@en ;
+    dcterms:bibliographicCitation "Zhang, S.; Zhang, S.; Wu, Z. SSCO-Core, version 0.1.1, 2026."@en ;
+    dcterms:contributor "Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Chen Zhu, Power Construction Corporation of China"@en,
+        "Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Zhiyong Jiang, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
+    dcterms:creator "Sherong Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Shihang Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
+        "Zhengqiao Wu, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
+    dcterms:description "Core module of the Structural Sustainability Compliance Ontology (SSCO), defining general project, objective, metric, classification, unit, and assessment-scenario concepts."@en ;
+    dcterms:issued "2026-03-15"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-03-18"^^xsd:date ;
+    dcterms:rights "Copyright © 2026 Authors"@en ;
+    dcterms:title "SSCO-Core"@en ;
+    vann:preferredNamespacePrefix "sscore" ;
+    vann:preferredNamespaceUri "https://w3id.org/ssco/core#" ;
+    owl:versionIRI <https://w3id.org/ssco/core/0.1.1> ;
+    owl:versionInfo "0.1.1" ;
+    foaf:homepage <https://w3id.org/ssco> .
+
 sscore:belongsToClassification a owl:ObjectProperty ;
     rdfs:label "belongs to classification"@en ;
     rdfs:comment "Links a classification reference to a classification."@en ;
@@ -196,29 +219,6 @@ sscore:usesClassification a owl:ObjectProperty ;
     rdfs:comment "Links a project to a classification system."@en ;
     rdfs:domain sscore:Project ;
     rdfs:range sscore:Classification .
-
-<https://w3id.org/ssco/core> a owl:Ontology ;
-    rdfs:label "SSCO-Core Ontology"@en ;
-    dcterms:alternative "SSCO-Core"@en ;
-    dcterms:bibliographicCitation "Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.0, 2026."@en ;
-    dcterms:contributor "Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Chen Zhu, Power Construction Corporation of China"@en,
-        "Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Zhiyong Jiang, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
-    dcterms:creator "Sherong Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Shihang Zhang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en,
-        "Zhengqiao Wu, China Water Resources Beifang Investigation, Design and Research Co. Ltd."@en ;
-    dcterms:description "The core module of the Structural Sustainability Compliance Ontology, defining project-context, objective, metric, classification, and unit-specification concepts."@en ;
-    dcterms:issued "2026-03-15"^^xsd:date ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-03-16"^^xsd:date ;
-    dcterms:rights "Copyright © 2026 Authors"@en ;
-    dcterms:title "SSCO-Core Ontology"@en ;
-    vann:preferredNamespacePrefix "sscore" ;
-    vann:preferredNamespaceUri "https://w3id.org/ssco/core#" ;
-    owl:versionIRI <https://w3id.org/ssco/core/0.1.0> ;
-    owl:versionInfo "0.1.0" ;
-    foaf:homepage <https://w3id.org/ssco/core> .
 
 sscore:UnitSpecification a owl:Class ;
     rdfs:label "Unit Specification"@en ;
