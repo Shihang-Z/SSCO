@@ -1,7 +1,7 @@
 <https://w3id.org/ssco> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/ssco> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/ssco/0.1.0> .
+<https://w3id.org/ssco> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/ssco/0.1.1> .
 <https://w3id.org/ssco> <http://purl.org/dc/terms/alternative> "SSCO"@en .
-<https://w3id.org/ssco> <http://purl.org/dc/terms/bibliographicCitation> "Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.0, 2026."@en .
+<https://w3id.org/ssco> <http://purl.org/dc/terms/bibliographicCitation> "Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.1, 2026."@en .
 <https://w3id.org/ssco> <http://purl.org/dc/terms/contributor> "Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en .
 <https://w3id.org/ssco> <http://purl.org/dc/terms/contributor> "Chen Zhu, Power Construction Corporation of China"@en .
 <https://w3id.org/ssco> <http://purl.org/dc/terms/contributor> "Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University"@en .
@@ -12,13 +12,13 @@
 <https://w3id.org/ssco> <http://purl.org/dc/terms/description> "An all-in-one publication version of the Structural Sustainability Compliance Ontology, integrating the SSCO-Core, SSCO-BFI, and SSCO-SCC modules."@en .
 <https://w3id.org/ssco> <http://purl.org/dc/terms/issued> "2026-03-15"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/ssco> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-<https://w3id.org/ssco> <http://purl.org/dc/terms/modified> "2026-03-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/ssco> <http://purl.org/dc/terms/modified> "2026-03-18"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/ssco> <http://purl.org/dc/terms/rights> "Copyright © 2026 Authors"@en .
 <https://w3id.org/ssco> <http://purl.org/dc/terms/title> "Structural Sustainability Compliance Ontology"@en .
 <https://w3id.org/ssco> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ssco" .
 <https://w3id.org/ssco> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/ssco#" .
 <https://w3id.org/ssco> <http://www.w3.org/2000/01/rdf-schema#label> "Structural Sustainability Compliance Ontology"@en .
-<https://w3id.org/ssco> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
+<https://w3id.org/ssco> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.1" .
 <https://w3id.org/ssco> <http://xmlns.com/foaf/0.1/homepage> <https://w3id.org/ssco> .
 # 
 # 
@@ -85,6 +85,9 @@
 # 
 # http://www.w3.org/2001/XMLSchema#date
 <http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# http://www.w3.org/2001/XMLSchema#gYear
+<http://www.w3.org/2001/XMLSchema#gYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
 # 
 # 
 # 
@@ -343,6 +346,13 @@
 <https://w3id.org/ssco/core#usesClassification> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a project to a classification system."@en .
 <https://w3id.org/ssco/core#usesClassification> <http://www.w3.org/2000/01/rdf-schema#label> "uses classification"@en .
 # 
+# https://w3id.org/ssco/scc#addressesStakeholderCategory
+<https://w3id.org/ssco/scc#addressesStakeholderCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ssco/scc#addressesStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#SocialIndicator> .
+<https://w3id.org/ssco/scc#addressesStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/scc#StakeholderCategory> .
+<https://w3id.org/ssco/scc#addressesStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a social indicator to the stakeholder category that the indicator addresses."@en .
+<https://w3id.org/ssco/scc#addressesStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#label> "addresses stakeholder category"@en .
+# 
 # https://w3id.org/ssco/scc#appliesToLifeCycleStage
 <https://w3id.org/ssco/scc#appliesToLifeCycleStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ssco/scc#appliesToLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#SustainabilityIndicator> .
@@ -364,12 +374,40 @@
 <https://w3id.org/ssco/scc#checksCriterion> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a compliance check to the compliance criterion that it checks."@en .
 <https://w3id.org/ssco/scc#checksCriterion> <http://www.w3.org/2000/01/rdf-schema#label> "checks criterion"@en .
 # 
+# https://w3id.org/ssco/scc#contributesToImpactCategory
+<https://w3id.org/ssco/scc#contributesToImpactCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ssco/scc#contributesToImpactCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#InventoryFlow> .
+<https://w3id.org/ssco/scc#contributesToImpactCategory> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/scc#EnvironmentalIndicator> .
+<https://w3id.org/ssco/scc#contributesToImpactCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an inventory flow to an environmental indicator or impact category to which it contributes."@en .
+<https://w3id.org/ssco/scc#contributesToImpactCategory> <http://www.w3.org/2000/01/rdf-schema#label> "contributes to impact category"@en .
+# 
+# https://w3id.org/ssco/scc#derivesFromCostItem
+<https://w3id.org/ssco/scc#derivesFromCostItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ssco/scc#derivesFromCostItem> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#SustainabilityPerformance> .
+<https://w3id.org/ssco/scc#derivesFromCostItem> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/scc#LifeCycleCostItem> .
+<https://w3id.org/ssco/scc#derivesFromCostItem> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a sustainability performance value, especially an economic performance value, to the life-cycle cost items from which it is derived."@en .
+<https://w3id.org/ssco/scc#derivesFromCostItem> <http://www.w3.org/2000/01/rdf-schema#label> "derives from cost item"@en .
+# 
+# https://w3id.org/ssco/scc#derivesFromInventoryFlow
+<https://w3id.org/ssco/scc#derivesFromInventoryFlow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ssco/scc#derivesFromInventoryFlow> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#SustainabilityPerformance> .
+<https://w3id.org/ssco/scc#derivesFromInventoryFlow> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/scc#InventoryFlow> .
+<https://w3id.org/ssco/scc#derivesFromInventoryFlow> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a sustainability performance value to the inventory flow data from which it is derived."@en .
+<https://w3id.org/ssco/scc#derivesFromInventoryFlow> <http://www.w3.org/2000/01/rdf-schema#label> "derives from inventory flow"@en .
+# 
 # https://w3id.org/ssco/scc#evaluatesPerformance
 <https://w3id.org/ssco/scc#evaluatesPerformance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ssco/scc#evaluatesPerformance> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#ComplianceCheck> .
 <https://w3id.org/ssco/scc#evaluatesPerformance> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/scc#Performance> .
 <https://w3id.org/ssco/scc#evaluatesPerformance> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a compliance check to the performance that it evaluates as evidence."@en .
 <https://w3id.org/ssco/scc#evaluatesPerformance> <http://www.w3.org/2000/01/rdf-schema#label> "evaluates performance"@en .
+# 
+# https://w3id.org/ssco/scc#hasAssessmentScenario
+<https://w3id.org/ssco/scc#hasAssessmentScenario> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ssco/scc#hasAssessmentScenario> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/core#Project> .
+<https://w3id.org/ssco/scc#hasAssessmentScenario> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#hasAssessmentScenario> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a project to the assessment scenario that defines the goal-and-scope conditions of a life-cycle sustainability assessment."@en .
+<https://w3id.org/ssco/scc#hasAssessmentScenario> <http://www.w3.org/2000/01/rdf-schema#label> "has assessment scenario"@en .
 # 
 # https://w3id.org/ssco/scc#hasBenchmark
 <https://w3id.org/ssco/scc#hasBenchmark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -392,6 +430,20 @@
 <https://w3id.org/ssco/scc#hasIndicator> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a sustainability aspect to a sustainability indicator."@en .
 <https://w3id.org/ssco/scc#hasIndicator> <http://www.w3.org/2000/01/rdf-schema#label> "has indicator"@en .
 # 
+# https://w3id.org/ssco/scc#hasInventoryFlow
+<https://w3id.org/ssco/scc#hasInventoryFlow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ssco/scc#hasInventoryFlow> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/bfi#Task> .
+<https://w3id.org/ssco/scc#hasInventoryFlow> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/scc#InventoryFlow> .
+<https://w3id.org/ssco/scc#hasInventoryFlow> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a task to an inventory flow used in life cycle inventory analysis."@en .
+<https://w3id.org/ssco/scc#hasInventoryFlow> <http://www.w3.org/2000/01/rdf-schema#label> "has inventory flow"@en .
+# 
+# https://w3id.org/ssco/scc#hasLifeCycleCostItem
+<https://w3id.org/ssco/scc#hasLifeCycleCostItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ssco/scc#hasLifeCycleCostItem> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/core#Project> .
+<https://w3id.org/ssco/scc#hasLifeCycleCostItem> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/scc#LifeCycleCostItem> .
+<https://w3id.org/ssco/scc#hasLifeCycleCostItem> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a project to a life-cycle cost item considered in life-cycle costing."@en .
+<https://w3id.org/ssco/scc#hasLifeCycleCostItem> <http://www.w3.org/2000/01/rdf-schema#label> "has life-cycle cost item"@en .
+# 
 # https://w3id.org/ssco/scc#indicatesPerformance
 <https://w3id.org/ssco/scc#indicatesPerformance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ssco/scc#indicatesPerformance> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#SustainabilityIndicator> .
@@ -413,6 +465,20 @@
 <https://w3id.org/ssco/scc#isCheckedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a compliance criterion to a compliance check."@en .
 <https://w3id.org/ssco/scc#isCheckedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is checked by"@en .
 # 
+# https://w3id.org/ssco/scc#isCostOfResource
+<https://w3id.org/ssco/scc#isCostOfResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ssco/scc#isCostOfResource> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#LifeCycleCostItem> .
+<https://w3id.org/ssco/scc#isCostOfResource> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/bfi#Resource> .
+<https://w3id.org/ssco/scc#isCostOfResource> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a life-cycle cost item to the resource to which the cost refers."@en .
+<https://w3id.org/ssco/scc#isCostOfResource> <http://www.w3.org/2000/01/rdf-schema#label> "is cost of resource"@en .
+# 
+# https://w3id.org/ssco/scc#isCostOfTask
+<https://w3id.org/ssco/scc#isCostOfTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ssco/scc#isCostOfTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#LifeCycleCostItem> .
+<https://w3id.org/ssco/scc#isCostOfTask> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/bfi#Task> .
+<https://w3id.org/ssco/scc#isCostOfTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a life-cycle cost item to the task that gives rise to the cost."@en .
+<https://w3id.org/ssco/scc#isCostOfTask> <http://www.w3.org/2000/01/rdf-schema#label> "is cost of task"@en .
+# 
 # https://w3id.org/ssco/scc#isSpecifiedBy
 <https://w3id.org/ssco/scc#isSpecifiedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/ssco/scc#isSpecifiedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#SustainabilityIndicator> .
@@ -426,6 +492,12 @@
 <https://w3id.org/ssco/scc#isSubjectToRequirement> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/scc#ComplianceRequirement> .
 <https://w3id.org/ssco/scc#isSubjectToRequirement> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a project to a compliance requirement."@en .
 <https://w3id.org/ssco/scc#isSubjectToRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "is subject to requirement"@en .
+# 
+# https://w3id.org/ssco/scc#occursInLifeCycleStage
+<https://w3id.org/ssco/scc#occursInLifeCycleStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ssco/scc#occursInLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ssco/scc#LifeCycleStage> .
+<https://w3id.org/ssco/scc#occursInLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a task, inventory flow, life-cycle cost item, or other assessment element to the life-cycle stage in which it occurs."@en .
+<https://w3id.org/ssco/scc#occursInLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#label> "occurs in life-cycle stage"@en .
 # 
 # https://w3id.org/ssco/scc#operationalizes
 <https://w3id.org/ssco/scc#operationalizes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -1403,6 +1475,13 @@
 <https://w3id.org/ssco/core#targetValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the target value associated with an objective or metric."@en .
 <https://w3id.org/ssco/core#targetValue> <http://www.w3.org/2000/01/rdf-schema#label> "target value"@en .
 # 
+# https://w3id.org/ssco/scc#allocationMethodText
+<https://w3id.org/ssco/scc#allocationMethodText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#allocationMethodText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#allocationMethodText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#allocationMethodText> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the allocation method adopted by the assessment scenario."@en .
+<https://w3id.org/ssco/scc#allocationMethodText> <http://www.w3.org/2000/01/rdf-schema#label> "allocation method text"@en .
+# 
 # https://w3id.org/ssco/scc#applicabilityText
 <https://w3id.org/ssco/scc#applicabilityText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ssco/scc#applicabilityText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#ComplianceCriterion> .
@@ -1472,6 +1551,34 @@
 <https://w3id.org/ssco/scc#correctiveActionText> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies a textual statement describing a corrective action proposed or taken for a nonconformity."@en .
 <https://w3id.org/ssco/scc#correctiveActionText> <http://www.w3.org/2000/01/rdf-schema#label> "corrective action text"@en .
 # 
+# https://w3id.org/ssco/scc#costCurrency
+<https://w3id.org/ssco/scc#costCurrency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#costCurrency> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#LifeCycleCostItem> .
+<https://w3id.org/ssco/scc#costCurrency> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#costCurrency> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the currency in which a life-cycle cost item is expressed."@en .
+<https://w3id.org/ssco/scc#costCurrency> <http://www.w3.org/2000/01/rdf-schema#label> "cost currency"@en .
+# 
+# https://w3id.org/ssco/scc#costOccurrenceYear
+<https://w3id.org/ssco/scc#costOccurrenceYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#costOccurrenceYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#LifeCycleCostItem> .
+<https://w3id.org/ssco/scc#costOccurrenceYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#gYear> .
+<https://w3id.org/ssco/scc#costOccurrenceYear> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the year in which a life-cycle cost item occurs within the period of analysis."@en .
+<https://w3id.org/ssco/scc#costOccurrenceYear> <http://www.w3.org/2000/01/rdf-schema#label> "cost occurrence year"@en .
+# 
+# https://w3id.org/ssco/scc#costType
+<https://w3id.org/ssco/scc#costType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#costType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#LifeCycleCostItem> .
+<https://w3id.org/ssco/scc#costType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#costType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the type of a life-cycle cost item, such as initial, operation, maintenance, replacement, or end-of-life cost."@en .
+<https://w3id.org/ssco/scc#costType> <http://www.w3.org/2000/01/rdf-schema#label> "cost type"@en .
+# 
+# https://w3id.org/ssco/scc#costValue
+<https://w3id.org/ssco/scc#costValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#costValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#LifeCycleCostItem> .
+<https://w3id.org/ssco/scc#costValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/ssco/scc#costValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the quantified value of a life-cycle cost item."@en .
+<https://w3id.org/ssco/scc#costValue> <http://www.w3.org/2000/01/rdf-schema#label> "cost value"@en .
+# 
 # https://w3id.org/ssco/scc#criterionExpression
 <https://w3id.org/ssco/scc#criterionExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ssco/scc#criterionExpression> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#ComplianceCriterion> .
@@ -1486,12 +1593,89 @@
 <https://w3id.org/ssco/scc#criterionIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies an identifier assigned to a compliance criterion."@en .
 <https://w3id.org/ssco/scc#criterionIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "criterion identifier"@en .
 # 
+# https://w3id.org/ssco/scc#cutOffRuleText
+<https://w3id.org/ssco/scc#cutOffRuleText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#cutOffRuleText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#cutOffRuleText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#cutOffRuleText> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the cut-off rule adopted by the assessment scenario."@en .
+<https://w3id.org/ssco/scc#cutOffRuleText> <http://www.w3.org/2000/01/rdf-schema#label> "cut-off rule text"@en .
+# 
+# https://w3id.org/ssco/scc#dataQualityDescription
+<https://w3id.org/ssco/scc#dataQualityDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#dataQualityDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#dataQualityDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#dataQualityDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies a qualitative description of the data quality assumptions adopted by the assessment scenario."@en .
+<https://w3id.org/ssco/scc#dataQualityDescription> <http://www.w3.org/2000/01/rdf-schema#label> "data quality description"@en .
+# 
+# https://w3id.org/ssco/scc#discountRateValue
+<https://w3id.org/ssco/scc#discountRateValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#discountRateValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#discountRateValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/ssco/scc#discountRateValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the discount rate adopted for life-cycle costing analysis."@en .
+<https://w3id.org/ssco/scc#discountRateValue> <http://www.w3.org/2000/01/rdf-schema#label> "discount rate value"@en .
+# 
 # https://w3id.org/ssco/scc#evidenceReference
 <https://w3id.org/ssco/scc#evidenceReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ssco/scc#evidenceReference> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#ComplianceCheck> .
 <https://w3id.org/ssco/scc#evidenceReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/ssco/scc#evidenceReference> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies a reference to supporting evidence used in a compliance check."@en .
 <https://w3id.org/ssco/scc#evidenceReference> <http://www.w3.org/2000/01/rdf-schema#label> "evidence reference"@en .
+# 
+# https://w3id.org/ssco/scc#flowDirection
+<https://w3id.org/ssco/scc#flowDirection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#flowDirection> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#InventoryFlow> .
+<https://w3id.org/ssco/scc#flowDirection> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#flowDirection> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies whether an inventory flow is an input, output, emission, waste, or other directed flow."@en .
+<https://w3id.org/ssco/scc#flowDirection> <http://www.w3.org/2000/01/rdf-schema#label> "flow direction"@en .
+# 
+# https://w3id.org/ssco/scc#flowName
+<https://w3id.org/ssco/scc#flowName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#flowName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#InventoryFlow> .
+<https://w3id.org/ssco/scc#flowName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#flowName> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the name of an inventory flow."@en .
+<https://w3id.org/ssco/scc#flowName> <http://www.w3.org/2000/01/rdf-schema#label> "flow name"@en .
+# 
+# https://w3id.org/ssco/scc#flowSourceText
+<https://w3id.org/ssco/scc#flowSourceText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#flowSourceText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#InventoryFlow> .
+<https://w3id.org/ssco/scc#flowSourceText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#flowSourceText> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the data source, dataset, or provenance statement for an inventory flow."@en .
+<https://w3id.org/ssco/scc#flowSourceText> <http://www.w3.org/2000/01/rdf-schema#label> "flow source text"@en .
+# 
+# https://w3id.org/ssco/scc#flowUnit
+<https://w3id.org/ssco/scc#flowUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#flowUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#InventoryFlow> .
+<https://w3id.org/ssco/scc#flowUnit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#flowUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the unit used to quantify an inventory flow."@en .
+<https://w3id.org/ssco/scc#flowUnit> <http://www.w3.org/2000/01/rdf-schema#label> "flow unit"@en .
+# 
+# https://w3id.org/ssco/scc#flowValue
+<https://w3id.org/ssco/scc#flowValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#flowValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#InventoryFlow> .
+<https://w3id.org/ssco/scc#flowValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/ssco/scc#flowValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the quantified value of an inventory flow."@en .
+<https://w3id.org/ssco/scc#flowValue> <http://www.w3.org/2000/01/rdf-schema#label> "flow value"@en .
+# 
+# https://w3id.org/ssco/scc#functionalUnitQuantity
+<https://w3id.org/ssco/scc#functionalUnitQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#functionalUnitQuantity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#functionalUnitQuantity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/ssco/scc#functionalUnitQuantity> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the numeric quantity of the functional unit used by the assessment scenario."@en .
+<https://w3id.org/ssco/scc#functionalUnitQuantity> <http://www.w3.org/2000/01/rdf-schema#label> "functional unit quantity"@en .
+# 
+# https://w3id.org/ssco/scc#functionalUnitText
+<https://w3id.org/ssco/scc#functionalUnitText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#functionalUnitText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#functionalUnitText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#functionalUnitText> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the textual description of the functional unit or functional equivalent used by the assessment scenario."@en .
+<https://w3id.org/ssco/scc#functionalUnitText> <http://www.w3.org/2000/01/rdf-schema#label> "functional unit text"@en .
+# 
+# https://w3id.org/ssco/scc#functionalUnitUnit
+<https://w3id.org/ssco/scc#functionalUnitUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#functionalUnitUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#functionalUnitUnit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#functionalUnitUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the unit associated with the functional unit quantity."@en .
+<https://w3id.org/ssco/scc#functionalUnitUnit> <http://www.w3.org/2000/01/rdf-schema#label> "functional unit unit"@en .
 # 
 # https://w3id.org/ssco/scc#indicatorCode
 <https://w3id.org/ssco/scc#indicatorCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -1549,6 +1733,13 @@
 <https://w3id.org/ssco/scc#performanceValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the scalar value of a reported performance."@en .
 <https://w3id.org/ssco/scc#performanceValue> <http://www.w3.org/2000/01/rdf-schema#label> "performance value"@en .
 # 
+# https://w3id.org/ssco/scc#presentValue
+<https://w3id.org/ssco/scc#presentValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#presentValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#LifeCycleCostItem> .
+<https://w3id.org/ssco/scc#presentValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/ssco/scc#presentValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the discounted present value assigned to a life-cycle cost item."@en .
+<https://w3id.org/ssco/scc#presentValue> <http://www.w3.org/2000/01/rdf-schema#label> "present value"@en .
+# 
 # https://w3id.org/ssco/scc#rationaleText
 <https://w3id.org/ssco/scc#rationaleText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ssco/scc#rationaleText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#ComplianceResult> .
@@ -1582,6 +1773,13 @@
 <https://w3id.org/ssco/scc#requirementText> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the textual statement of a compliance requirement."@en .
 <https://w3id.org/ssco/scc#requirementText> <http://www.w3.org/2000/01/rdf-schema#label> "requirement text"@en .
 # 
+# https://w3id.org/ssco/scc#residualValue
+<https://w3id.org/ssco/scc#residualValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#residualValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#LifeCycleCostItem> .
+<https://w3id.org/ssco/scc#residualValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/ssco/scc#residualValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the residual or terminal value associated with a life-cycle cost item at the end of the period of analysis."@en .
+<https://w3id.org/ssco/scc#residualValue> <http://www.w3.org/2000/01/rdf-schema#label> "residual value"@en .
+# 
 # https://w3id.org/ssco/scc#resultInterpretation
 <https://w3id.org/ssco/scc#resultInterpretation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ssco/scc#resultInterpretation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#ComplianceResult> .
@@ -1589,12 +1787,54 @@
 <https://w3id.org/ssco/scc#resultInterpretation> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies an interpretative statement associated with a compliance result."@en .
 <https://w3id.org/ssco/scc#resultInterpretation> <http://www.w3.org/2000/01/rdf-schema#label> "result interpretation"@en .
 # 
+# https://w3id.org/ssco/scc#scenarioName
+<https://w3id.org/ssco/scc#scenarioName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#scenarioName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#scenarioName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#scenarioName> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the name or short designation of an assessment scenario."@en .
+<https://w3id.org/ssco/scc#scenarioName> <http://www.w3.org/2000/01/rdf-schema#label> "scenario name"@en .
+# 
+# https://w3id.org/ssco/scc#socialSubcategoryText
+<https://w3id.org/ssco/scc#socialSubcategoryText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#socialSubcategoryText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#SocialIndicator> .
+<https://w3id.org/ssco/scc#socialSubcategoryText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#socialSubcategoryText> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the social subcategory or issue addressed by a social indicator."@en .
+<https://w3id.org/ssco/scc#socialSubcategoryText> <http://www.w3.org/2000/01/rdf-schema#label> "social subcategory text"@en .
+# 
 # https://w3id.org/ssco/scc#stageCode
 <https://w3id.org/ssco/scc#stageCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/ssco/scc#stageCode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#LifeCycleStage> .
 <https://w3id.org/ssco/scc#stageCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/ssco/scc#stageCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies a code or short identifier for a life cycle stage."@en .
 <https://w3id.org/ssco/scc#stageCode> <http://www.w3.org/2000/01/rdf-schema#label> "stage code"@en .
+# 
+# https://w3id.org/ssco/scc#stakeholderScopeText
+<https://w3id.org/ssco/scc#stakeholderScopeText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#stakeholderScopeText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#StakeholderCategory> .
+<https://w3id.org/ssco/scc#stakeholderScopeText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#stakeholderScopeText> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies a textual description of the scope or interpretation of a stakeholder category in the assessment."@en .
+<https://w3id.org/ssco/scc#stakeholderScopeText> <http://www.w3.org/2000/01/rdf-schema#label> "stakeholder scope text"@en .
+# 
+# https://w3id.org/ssco/scc#studyPeriodUnit
+<https://w3id.org/ssco/scc#studyPeriodUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#studyPeriodUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#studyPeriodUnit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#studyPeriodUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the unit of the period of analysis, such as year or month."@en .
+<https://w3id.org/ssco/scc#studyPeriodUnit> <http://www.w3.org/2000/01/rdf-schema#label> "study period unit"@en .
+# 
+# https://w3id.org/ssco/scc#studyPeriodValue
+<https://w3id.org/ssco/scc#studyPeriodValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#studyPeriodValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#studyPeriodValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/ssco/scc#studyPeriodValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the numeric period of analysis used for life-cycle costing or other time-based assessment."@en .
+<https://w3id.org/ssco/scc#studyPeriodValue> <http://www.w3.org/2000/01/rdf-schema#label> "study period value"@en .
+# 
+# https://w3id.org/ssco/scc#systemBoundaryText
+<https://w3id.org/ssco/scc#systemBoundaryText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#systemBoundaryText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#AssessmentScenario> .
+<https://w3id.org/ssco/scc#systemBoundaryText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#systemBoundaryText> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the textual statement of the system boundary used by the assessment scenario."@en .
+<https://w3id.org/ssco/scc#systemBoundaryText> <http://www.w3.org/2000/01/rdf-schema#label> "system boundary text"@en .
 # 
 # https://w3id.org/ssco/scc#technicalAssessmentMethod
 <https://w3id.org/ssco/scc#technicalAssessmentMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -1616,6 +1856,13 @@
 <https://w3id.org/ssco/scc#thresholdValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
 <https://w3id.org/ssco/scc#thresholdValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the scalar threshold used in a compliance criterion for comparison."@en .
 <https://w3id.org/ssco/scc#thresholdValue> <http://www.w3.org/2000/01/rdf-schema#label> "threshold value"@en .
+# 
+# https://w3id.org/ssco/scc#uncertaintyText
+<https://w3id.org/ssco/scc#uncertaintyText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ssco/scc#uncertaintyText> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ssco/scc#InventoryFlow> .
+<https://w3id.org/ssco/scc#uncertaintyText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ssco/scc#uncertaintyText> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies an uncertainty statement associated with an inventory flow."@en .
+<https://w3id.org/ssco/scc#uncertaintyText> <http://www.w3.org/2000/01/rdf-schema#label> "uncertainty text"@en .
 # 
 # 
 # 
@@ -1861,6 +2108,13 @@
 <https://w3id.org/ssco/core#UnitSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Unit Specification"@en .
 <https://w3id.org/ssco/core#UnitSpecification> <http://www.w3.org/2004/02/skos/core#prefLabel> "Unit Specification"@en .
 # 
+# https://w3id.org/ssco/scc#AssessmentScenario
+<https://w3id.org/ssco/scc#AssessmentScenario> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ssco/scc#AssessmentScenario> <http://purl.org/dc/terms/source> "ISO 14044:2006, goal and scope definition; ISO 15686-5:2017, period of analysis for life-cycle costing."@en .
+<https://w3id.org/ssco/scc#AssessmentScenario> <http://www.w3.org/2000/01/rdf-schema#comment> "A goal-and-scope setting that states the functional unit, system boundary, study period, allocation method, cut-off rule, and data-quality context used for a life-cycle sustainability assessment."@en .
+<https://w3id.org/ssco/scc#AssessmentScenario> <http://www.w3.org/2000/01/rdf-schema#label> "Assessment Scenario"@en .
+<https://w3id.org/ssco/scc#AssessmentScenario> <http://www.w3.org/2004/02/skos/core#prefLabel> "Assessment Scenario"@en .
+# 
 # https://w3id.org/ssco/scc#Benchmark
 <https://w3id.org/ssco/scc#Benchmark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ssco/scc#Benchmark> <http://purl.org/dc/terms/source> "ISO 21678:2020, indicators and benchmarks; ISO 21931-2:2019, benchmarks or levels of performance."@en .
@@ -1907,6 +2161,14 @@
 <https://w3id.org/ssco/scc#ConstructionStage> <http://www.w3.org/2000/01/rdf-schema#comment> "A life cycle stage covering on-site construction and installation processes."@en .
 <https://w3id.org/ssco/scc#ConstructionStage> <http://www.w3.org/2000/01/rdf-schema#label> "Construction Stage"@en .
 <https://w3id.org/ssco/scc#ConstructionStage> <http://www.w3.org/2004/02/skos/core#prefLabel> "Construction Stage"@en .
+# 
+# https://w3id.org/ssco/scc#ConsumerStakeholderCategory
+<https://w3id.org/ssco/scc#ConsumerStakeholderCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ssco/scc#ConsumerStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ssco/scc#StakeholderCategory> .
+<https://w3id.org/ssco/scc#ConsumerStakeholderCategory> <http://purl.org/dc/terms/source> "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."@en .
+<https://w3id.org/ssco/scc#ConsumerStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A stakeholder category representing consumers or end users relevant to social life-cycle assessment."@en .
+<https://w3id.org/ssco/scc#ConsumerStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Consumer Stakeholder Category"@en .
+<https://w3id.org/ssco/scc#ConsumerStakeholderCategory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Consumer Stakeholder Category"@en .
 # 
 # https://w3id.org/ssco/scc#EconomicAspect
 <https://w3id.org/ssco/scc#EconomicAspect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1956,12 +2218,34 @@
 <https://w3id.org/ssco/scc#FunctionalTechnicalPerformance> <http://www.w3.org/2000/01/rdf-schema#label> "Functional Technical Performance"@en .
 <https://w3id.org/ssco/scc#FunctionalTechnicalPerformance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Functional Technical Performance"@en .
 # 
+# https://w3id.org/ssco/scc#InventoryFlow
+<https://w3id.org/ssco/scc#InventoryFlow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ssco/scc#InventoryFlow> <http://purl.org/dc/terms/source> "ISO 14044:2006, life cycle inventory analysis."@en .
+<https://w3id.org/ssco/scc#InventoryFlow> <http://www.w3.org/2000/01/rdf-schema#comment> "A quantified input, output, emission, waste, or other inventory flow associated with a task and used in life cycle inventory analysis."@en .
+<https://w3id.org/ssco/scc#InventoryFlow> <http://www.w3.org/2000/01/rdf-schema#label> "Inventory Flow"@en .
+<https://w3id.org/ssco/scc#InventoryFlow> <http://www.w3.org/2004/02/skos/core#prefLabel> "Inventory Flow"@en .
+# 
+# https://w3id.org/ssco/scc#LifeCycleCostItem
+<https://w3id.org/ssco/scc#LifeCycleCostItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ssco/scc#LifeCycleCostItem> <http://purl.org/dc/terms/source> "ISO 15686-5:2017, life-cycle costing and period of analysis."@en .
+<https://w3id.org/ssco/scc#LifeCycleCostItem> <http://www.w3.org/2000/01/rdf-schema#comment> "A cost item occurring over a defined period of analysis and contributing to life-cycle costing."@en .
+<https://w3id.org/ssco/scc#LifeCycleCostItem> <http://www.w3.org/2000/01/rdf-schema#label> "Life-Cycle Cost Item"@en .
+<https://w3id.org/ssco/scc#LifeCycleCostItem> <http://www.w3.org/2004/02/skos/core#prefLabel> "Life-Cycle Cost Item"@en .
+# 
 # https://w3id.org/ssco/scc#LifeCycleStage
 <https://w3id.org/ssco/scc#LifeCycleStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ssco/scc#LifeCycleStage> <http://purl.org/dc/terms/source> "ISO 15686-1:2011, life-cycle stages; ISO 15392:2019, life cycle of construction works."@en .
 <https://w3id.org/ssco/scc#LifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#comment> "A stage in the life cycle of a construction work to which indicators or performances may relate."@en .
 <https://w3id.org/ssco/scc#LifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#label> "Life Cycle Stage"@en .
 <https://w3id.org/ssco/scc#LifeCycleStage> <http://www.w3.org/2004/02/skos/core#prefLabel> "Life Cycle Stage"@en .
+# 
+# https://w3id.org/ssco/scc#LocalCommunityStakeholderCategory
+<https://w3id.org/ssco/scc#LocalCommunityStakeholderCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ssco/scc#LocalCommunityStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ssco/scc#StakeholderCategory> .
+<https://w3id.org/ssco/scc#LocalCommunityStakeholderCategory> <http://purl.org/dc/terms/source> "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."@en .
+<https://w3id.org/ssco/scc#LocalCommunityStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A stakeholder category representing local communities affected by the product system or constructed asset."@en .
+<https://w3id.org/ssco/scc#LocalCommunityStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Local Community Stakeholder Category"@en .
+<https://w3id.org/ssco/scc#LocalCommunityStakeholderCategory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Local Community Stakeholder Category"@en .
 # 
 # https://w3id.org/ssco/scc#NoncompliantResult
 <https://w3id.org/ssco/scc#NoncompliantResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -2022,6 +2306,21 @@
 <https://w3id.org/ssco/scc#SocialIndicator> <http://www.w3.org/2000/01/rdf-schema#label> "Social Indicator"@en .
 <https://w3id.org/ssco/scc#SocialIndicator> <http://www.w3.org/2004/02/skos/core#prefLabel> "Social Indicator"@en .
 # 
+# https://w3id.org/ssco/scc#SocietyStakeholderCategory
+<https://w3id.org/ssco/scc#SocietyStakeholderCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ssco/scc#SocietyStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ssco/scc#StakeholderCategory> .
+<https://w3id.org/ssco/scc#SocietyStakeholderCategory> <http://purl.org/dc/terms/source> "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."@en .
+<https://w3id.org/ssco/scc#SocietyStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A stakeholder category representing society-level concerns relevant to social life-cycle assessment."@en .
+<https://w3id.org/ssco/scc#SocietyStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Society Stakeholder Category"@en .
+<https://w3id.org/ssco/scc#SocietyStakeholderCategory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Society Stakeholder Category"@en .
+# 
+# https://w3id.org/ssco/scc#StakeholderCategory
+<https://w3id.org/ssco/scc#StakeholderCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ssco/scc#StakeholderCategory> <http://purl.org/dc/terms/source> "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products, stakeholder categories."@en .
+<https://w3id.org/ssco/scc#StakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A category of stakeholders used to scope and interpret social life-cycle assessment issues and indicators."@en .
+<https://w3id.org/ssco/scc#StakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Stakeholder Category"@en .
+<https://w3id.org/ssco/scc#StakeholderCategory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Stakeholder Category"@en .
+# 
 # https://w3id.org/ssco/scc#SustainabilityAspect
 <https://w3id.org/ssco/scc#SustainabilityAspect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/ssco/scc#SustainabilityAspect> <http://purl.org/dc/terms/source> "ISO 15392:2019, sustainability in buildings and civil engineering works; ISO 21929-1:2011, sustainability indicators framework."@en .
@@ -2051,5 +2350,21 @@
 <https://w3id.org/ssco/scc#UseStage> <http://www.w3.org/2000/01/rdf-schema#comment> "A life cycle stage covering use, operation, maintenance, and related service life processes."@en .
 <https://w3id.org/ssco/scc#UseStage> <http://www.w3.org/2000/01/rdf-schema#label> "Use Stage"@en .
 <https://w3id.org/ssco/scc#UseStage> <http://www.w3.org/2004/02/skos/core#prefLabel> "Use Stage"@en .
+# 
+# https://w3id.org/ssco/scc#ValueChainActorStakeholderCategory
+<https://w3id.org/ssco/scc#ValueChainActorStakeholderCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ssco/scc#ValueChainActorStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ssco/scc#StakeholderCategory> .
+<https://w3id.org/ssco/scc#ValueChainActorStakeholderCategory> <http://purl.org/dc/terms/source> "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."@en .
+<https://w3id.org/ssco/scc#ValueChainActorStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A stakeholder category representing suppliers and other value-chain actors relevant to social life-cycle assessment."@en .
+<https://w3id.org/ssco/scc#ValueChainActorStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Value Chain Actor Stakeholder Category"@en .
+<https://w3id.org/ssco/scc#ValueChainActorStakeholderCategory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Value Chain Actor Stakeholder Category"@en .
+# 
+# https://w3id.org/ssco/scc#WorkerStakeholderCategory
+<https://w3id.org/ssco/scc#WorkerStakeholderCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ssco/scc#WorkerStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ssco/scc#StakeholderCategory> .
+<https://w3id.org/ssco/scc#WorkerStakeholderCategory> <http://purl.org/dc/terms/source> "UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products."@en .
+<https://w3id.org/ssco/scc#WorkerStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A stakeholder category representing workers or employees affected by the product system or constructed asset."@en .
+<https://w3id.org/ssco/scc#WorkerStakeholderCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Worker Stakeholder Category"@en .
+<https://w3id.org/ssco/scc#WorkerStakeholderCategory> <http://www.w3.org/2004/02/skos/core#prefLabel> "Worker Stakeholder Category"@en .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
