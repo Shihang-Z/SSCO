@@ -11,9 +11,9 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/ssco">
-        <owl:versionIRI rdf:resource="https://w3id.org/ssco/0.1.0"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/ssco/0.1.1"/>
         <terms:alternative xml:lang="en">SSCO</terms:alternative>
-        <terms:bibliographicCitation xml:lang="en">Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.0, 2026.</terms:bibliographicCitation>
+        <terms:bibliographicCitation xml:lang="en">Zhang, S.; Zhang, S.; Wu, Z. Structural Sustainability Compliance Ontology (SSCO), version 0.1.1, 2026.</terms:bibliographicCitation>
         <terms:contributor xml:lang="en">Chao Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University</terms:contributor>
         <terms:contributor xml:lang="en">Chen Zhu, Power Construction Corporation of China</terms:contributor>
         <terms:contributor xml:lang="en">Xiaohua Wang, State Key Laboratory of Hydraulic Engineering Intelligent Construction and Operation, Tianjin University</terms:contributor>
@@ -24,13 +24,13 @@
         <terms:description xml:lang="en">An all-in-one publication version of the Structural Sustainability Compliance Ontology, integrating the SSCO-Core, SSCO-BFI, and SSCO-SCC modules.</terms:description>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-15</terms:issued>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-16</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-18</terms:modified>
         <terms:rights xml:lang="en">Copyright © 2026 Authors</terms:rights>
         <terms:title xml:lang="en">Structural Sustainability Compliance Ontology</terms:title>
         <vann:preferredNamespacePrefix>ssco</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://w3id.org/ssco#</vann:preferredNamespaceUri>
         <rdfs:label xml:lang="en">Structural Sustainability Compliance Ontology</rdfs:label>
-        <owl:versionInfo>0.1.0</owl:versionInfo>
+        <owl:versionInfo>0.1.1</owl:versionInfo>
         <foaf:homepage rdf:resource="https://w3id.org/ssco"/>
     </owl:Ontology>
     
@@ -169,6 +169,13 @@
 
 
     <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
     
 
 
@@ -607,6 +614,18 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#addressesStakeholderCategory -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ssco/scc#addressesStakeholderCategory">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#SocialIndicator"/>
+        <rdfs:range rdf:resource="https://w3id.org/ssco/scc#StakeholderCategory"/>
+        <rdfs:comment xml:lang="en">Links a social indicator to the stakeholder category that the indicator addresses.</rdfs:comment>
+        <rdfs:label xml:lang="en">addresses stakeholder category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/ssco/scc#appliesToLifeCycleStage -->
 
 
@@ -643,6 +662,42 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#contributesToImpactCategory -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ssco/scc#contributesToImpactCategory">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#InventoryFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/ssco/scc#EnvironmentalIndicator"/>
+        <rdfs:comment xml:lang="en">Links an inventory flow to an environmental indicator or impact category to which it contributes.</rdfs:comment>
+        <rdfs:label xml:lang="en">contributes to impact category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#derivesFromCostItem -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ssco/scc#derivesFromCostItem">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#SustainabilityPerformance"/>
+        <rdfs:range rdf:resource="https://w3id.org/ssco/scc#LifeCycleCostItem"/>
+        <rdfs:comment xml:lang="en">Links a sustainability performance value, especially an economic performance value, to the life-cycle cost items from which it is derived.</rdfs:comment>
+        <rdfs:label xml:lang="en">derives from cost item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#derivesFromInventoryFlow -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ssco/scc#derivesFromInventoryFlow">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#SustainabilityPerformance"/>
+        <rdfs:range rdf:resource="https://w3id.org/ssco/scc#InventoryFlow"/>
+        <rdfs:comment xml:lang="en">Links a sustainability performance value to the inventory flow data from which it is derived.</rdfs:comment>
+        <rdfs:label xml:lang="en">derives from inventory flow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/ssco/scc#evaluatesPerformance -->
 
 
@@ -651,6 +706,18 @@
         <rdfs:range rdf:resource="https://w3id.org/ssco/scc#Performance"/>
         <rdfs:comment xml:lang="en">Relates a compliance check to the performance that it evaluates as evidence.</rdfs:comment>
         <rdfs:label xml:lang="en">evaluates performance</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#hasAssessmentScenario -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ssco/scc#hasAssessmentScenario">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/core#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:comment xml:lang="en">Links a project to the assessment scenario that defines the goal-and-scope conditions of a life-cycle sustainability assessment.</rdfs:comment>
+        <rdfs:label xml:lang="en">has assessment scenario</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -691,6 +758,30 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#hasInventoryFlow -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ssco/scc#hasInventoryFlow">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/bfi#Task"/>
+        <rdfs:range rdf:resource="https://w3id.org/ssco/scc#InventoryFlow"/>
+        <rdfs:comment xml:lang="en">Links a task to an inventory flow used in life cycle inventory analysis.</rdfs:comment>
+        <rdfs:label xml:lang="en">has inventory flow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#hasLifeCycleCostItem -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ssco/scc#hasLifeCycleCostItem">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/core#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/ssco/scc#LifeCycleCostItem"/>
+        <rdfs:comment xml:lang="en">Links a project to a life-cycle cost item considered in life-cycle costing.</rdfs:comment>
+        <rdfs:label xml:lang="en">has life-cycle cost item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/ssco/scc#indicatesPerformance -->
 
 
@@ -727,6 +818,30 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#isCostOfResource -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ssco/scc#isCostOfResource">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#LifeCycleCostItem"/>
+        <rdfs:range rdf:resource="https://w3id.org/ssco/bfi#Resource"/>
+        <rdfs:comment xml:lang="en">Links a life-cycle cost item to the resource to which the cost refers.</rdfs:comment>
+        <rdfs:label xml:lang="en">is cost of resource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#isCostOfTask -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ssco/scc#isCostOfTask">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#LifeCycleCostItem"/>
+        <rdfs:range rdf:resource="https://w3id.org/ssco/bfi#Task"/>
+        <rdfs:comment xml:lang="en">Links a life-cycle cost item to the task that gives rise to the cost.</rdfs:comment>
+        <rdfs:label xml:lang="en">is cost of task</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/ssco/scc#isSpecifiedBy -->
 
 
@@ -747,6 +862,17 @@
         <rdfs:range rdf:resource="https://w3id.org/ssco/scc#ComplianceRequirement"/>
         <rdfs:comment xml:lang="en">Links a project to a compliance requirement.</rdfs:comment>
         <rdfs:label xml:lang="en">is subject to requirement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#occursInLifeCycleStage -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ssco/scc#occursInLifeCycleStage">
+        <rdfs:range rdf:resource="https://w3id.org/ssco/scc#LifeCycleStage"/>
+        <rdfs:comment xml:lang="en">Links a task, inventory flow, life-cycle cost item, or other assessment element to the life-cycle stage in which it occurs.</rdfs:comment>
+        <rdfs:label xml:lang="en">occurs in life-cycle stage</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2420,6 +2546,18 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#allocationMethodText -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#allocationMethodText">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the allocation method adopted by the assessment scenario.</rdfs:comment>
+        <rdfs:label xml:lang="en">allocation method text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/ssco/scc#applicabilityText -->
 
 
@@ -2539,6 +2677,54 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#costCurrency -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#costCurrency">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#LifeCycleCostItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the currency in which a life-cycle cost item is expressed.</rdfs:comment>
+        <rdfs:label xml:lang="en">cost currency</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#costOccurrenceYear -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#costOccurrenceYear">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#LifeCycleCostItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:comment xml:lang="en">Specifies the year in which a life-cycle cost item occurs within the period of analysis.</rdfs:comment>
+        <rdfs:label xml:lang="en">cost occurrence year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#costType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#costType">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#LifeCycleCostItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the type of a life-cycle cost item, such as initial, operation, maintenance, replacement, or end-of-life cost.</rdfs:comment>
+        <rdfs:label xml:lang="en">cost type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#costValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#costValue">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#LifeCycleCostItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Specifies the quantified value of a life-cycle cost item.</rdfs:comment>
+        <rdfs:label xml:lang="en">cost value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/ssco/scc#criterionExpression -->
 
 
@@ -2563,6 +2749,42 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#cutOffRuleText -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#cutOffRuleText">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the cut-off rule adopted by the assessment scenario.</rdfs:comment>
+        <rdfs:label xml:lang="en">cut-off rule text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#dataQualityDescription -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#dataQualityDescription">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies a qualitative description of the data quality assumptions adopted by the assessment scenario.</rdfs:comment>
+        <rdfs:label xml:lang="en">data quality description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#discountRateValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#discountRateValue">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Specifies the discount rate adopted for life-cycle costing analysis.</rdfs:comment>
+        <rdfs:label xml:lang="en">discount rate value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/ssco/scc#evidenceReference -->
 
 
@@ -2571,6 +2793,102 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Specifies a reference to supporting evidence used in a compliance check.</rdfs:comment>
         <rdfs:label xml:lang="en">evidence reference</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#flowDirection -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#flowDirection">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#InventoryFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies whether an inventory flow is an input, output, emission, waste, or other directed flow.</rdfs:comment>
+        <rdfs:label xml:lang="en">flow direction</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#flowName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#flowName">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#InventoryFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the name of an inventory flow.</rdfs:comment>
+        <rdfs:label xml:lang="en">flow name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#flowSourceText -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#flowSourceText">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#InventoryFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the data source, dataset, or provenance statement for an inventory flow.</rdfs:comment>
+        <rdfs:label xml:lang="en">flow source text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#flowUnit -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#flowUnit">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#InventoryFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the unit used to quantify an inventory flow.</rdfs:comment>
+        <rdfs:label xml:lang="en">flow unit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#flowValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#flowValue">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#InventoryFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Specifies the quantified value of an inventory flow.</rdfs:comment>
+        <rdfs:label xml:lang="en">flow value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#functionalUnitQuantity -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#functionalUnitQuantity">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Specifies the numeric quantity of the functional unit used by the assessment scenario.</rdfs:comment>
+        <rdfs:label xml:lang="en">functional unit quantity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#functionalUnitText -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#functionalUnitText">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the textual description of the functional unit or functional equivalent used by the assessment scenario.</rdfs:comment>
+        <rdfs:label xml:lang="en">functional unit text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#functionalUnitUnit -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#functionalUnitUnit">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the unit associated with the functional unit quantity.</rdfs:comment>
+        <rdfs:label xml:lang="en">functional unit unit</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2671,6 +2989,18 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#presentValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#presentValue">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#LifeCycleCostItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Specifies the discounted present value assigned to a life-cycle cost item.</rdfs:comment>
+        <rdfs:label xml:lang="en">present value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/ssco/scc#rationaleText -->
 
 
@@ -2729,6 +3059,18 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#residualValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#residualValue">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#LifeCycleCostItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Specifies the residual or terminal value associated with a life-cycle cost item at the end of the period of analysis.</rdfs:comment>
+        <rdfs:label xml:lang="en">residual value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/ssco/scc#resultInterpretation -->
 
 
@@ -2741,6 +3083,30 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#scenarioName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#scenarioName">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the name or short designation of an assessment scenario.</rdfs:comment>
+        <rdfs:label xml:lang="en">scenario name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#socialSubcategoryText -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#socialSubcategoryText">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#SocialIndicator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the social subcategory or issue addressed by a social indicator.</rdfs:comment>
+        <rdfs:label xml:lang="en">social subcategory text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/ssco/scc#stageCode -->
 
 
@@ -2749,6 +3115,54 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Specifies a code or short identifier for a life cycle stage.</rdfs:comment>
         <rdfs:label xml:lang="en">stage code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#stakeholderScopeText -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#stakeholderScopeText">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#StakeholderCategory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies a textual description of the scope or interpretation of a stakeholder category in the assessment.</rdfs:comment>
+        <rdfs:label xml:lang="en">stakeholder scope text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#studyPeriodUnit -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#studyPeriodUnit">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the unit of the period of analysis, such as year or month.</rdfs:comment>
+        <rdfs:label xml:lang="en">study period unit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#studyPeriodValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#studyPeriodValue">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Specifies the numeric period of analysis used for life-cycle costing or other time-based assessment.</rdfs:comment>
+        <rdfs:label xml:lang="en">study period value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#systemBoundaryText -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#systemBoundaryText">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#AssessmentScenario"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the textual statement of the system boundary used by the assessment scenario.</rdfs:comment>
+        <rdfs:label xml:lang="en">system boundary text</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2785,6 +3199,18 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">Specifies the scalar threshold used in a compliance criterion for comparison.</rdfs:comment>
         <rdfs:label xml:lang="en">threshold value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#uncertaintyText -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ssco/scc#uncertaintyText">
+        <rdfs:domain rdf:resource="https://w3id.org/ssco/scc#InventoryFlow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies an uncertainty statement associated with an inventory flow.</rdfs:comment>
+        <rdfs:label xml:lang="en">uncertainty text</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -3196,6 +3622,18 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#AssessmentScenario -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ssco/scc#AssessmentScenario">
+        <terms:source xml:lang="en">ISO 14044:2006, goal and scope definition; ISO 15686-5:2017, period of analysis for life-cycle costing.</terms:source>
+        <rdfs:comment xml:lang="en">A goal-and-scope setting that states the functional unit, system boundary, study period, allocation method, cut-off rule, and data-quality context used for a life-cycle sustainability assessment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Assessment Scenario</rdfs:label>
+        <skos:prefLabel xml:lang="en">Assessment Scenario</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/ssco/scc#Benchmark -->
 
 
@@ -3278,6 +3716,19 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#ConsumerStakeholderCategory -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ssco/scc#ConsumerStakeholderCategory">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ssco/scc#StakeholderCategory"/>
+        <terms:source xml:lang="en">UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products.</terms:source>
+        <rdfs:comment xml:lang="en">A stakeholder category representing consumers or end users relevant to social life-cycle assessment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Consumer Stakeholder Category</rdfs:label>
+        <skos:prefLabel xml:lang="en">Consumer Stakeholder Category</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/ssco/scc#EconomicAspect -->
 
 
@@ -3356,6 +3807,30 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#InventoryFlow -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ssco/scc#InventoryFlow">
+        <terms:source xml:lang="en">ISO 14044:2006, life cycle inventory analysis.</terms:source>
+        <rdfs:comment xml:lang="en">A quantified input, output, emission, waste, or other inventory flow associated with a task and used in life cycle inventory analysis.</rdfs:comment>
+        <rdfs:label xml:lang="en">Inventory Flow</rdfs:label>
+        <skos:prefLabel xml:lang="en">Inventory Flow</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#LifeCycleCostItem -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ssco/scc#LifeCycleCostItem">
+        <terms:source xml:lang="en">ISO 15686-5:2017, life-cycle costing and period of analysis.</terms:source>
+        <rdfs:comment xml:lang="en">A cost item occurring over a defined period of analysis and contributing to life-cycle costing.</rdfs:comment>
+        <rdfs:label xml:lang="en">Life-Cycle Cost Item</rdfs:label>
+        <skos:prefLabel xml:lang="en">Life-Cycle Cost Item</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/ssco/scc#LifeCycleStage -->
 
 
@@ -3364,6 +3839,19 @@
         <rdfs:comment xml:lang="en">A stage in the life cycle of a construction work to which indicators or performances may relate.</rdfs:comment>
         <rdfs:label xml:lang="en">Life Cycle Stage</rdfs:label>
         <skos:prefLabel xml:lang="en">Life Cycle Stage</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#LocalCommunityStakeholderCategory -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ssco/scc#LocalCommunityStakeholderCategory">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ssco/scc#StakeholderCategory"/>
+        <terms:source xml:lang="en">UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products.</terms:source>
+        <rdfs:comment xml:lang="en">A stakeholder category representing local communities affected by the product system or constructed asset.</rdfs:comment>
+        <rdfs:label xml:lang="en">Local Community Stakeholder Category</rdfs:label>
+        <skos:prefLabel xml:lang="en">Local Community Stakeholder Category</skos:prefLabel>
     </owl:Class>
     
 
@@ -3467,6 +3955,31 @@
     
 
 
+    <!-- https://w3id.org/ssco/scc#SocietyStakeholderCategory -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ssco/scc#SocietyStakeholderCategory">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ssco/scc#StakeholderCategory"/>
+        <terms:source xml:lang="en">UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products.</terms:source>
+        <rdfs:comment xml:lang="en">A stakeholder category representing society-level concerns relevant to social life-cycle assessment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Society Stakeholder Category</rdfs:label>
+        <skos:prefLabel xml:lang="en">Society Stakeholder Category</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#StakeholderCategory -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ssco/scc#StakeholderCategory">
+        <terms:source xml:lang="en">UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products, stakeholder categories.</terms:source>
+        <rdfs:comment xml:lang="en">A category of stakeholders used to scope and interpret social life-cycle assessment issues and indicators.</rdfs:comment>
+        <rdfs:label xml:lang="en">Stakeholder Category</rdfs:label>
+        <skos:prefLabel xml:lang="en">Stakeholder Category</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/ssco/scc#SustainabilityAspect -->
 
 
@@ -3513,6 +4026,32 @@
         <rdfs:comment xml:lang="en">A life cycle stage covering use, operation, maintenance, and related service life processes.</rdfs:comment>
         <rdfs:label xml:lang="en">Use Stage</rdfs:label>
         <skos:prefLabel xml:lang="en">Use Stage</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#ValueChainActorStakeholderCategory -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ssco/scc#ValueChainActorStakeholderCategory">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ssco/scc#StakeholderCategory"/>
+        <terms:source xml:lang="en">UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products.</terms:source>
+        <rdfs:comment xml:lang="en">A stakeholder category representing suppliers and other value-chain actors relevant to social life-cycle assessment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Value Chain Actor Stakeholder Category</rdfs:label>
+        <skos:prefLabel xml:lang="en">Value Chain Actor Stakeholder Category</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ssco/scc#WorkerStakeholderCategory -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ssco/scc#WorkerStakeholderCategory">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ssco/scc#StakeholderCategory"/>
+        <terms:source xml:lang="en">UNEP/SETAC, Guidelines for Social Life Cycle Assessment of Products.</terms:source>
+        <rdfs:comment xml:lang="en">A stakeholder category representing workers or employees affected by the product system or constructed asset.</rdfs:comment>
+        <rdfs:label xml:lang="en">Worker Stakeholder Category</rdfs:label>
+        <skos:prefLabel xml:lang="en">Worker Stakeholder Category</skos:prefLabel>
     </owl:Class>
 </rdf:RDF>
 
