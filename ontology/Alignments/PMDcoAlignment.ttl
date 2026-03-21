@@ -1,0 +1,39 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sscore: <https://w3id.org/ssco/core#> .
+@prefix sscobfi: <https://w3id.org/ssco/bfi#> .
+@prefix sscoscc: <https://w3id.org/ssco/scc#> .
+
+@prefix co: <https://w3id.org/pmd/co/> .
+
+<https://w3id.org/ssco/alignment/PMDcoAlignment> a owl:Ontology ;
+  dcterms:title "SSCO alignment module for PMDco"@en ;
+  dcterms:description "Alignment axioms connecting SSCO-BFI to the Platform Material Digital Core Ontology (PMDco), focusing on processes, objects, materials, analysis-related descriptions, and data products."@en ;
+  dcterms:created "2026-03-19"^^xsd:date ;
+  dcterms:modified "2026-03-19"^^xsd:date ;
+  dcterms:creator "Shihang Zhang"@en ;
+  owl:versionInfo "0.1.1" ;
+  vann:preferredNamespacePrefix "PMDcoAlignment" ;
+  vann:preferredNamespaceUri "https://w3id.org/ssco/alignment/PMDcoAlignment" ;
+  owl:imports <https://w3id.org/ssco> ,
+    <https://w3id.org/pmd/co> .
+
+sscobfi:Process skos:closeMatch co:Process .
+sscobfi:Task rdfs:subClassOf co:Process .
+sscobfi:StructuralElement skos:closeMatch co:Object .
+sscobfi:StructuralItem skos:closeMatch co:Object .
+sscobfi:MaterialDefinition skos:closeMatch co:MaterialRelated .
+sscobfi:MaterialDefinition skos:relatedMatch co:EngineeredMaterial .
+sscobfi:AnalysisModel skos:relatedMatch co:Method .
+sscobfi:AnalysisResults skos:closeMatch co:Dataset .
+sscobfi:EquipmentResource skos:relatedMatch co:ProcessingNode .
+
+sscobfi:consumesResource skos:closeMatch co:input .
+sscobfi:hasResults skos:closeMatch co:output .
+sscobfi:hasMaterial skos:relatedMatch co:characteristic .
+sscobfi:precedesTask skos:relatedMatch co:nextProcess .

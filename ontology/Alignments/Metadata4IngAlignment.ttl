@@ -1,0 +1,32 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sscore: <https://w3id.org/ssco/core#> .
+@prefix sscobfi: <https://w3id.org/ssco/bfi#> .
+@prefix sscoscc: <https://w3id.org/ssco/scc#> .
+
+<https://w3id.org/ssco/alignment/Metadata4IngAlignment> a owl:Ontology ;
+  dcterms:title "SSCO alignment module for Metadata4Ing"@en ;
+  dcterms:description "Alignment axioms connecting SSCO-BFI to Metadata4Ing concepts for processing steps, methods, tools, and investigated objects in engineering research workflows."@en ;
+  dcterms:created "2026-03-19"^^xsd:date ;
+  dcterms:creator "Shihang Zhang"@en ;
+  owl:versionInfo "0.1.0" ;
+  vann:preferredNamespacePrefix "Metadata4IngAlignment" ;
+  vann:preferredNamespaceUri "https://w3id.org/ssco/alignment/Metadata4IngAlignment" ;
+  owl:imports <https://w3id.org/ssco> ,
+    <http://w3id.org/nfdi4ing/metadata4ing> .
+
+@prefix m4i: <http://w3id.org/nfdi4ing/metadata4ing#> .
+
+sscobfi:Process skos:closeMatch m4i:ProcessingStep .
+sscobfi:Task skos:closeMatch m4i:ProcessingStep .
+sscobfi:AnalysisStep rdfs:subClassOf m4i:ProcessingStep .
+sscobfi:AnalysisModel skos:closeMatch m4i:Method .
+sscobfi:EquipmentResource skos:closeMatch m4i:Tool .
+
+sscobfi:allocatesResource skos:relatedMatch m4i:hasEmployedTool .
+sscobfi:isAnalyzedForTask skos:relatedMatch m4i:investigates .

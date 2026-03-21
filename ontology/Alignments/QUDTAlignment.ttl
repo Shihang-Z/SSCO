@@ -1,0 +1,43 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sscore: <https://w3id.org/ssco/core#> .
+@prefix sscobfi: <https://w3id.org/ssco/bfi#> .
+@prefix sscoscc: <https://w3id.org/ssco/scc#> .
+
+<https://w3id.org/ssco/alignment/QUDTAlignment> a owl:Ontology ;
+  dcterms:title "SSCO alignment module for QUDT"@en ;
+  dcterms:description "Alignment axioms connecting SSCO-SCC measurement and benchmark constructs to QUDT quantity kinds, quantity values, units, and numeric values."@en ;
+  dcterms:created "2026-03-19"^^xsd:date ;
+  dcterms:creator "Shihang Zhang"@en ;
+  owl:versionInfo "0.1.0" ;
+  vann:preferredNamespacePrefix "QUDTAlignment" ;
+  vann:preferredNamespaceUri "https://w3id.org/ssco/alignment/QUDTAlignment" ;
+  owl:imports <https://w3id.org/ssco> ,
+    <http://qudt.org/schema/qudt/> .
+
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+sscoscc:SustainabilityIndicator skos:closeMatch qudt:QuantityKind .
+sscoscc:EnvironmentalIndicator rdfs:subClassOf qudt:QuantityKind .
+sscoscc:EconomicIndicator rdfs:subClassOf qudt:QuantityKind .
+sscoscc:SocialIndicator rdfs:subClassOf qudt:QuantityKind .
+sscoscc:Benchmark skos:closeMatch qudt:QuantityValue .
+sscoscc:Performance skos:closeMatch qudt:QuantityValue .
+sscoscc:SustainabilityPerformance rdfs:subClassOf qudt:QuantityValue .
+sscoscc:FunctionalTechnicalPerformance rdfs:subClassOf qudt:QuantityValue .
+
+sscoscc:benchmarkValue skos:closeMatch qudt:numericValue .
+sscoscc:benchmarkUnit skos:closeMatch qudt:hasUnit .
+sscoscc:thresholdValue skos:closeMatch qudt:numericValue .
+sscoscc:thresholdUnit skos:closeMatch qudt:hasUnit .
+sscoscc:performanceValue skos:closeMatch qudt:numericValue .
+sscoscc:performanceUnit skos:closeMatch qudt:hasUnit .
+sscoscc:functionalUnitQuantity skos:closeMatch qudt:numericValue .
+sscoscc:functionalUnitUnit skos:closeMatch qudt:hasUnit .
+sscoscc:indicatorUnit skos:closeMatch qudt:hasUnit .

@@ -1,0 +1,32 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sscore: <https://w3id.org/ssco/core#> .
+@prefix sscobfi: <https://w3id.org/ssco/bfi#> .
+@prefix sscoscc: <https://w3id.org/ssco/scc#> .
+
+<https://w3id.org/ssco/alignment/SDGIOAlignment> a owl:Ontology ;
+  dcterms:title "SSCO alignment module for SDGIO"@en ;
+  dcterms:description "Alignment axioms connecting SSCO-SCC sustainability constructs to the SDG Interface Ontology (SDGIO), especially sustainability indicators and goal-oriented assessment concepts."@en ;
+  dcterms:created "2026-03-19"^^xsd:date ;
+  dcterms:creator "Shihang Zhang"@en ;
+  owl:versionInfo "0.1.0" ;
+  vann:preferredNamespacePrefix "SDGIOAlignment" ;
+  vann:preferredNamespaceUri "https://w3id.org/ssco/alignment/SDGIOAlignment" ;
+  owl:imports <https://w3id.org/ssco> ,
+    <http://metadata.un.org/sdg/ontology> .
+
+@prefix sdgio: <http://metadata.un.org/sdg/ontology#> .
+
+sscoscc:SustainabilityIndicator skos:relatedMatch sdgio:Indicator .
+sscoscc:EnvironmentalIndicator skos:broadMatch sdgio:Indicator .
+sscoscc:EconomicIndicator skos:broadMatch sdgio:Indicator .
+sscoscc:SocialIndicator skos:broadMatch sdgio:Indicator .
+sscoscc:SustainabilityAspect skos:relatedMatch sdgio:Goal .
+sscoscc:ComplianceCriterion skos:relatedMatch sdgio:Target .
+
+sscoscc:hasIndicator skos:relatedMatch sdgio:hasIndicator .

@@ -1,0 +1,36 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sscore: <https://w3id.org/ssco/core#> .
+@prefix sscobfi: <https://w3id.org/ssco/bfi#> .
+@prefix sscoscc: <https://w3id.org/ssco/scc#> .
+
+<https://w3id.org/ssco/alignment/AEC3POAlignment> a owl:Ontology ;
+  dcterms:title "SSCO alignment module for AEC3PO"@en ;
+  dcterms:description "Alignment axioms connecting SSCO-SCC compliance checking concepts to AEC3PO modules for statements, check methods, checking acts, and compliance verification reports."@en ;
+  dcterms:created "2026-03-19"^^xsd:date ;
+  dcterms:creator "Shihang Zhang"@en ;
+  owl:versionInfo "0.1.0" ;
+  vann:preferredNamespacePrefix "AEC3POAlignment" ;
+  vann:preferredNamespaceUri "https://w3id.org/ssco/alignment/AEC3POAlignment" ;
+  owl:imports <https://w3id.org/ssco> ,
+    <https://w3id.org/lbd/aec3po/statement> ,
+    <https://w3id.org/lbd/aec3po/check_method> ,
+    <https://w3id.org/lbd/aec3po/checking_act> .
+
+@prefix aec3po: <https://w3id.org/lbd/aec3po/> .
+
+sscoscc:ComplianceRequirement skos:relatedMatch aec3po:DataRequirement .
+sscoscc:ComplianceCriterion skos:closeMatch aec3po:CheckStatement .
+sscoscc:ComplianceCheck skos:closeMatch aec3po:CheckingAct .
+sscoscc:ComplianceResult skos:closeMatch aec3po:ComplianceVerificationReport .
+sscoscc:FunctionalTechnicalPerformance skos:relatedMatch aec3po:Property .
+sscoscc:SustainabilityIndicator skos:relatedMatch aec3po:QuantityKind .
+
+sscoscc:checksCriterion skos:closeMatch aec3po:checked .
+sscoscc:producesComplianceResult skos:closeMatch aec3po:hasReport .
+sscoscc:operationalizes skos:closeMatch aec3po:operationalizes .

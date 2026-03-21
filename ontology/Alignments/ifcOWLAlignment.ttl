@@ -1,0 +1,52 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sscore: <https://w3id.org/ssco/core#> .
+@prefix sscobfi: <https://w3id.org/ssco/bfi#> .
+@prefix sscoscc: <https://w3id.org/ssco/scc#> .
+
+<https://w3id.org/ssco/alignment/ifcOWLAlignment> a owl:Ontology ;
+  dcterms:title "SSCO alignment module for ifcOWL"@en ;
+  dcterms:description "Alignment axioms connecting SSCO-Core and SSCO-BFI to ifcOWL concepts that are semantically equivalent or closely corresponding in IFC-based building and structural information modelling."@en ;
+  dcterms:created "2026-03-19"^^xsd:date ;
+  dcterms:creator "Shihang Zhang"@en ;
+  owl:versionInfo "0.1.0" ;
+  vann:preferredNamespacePrefix "ifcOWLAlignment" ;
+  vann:preferredNamespaceUri "https://w3id.org/ssco/alignment/ifcOWLAlignment" ;
+  owl:imports <https://w3id.org/ssco> ,
+    <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL> .
+
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL#> .
+
+sscore:Project owl:equivalentClass ifc:IfcProject .
+sscore:Objective owl:equivalentClass ifc:IfcObjective .
+sscore:Metric owl:equivalentClass ifc:IfcMetric .
+sscore:Classification owl:equivalentClass ifc:IfcClassification .
+sscore:ClassificationReference owl:equivalentClass ifc:IfcClassificationReference .
+sscore:UnitSpecification owl:equivalentClass ifc:IfcUnitAssignment .
+
+sscobfi:Process owl:equivalentClass ifc:IfcProcess .
+sscobfi:Task owl:equivalentClass ifc:IfcTask .
+sscobfi:Control owl:equivalentClass ifc:IfcControl .
+sscobfi:Resource owl:equivalentClass ifc:IfcResource .
+sscobfi:SpatialStructureElement owl:equivalentClass ifc:IfcSpatialStructureElement .
+
+sscobfi:LaborResource rdfs:subClassOf ifc:IfcLaborResource .
+sscobfi:EquipmentResource rdfs:subClassOf ifc:IfcConstructionEquipmentResource .
+sscobfi:MaterialResource rdfs:subClassOf ifc:IfcConstructionMaterialResource .
+sscobfi:ScheduleControl skos:closeMatch ifc:IfcWorkSchedule .
+sscobfi:CalendarControl skos:closeMatch ifc:IfcWorkCalendar .
+sscobfi:CostControl skos:closeMatch ifc:IfcCostItem .
+sscobfi:AnalysisModel skos:closeMatch ifc:IfcStructuralAnalysisModel .
+sscobfi:StructuralItem skos:closeMatch ifc:IfcStructuralItem .
+sscobfi:MaterialDefinition skos:closeMatch ifc:IfcMaterialDefinition .
+sscobfi:Constraint skos:closeMatch ifc:IfcBoundaryCondition .
+
+sscore:usesClassification skos:relatedMatch ifc:IfcRelAssociatesClassification .
+sscobfi:hasMaterial skos:relatedMatch ifc:IfcRelAssociatesMaterial .
+sscobfi:isConstructedBy skos:relatedMatch ifc:IfcRelAssignsToProcess .
+sscobfi:isControlledBy skos:relatedMatch ifc:IfcRelAssignsToControl .

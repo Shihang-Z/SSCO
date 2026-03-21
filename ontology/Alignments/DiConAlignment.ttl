@@ -1,0 +1,58 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sscore: <https://w3id.org/ssco/core#> .
+@prefix sscobfi: <https://w3id.org/ssco/bfi#> .
+@prefix sscoscc: <https://w3id.org/ssco/scc#> .
+
+@prefix dice: <https://w3id.org/digitalconstruction/0.5/Entities#> .
+@prefix dicp: <https://w3id.org/digitalconstruction/0.5/Processes#> .
+@prefix dicc: <https://w3id.org/digitalconstruction/0.5/Contexts#> .
+@prefix dicl: <https://w3id.org/digitalconstruction/0.5/Lifecycle#> .
+@prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
+
+<https://w3id.org/ssco/alignment/DiConAlignment> a owl:Ontology ;
+  dcterms:title "SSCO alignment module for the Digital Construction Ontologies"@en ;
+  dcterms:description "Alignment axioms connecting SSCO-Core, SSCO-BFI, and SSCO-SCC to selected DiCon modules, especially Entities, Processes, Contexts, Lifecycle, and Materials."@en ;
+  dcterms:created "2026-03-19"^^xsd:date ;
+  dcterms:modified "2026-03-19"^^xsd:date ;
+  dcterms:creator "Shihang Zhang"@en ;
+  owl:versionInfo "0.1.1" ;
+  vann:preferredNamespacePrefix "DiConAlignment" ;
+  vann:preferredNamespaceUri "https://w3id.org/ssco/alignment/DiConAlignment" ;
+  owl:imports <https://w3id.org/ssco> ,
+    <https://w3id.org/digitalconstruction/0.5/Entities> ,
+    <https://w3id.org/digitalconstruction/0.5/Processes> ,
+    <https://w3id.org/digitalconstruction/0.5/Contexts> ,
+    <https://w3id.org/digitalconstruction/0.5/Lifecycle> ,
+    <https://w3id.org/digitalconstruction/0.5/Materials> .
+
+sscore:Project skos:closeMatch dicp:Project .
+sscore:ClassificationReference skos:closeMatch dice:Category .
+sscore:UnitSpecification skos:closeMatch dicc:UnitAssignment .
+
+sscobfi:Process skos:closeMatch dice:Process .
+sscobfi:Task skos:closeMatch dicp:Activity .
+sscobfi:Resource skos:closeMatch dicp:Resource .
+sscobfi:SpatialStructureElement skos:closeMatch dice:Location .
+sscobfi:StructuralElement skos:closeMatch dice:BuildingObject .
+sscobfi:MaterialDefinition skos:closeMatch dicm:Material .
+sscobfi:MaterialDefinition skos:relatedMatch dicm:MaterialObjectStructure .
+
+sscoscc:LifeCycleStage skos:closeMatch dicl:BuildingLifecycleStage .
+sscoscc:ProductStage rdfs:subClassOf dicl:BuildingLifecycleStage .
+sscoscc:ConstructionStage rdfs:subClassOf dicl:BuildingLifecycleStage .
+sscoscc:UseStage rdfs:subClassOf dicl:BuildingLifecycleStage .
+sscoscc:EndOfLifeStage rdfs:subClassOf dicl:BuildingLifecycleStage .
+
+sscobfi:containsProcess skos:relatedMatch dicp:hasLocation .
+sscobfi:isConstructedBy skos:relatedMatch dicp:hasObject .
+sscobfi:consumesResource skos:relatedMatch dicp:hasAssignedResource .
+sscobfi:allocatesResource skos:relatedMatch dicp:hasAssignedResource .
+sscobfi:precedesTask skos:relatedMatch dicp:isConditionOf .
+sscoscc:occursInLifeCycleStage skos:relatedMatch dicl:isActivityIn .
+sscobfi:hasMaterial skos:relatedMatch dicm:hasMaterial .
