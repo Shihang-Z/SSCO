@@ -2,7 +2,7 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<https://w3id.org/ssco/0.1.0> a prov:Entity;
+<https://w3id.org/ssco/> a prov:Entity;
 	 dc:title "Structural Sustainability Compliance Ontology";
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo :agent1;
